@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yousef Ramadan | Front-End Shopify Developer</title>
+  <meta name="description"
+    content="Front-End Shopify Developer specializing in Shopify & Shopify Plus. I build high-performing, conversion-driven e-commerce storefronts.">
+  <meta property="og:title" content="Yousef Ramadan | Front-End Shopify Developer">
+  <meta property="og:description"
+    content="Shopify & Shopify Plus specialist combining Sociology insights with technical expertise to build stores that convert.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://youseframadan.me/">
+  <link rel="icon" type="image/png" href="img/avatar.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yousef Ramadan",
+    "jobTitle": "Front-End Shopify Developer",
+    "description": "Specializing in Shopify & Shopify Plus. I build high-performing, conversion-driven e-commerce storefronts.",
+    "url": "https://youseframadan.me",
+    "sameAs": [
+      "https://github.com/yousefHPramdan",
+      "https://www.instagram.com/yousef.shopify/"
+    ]
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div id="preloader">
+    <div class="relative text-center">
+      <div class="pre-text">Yousef<span class="pre-accent">.</span></div>
+      <div class="pre-bar" id="pre-bar"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar" style="background:rgba(14,13,11,0.8)">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Yousef<span class="logo-dot">.</span></a>
+      <ul id="nav-links">
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
+        <button id="theme-btn">🌙</button>
+        <button id="nav-toggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container w-full">
+      <div class="max-w-[780px]">
+        <div class="hero-badge mb-6">
+          <span class="pulse-dot"></span>
+          Available for new projects
+        </div>
+        <h1 class="hero-title mb-6" id="hero-title"></h1>
+        <p class="text-[#a09880] text-[1.1rem] max-w-[540px] mb-10 leading-[1.85]"
+          style="opacity:0;animation:fadeUp 0.8s ease 0.9s forwards">
+          Front-End Shopify Developer specializing in Shopify &amp; Shopify Plus. I combine an understanding of human behavior with technical expertise in HTML, CSS, JavaScript, and Liquid to build high-performing storefronts that drive conversions.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-16" style="opacity:0;animation:fadeUp 0.8s ease 1.1s forwards">
+          <a href="contact.html" class="btn-primary magnetic">Start a Project <svg width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+          <a href="work.html" class="btn-secondary magnetic">View My Work</a>
+        </div>
+        <div class="flex gap-12 flex-wrap" style="opacity:0;animation:fadeUp 0.8s ease 1.3s forwards">
+          <div>
+            <div class="stat-num" data-target="12">0+</div>
+            <div class="text-[#5a5040] text-[0.82rem] mt-1">Stores Built</div>
+          </div>
+          <div>
+            <div class="stat-num" data-target="4">0+</div>
+            <div class="text-[#5a5040] text-[0.82rem] mt-1">Shopify Apps</div>
+          </div>
+          <div>
+            <div class="stat-num" data-target="2">0+</div>
+            <div class="text-[#5a5040] text-[0.82rem] mt-1">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-4 border-y" style="border-color:rgba(242,237,228,0.06);background:#161410">
+    <div class="marquee-inner">
+      <span class="marquee-item">Tiavola</span><span class="marquee-item">Ocean Bottle</span><span class="marquee-item">Muscle Food</span><span class="marquee-item">Wildfarmed</span><span class="marquee-item">ByPavo</span><span class="marquee-item">Loading-eg</span><span class="marquee-item">O2morny</span><span class="marquee-item">DAME</span><span class="marquee-item">Mother Root</span><span class="marquee-item">Corporate Wear</span><span class="marquee-item">Mouza</span><span class="marquee-item">Home Things</span><span class="marquee-item">Droplet</span><span class="marquee-item">Harley Supplies</span><span class="marquee-item">Slipfree</span><span class="marquee-item">Milkis UK</span>
+      <span class="marquee-item">Tiavola</span><span class="marquee-item">Ocean Bottle</span><span class="marquee-item">Muscle Food</span><span class="marquee-item">Wildfarmed</span><span class="marquee-item">ByPavo</span><span class="marquee-item">Loading-eg</span><span class="marquee-item">O2morny</span><span class="marquee-item">DAME</span><span class="marquee-item">Mother Root</span><span class="marquee-item">Corporate Wear</span><span class="marquee-item">Mouza</span><span class="marquee-item">Home Things</span><span class="marquee-item">Droplet</span><span class="marquee-item">Harley Supplies</span><span class="marquee-item">Slipfree</span><span class="marquee-item">Milkis UK</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="py-28">
+    <div class="container">
+      <div class="about-card reveal">
+        <img src="img/avatar.png" alt="Yousef Ramadan — Front-End Shopify Developer" class="about-avatar">
+        <div>
+          <h3 class="font-heading text-[1.5rem] font-bold mb-3">Hi, I'm Yousef. 👋</h3>
+          <p class="text-[#a09880] text-[0.97rem] leading-[1.8] mb-3">I'm a <strong class="text-ink font-semibold">Front-End Shopify Developer</strong> specializing in Shopify &amp; Shopify Plus. With a unique background in <strong class="text-ink font-semibold">Sociology</strong>, I combine an understanding of human behavior with technical expertise in HTML, CSS, JavaScript, and Liquid to build high-performing, fast, and scalable e-commerce storefronts that deliver seamless user experiences and drive higher conversion rates.</p>
+          <p class="text-[#a09880] text-[0.97rem] leading-[1.8]">Currently leading frontend development at <strong class="text-ink font-semibold">Tiavola</strong>, and previously developed custom themes and optimized storefronts for high-profile global brands — including <strong class="text-ink font-semibold">Loading-eg</strong>, <strong class="text-ink font-semibold">O2morny</strong>, <strong class="text-ink font-semibold">Ocean Bottle</strong>, and <strong class="text-ink font-semibold">Muscle Food</strong> — at <strong class="text-ink font-semibold">Haydon Power</strong> (Shopify Plus Agency).</p>
+          <div class="flex gap-4 mt-6 flex-wrap">
+            <a href="services.html" class="btn-primary btn-sm magnetic">Explore Services</a>
+            <a href="work.html" class="btn-secondary btn-sm magnetic">See My Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="py-28" style="background:#161410">
+    <div class="container">
+      <div class="text-center mb-14 reveal">
+        <div class="eyebrow mb-3">Proven Results</div>
+        <h2 class="section-title">Impact &amp; Metrics</h2>
+        <p class="section-sub mx-auto mt-4">Numbers are what actually sell. Here's how I've helped my clients.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 reveal">
+        <div class="impact-card">
+          <div class="impact-number">+40%</div>
+          <div class="text-[#a09880] text-[0.9rem]">Conversion Uplift (PAVO)</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">&lt;2s</div>
+          <div class="text-[#a09880] text-[0.9rem]">Avg. Page Load Time</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">+22%</div>
+          <div class="text-[#a09880] text-[0.9rem]">AOV via Custom Upsells</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">95+</div>
+          <div class="text-[#a09880] text-[0.9rem]">Lighthouse Score</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ROI CALCULATOR -->
+  <section class="py-28">
+    <div class="container">
+      <div class="card p-0 overflow-hidden reveal border-[rgba(212,168,67,0.1)] hover:border-[rgba(212,168,67,0.2)]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          <div class="p-8 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/5">
+            <div class="eyebrow mb-3">Profitability</div>
+            <h2 class="section-title text-left mb-6">Calculate Your Potential <span class="text-jade">Revenue Lift</span></h2>
+            <p class="text-[#a09880] text-[1.1rem] leading-[1.8] mb-8">Optimization isn't just about speed; it's about the bottom line. See how even a small increase in your conversion rate impacts your monthly revenue.</p>
+            <div class="flex gap-4 items-center mb-6">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-jade/10 flex items-center justify-center text-jade font-bold">1</div>
+              <p class="text-[0.95rem] font-semibold text-ink">Enter your current monthly revenue.</p>
+            </div>
+            <div class="flex gap-4 items-center">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-jade/10 flex items-center justify-center text-jade font-bold">2</div>
+              <p class="text-[0.95rem] font-semibold text-ink">See the estimated lift from a custom optimization.</p>
+            </div>
+          </div>
+          <div class="p-8 lg:p-14 bg-[#1e1b16]/50">
+            <div class="flex flex-col gap-6">
+              <div>
+                <label class="font-heading text-[0.7rem] font-bold tracking-widest uppercase text-[#a09880] mb-3 block">Monthly Revenue ($)</label>
+                <input type="number" id="roi-revenue" class="contact-input" placeholder="e.g., 50000" value="50000" style="background:#0e0d0b">
+              </div>
+              <div class="mt-4 pt-8 border-t border-white/5">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="text-[#a09880] text-[0.92rem]">Estimated Monthly Increase:</span>
+                  <span class="text-jade font-heading text-[2rem] font-bold" id="roi-result">+$7,500</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[#a09880] text-[0.92rem]">New Monthly Total:</span>
+                  <span class="text-ink font-heading text-[1.3rem] font-bold" id="roi-total">$57,500</span>
+                </div>
+              </div>
+              <div class="mt-4 bg-[#0e0d0b] p-4 rounded-xl border border-white/5">
+                <p class="text-[0.75rem] text-[#5a5040] italic leading-relaxed">
+                  * Calculated using a conservative <strong>15% improvement</strong> in conversion efficiency. 
+                  Example: If your store converts at 2%, we aim to lift it to 2.3% through UI/UX polish and performance tuning.
+                </p>
+              </div>
+              <a href="contact.html" class="btn-primary w-full justify-center mt-4">Get a Free Performance Audit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FEATURED WORK -->
+  <section class="py-28 bg-[#0a0908]">
+    <div class="container">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+        <div>
+          <div class="eyebrow mb-3">Portfolio</div>
+          <h2 class="section-title text-left mb-0">Featured <span class="text-gold">Projects</span></h2>
+        </div>
+        <a href="work.html" class="btn-secondary magnetic mb-2">View All Work</a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- PROJECT 1 -->
+        <a href="work.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="img/tiavola_mockup.png" alt="Tiavola" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <div class="flex gap-2 mb-3">
+              <span class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify Plus</span>
+              <span class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Lead Developer</span>
+            </div>
+            <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Tiavola</h3>
+            <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">Leading frontend architecture for a high-growth Shopify Plus storefront.</p>
+          </div>
+        </a>
+
+        <!-- PROJECT 2 -->
+        <a href="work.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="img/bypavo_mockup.png" alt="ByPavo" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <div class="flex gap-2 mb-3">
+              <span class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-jade/10 text-jade border border-jade/20 rounded-full backdrop-blur-md">CRO</span>
+              <span class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Luxury Fashion</span>
+            </div>
+            <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">ByPavo</h3>
+            <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">Premium fashion store with a focus on high-performance and conversion optimization.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI SECTIONS ROW -->
+  <section class="py-28">
+    <div class="container">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <a href="services.html" class="card p-8 reveal group" style="text-decoration:none">
+          <div class="text-[2rem] mb-4">🏗️</div>
+          <h3 class="font-heading font-bold text-[1.15rem] mb-2">Services</h3>
+          <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Store setup, theme dev, app builds, migrations,
+            and CRO strategy.</p>
+          <span
+            class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Explore
+            →</span>
+        </a>
+        <a href="work.html" class="card p-8 reveal group" style="text-decoration:none">
+          <div class="text-[2rem] mb-4">🎨</div>
+          <h3 class="font-heading font-bold text-[1.15rem] mb-2">Selected Work</h3>
+          <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Real stores and apps I've designed and built for
+            clients across Egypt and beyond.</p>
+          <span
+            class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">View
+            Projects →</span>
+        </a>
+        <a href="store.html" class="card p-8 reveal group" style="text-decoration:none">
+          <div class="text-[2rem] mb-4">🛒</div>
+          <h3 class="font-heading font-bold text-[1.15rem] mb-2">Shopioso Store</h3>
+          <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">33+ ready-to-use Shopify code snippets to boost
+            your store's conversion rate.</p>
+          <span
+            class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Browse
+            Snippets →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-28" style="background:#161410">
+    <div class="container">
+      <div class="text-center mb-14 reveal">
+        <div class="eyebrow mb-3">What Clients Say</div>
+        <h2 class="section-title">Testimonials</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Yousef completely transformed our store. The custom theme he built loads incredibly
+            fast and our conversion rate jumped 40% in the first month."</p>
+          <div class="testi-author">Ahmed K.</div>
+          <div class="testi-role">Fashion E-Commerce — PAVO</div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"The snippets from CodeCanyon saved me hundreds of dollars on apps. The free shipping
+            bar alone increased our AOV by 22%. Highly recommended."</p>
+          <div class="testi-author">Sarah M.</div>
+          <div class="testi-role">Shopify Store Owner</div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Professional, fast, and truly understands Shopify. Yousef built our wishlist app exactly how we needed it and integrated our complex catalog perfectly."</p>
+          <div class="testi-author">Omar T.</div>
+          <div class="testi-role">E-Commerce Brand — Loading-eg</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Ready to build something<br>worth buying from?</h2>
+        <p>Whether you're starting fresh or leveling up an existing store, I'm here to make it happen.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
+          <a href="pricing.html" class="btn-secondary magnetic">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="mb-3"><a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank"
+          class="footer-link">LinkedIn</a><a href="https://www.instagram.com/youpify.dev/" target="_blank"
+          class="footer-link">Instagram</a><a href="https://github.com/yousefHPramdan" target="_blank"
+          class="footer-link">GitHub</a><a href="contact.html" class="footer-link">Contact</a></div>
+      <p class="text-[0.82rem] text-[#5a5040]">© <span id="copyright-year">2026</span> Yousef Ramadan. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="contact.html" id="sticky-widget"><span class="sw-dot"></span><span class="sw-text">Available for Work <span>·
+        Let's Talk</span></span></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

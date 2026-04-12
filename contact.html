@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Yousef Ramadan | Front-End Shopify Developer</title>
+  <meta name="description" content="Get in touch to discuss your Shopify project. Fast response, free scoping call, fixed-price quotes.">
+  <meta property="og:title" content="Contact | Yousef Ramadan | Front-End Shopify Developer">
+  <meta property="og:description" content="Let's build your Shopify store. Reach out for a free 30-min discovery call.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://youseframadan.me/contact.html">
+  <link rel="icon" type="image/png" href="img/avatar.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Syne','sans-serif'],body:['Plus Jakarta Sans','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-input { width:100%; background:#26221b; border:1px solid rgba(242,237,228,0.08); border-radius:12px; padding:14px 18px; color:#f2ede4; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.93rem; transition:border-color 0.25s, box-shadow 0.25s; outline:none; }
+    .contact-input::placeholder { color:#5a5040; }
+    .contact-input:focus { border-color:rgba(212,168,67,0.4); box-shadow:0 0 0 3px rgba(212,168,67,0.08); }
+    .contact-label { font-family:'Syne',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#a09880; margin-bottom:8px; display:block; }
+    .channel-card { background:#1e1b16; border:1px solid rgba(242,237,228,0.07); border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:all 0.3s; text-decoration:none; color:inherit; }
+    .channel-card:hover { border-color:rgba(212,168,67,0.3); transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.3); }
+    .channel-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; background:rgba(212,168,67,0.09); border:1px solid rgba(212,168,67,0.15); flex-shrink:0; }
+    [data-theme="light"] .contact-input { background:#f5f0e8; border-color:rgba(0,0,0,0.1); color:#1a1610; }
+    [data-theme="light"] .channel-card { background:#fff; border-color:rgba(0,0,0,0.07); }
+  </style>
+</head>
+<body>
+<div id="cursor"></div><div id="cursor-ring"></div>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<div id="preloader"><div class="relative text-center"><div class="pre-text">Yousef<span class="pre-accent">.</span></div><div class="pre-bar" id="pre-bar"></div></div></div>
+
+<nav id="navbar" style="background:rgba(14,13,11,0.8)">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Yousef<span class="logo-dot">.</span></a>
+    <ul id="nav-links">
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html"     class="nav-link">Work</a></li>
+      <li><a href="store.html"    class="nav-link">Store</a></li>
+      <li><a href="process.html"  class="nav-link">Process</a></li>
+      <li><a href="pricing.html"  class="nav-link">Pricing</a></li>
+      <li><a href="contact.html"  class="nav-link active">Contact</a></li>
+    </ul>
+    <div class="nav-right"><a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a><button id="theme-btn">🌙</button><button id="nav-toggle"><span></span><span></span><span></span></button></div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="hero-badge mb-6 inline-flex">
+      <span class="pulse-dot"></span>
+      Available for new projects
+    </div>
+    <h1 class="section-title mt-4">Let's Build Something</h1>
+    <p class="section-sub mx-auto">Whether you're starting fresh, migrating, or scaling — reach out and let's talk about your project.</p>
+  </div>
+</div>
+
+<section class="py-20">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- LEFT: CONTACT FORM -->
+      <div class="reveal">
+        <div class="card p-8">
+          <h2 class="font-heading text-[1.4rem] font-bold mb-8">Send a Message</h2>
+          <form id="contact-form" class="flex flex-col gap-6" onsubmit="handleSubmit(event)">
+            <div>
+              <label class="contact-label">Your Name</label>
+              <input type="text" name="name" class="contact-input" placeholder="Ahmed Mohamed" required>
+            </div>
+            <div>
+              <label class="contact-label">Email Address</label>
+              <input type="email" name="email" class="contact-input" placeholder="ahmed@yourstore.com" required>
+            </div>
+            <div>
+              <label class="contact-label">Project Type</label>
+              <select name="project_type" class="contact-input" style="cursor:pointer">
+                <option value="" style="background:#26221b">— Select a service —</option>
+                <option style="background:#26221b">Store Setup</option>
+                <option style="background:#26221b">Theme Development</option>
+                <option style="background:#26221b">Platform Migration</option>
+                <option style="background:#26221b">App Development</option>
+                <option style="background:#26221b">Conversion Optimization</option>
+                <option style="background:#26221b">Speed / Performance</option>
+                <option style="background:#26221b">Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="contact-label">Budget Range</label>
+              <select name="budget" class="contact-input" style="cursor:pointer">
+                <option value="" style="background:#26221b">— Select budget —</option>
+                <option style="background:#26221b">$500 – $1,000</option>
+                <option style="background:#26221b">$1,000 – $2,000</option>
+                <option style="background:#26221b">$2,000 – $5,000</option>
+                <option style="background:#26221b">$5,000+</option>
+                <option style="background:#26221b">Not sure yet</option>
+              </select>
+            </div>
+            <div>
+              <label class="contact-label">Tell me about your project</label>
+              <textarea name="message" class="contact-input" rows="5" placeholder="Describe your store, what you need, and any details that would help me give you an accurate quote..." style="resize:vertical"></textarea>
+            </div>
+            <button type="submit" class="btn-primary magnetic w-full justify-center">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <div id="form-success" class="hidden text-center py-4 px-6 rounded-xl text-[0.9rem] font-semibold" style="background:rgba(78,201,148,0.1);border:1px solid rgba(78,201,148,0.2);color:#4ec994">
+              ✓ Message sent! I’ll get back to you within 24 hours.
+            </div>
+            <div id="form-error" class="hidden text-center py-4 px-6 rounded-xl text-[0.9rem] font-semibold" style="background:rgba(201,95,58,0.1);border:1px solid rgba(201,95,58,0.2);color:#c95f3a">
+              Something went wrong. Please try again or reach out directly on Instagram.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT: CHANNELS + INFO -->
+      <div class="flex flex-col gap-8 reveal">
+
+        <div>
+          <h3 class="font-heading text-[1.1rem] font-bold mb-4">Reach Me Directly</h3>
+          <div class="flex flex-col gap-3">
+            <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" rel="noopener" class="channel-card magnetic">
+              <div class="channel-icon">💼</div>
+              <div><div class="font-heading font-bold text-[0.97rem]">LinkedIn</div><div class="text-[#a09880] text-[0.82rem]">Connect with me professionally</div></div>
+              <svg class="ml-auto text-[#5a5040]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://www.instagram.com/youpify.dev/" target="_blank" rel="noopener" class="channel-card magnetic">
+              <div class="channel-icon">📸</div>
+              <div><div class="font-heading font-bold text-[0.97rem]">Instagram</div><div class="text-[#a09880] text-[0.82rem]">@youpify.dev — DMs open</div></div>
+              <svg class="ml-auto text-[#5a5040]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://github.com/yousefHPramdan" target="_blank" rel="noopener" class="channel-card magnetic">
+              <div class="channel-icon">💻</div>
+              <div><div class="font-heading font-bold text-[0.97rem]">GitHub</div><div class="text-[#a09880] text-[0.82rem]">yousefHPramdan — Open source projects</div></div>
+              <svg class="ml-auto text-[#5a5040]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://shop.shopioso.com" target="_blank" rel="noopener" class="channel-card magnetic">
+              <div class="channel-icon">🛒</div>
+              <div><div class="font-heading font-bold text-[0.97rem]">Shopioso Store</div><div class="text-[#a09880] text-[0.82rem]">Browse all code snippets &amp; tools</div></div>
+              <svg class="ml-auto text-[#5a5040]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="card p-7">
+          <h3 class="font-heading text-[1.05rem] font-bold mb-4">What to Expect</h3>
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-4">
+              <div class="text-[1.4rem] flex-shrink-0">⚡</div>
+              <div><div class="font-semibold text-[0.92rem] mb-1">Fast Response</div><div class="text-[#a09880] text-[0.83rem]">I reply to all messages within 24 hours, usually same day.</div></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-[1.4rem] flex-shrink-0">📋</div>
+              <div><div class="font-semibold text-[0.92rem] mb-1">Free Scoping Call</div><div class="text-[#a09880] text-[0.83rem]">Every project starts with a free 30-min discovery call to align on scope and goals.</div></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-[1.4rem] flex-shrink-0">💰</div>
+              <div><div class="font-semibold text-[0.92rem] mb-1">Fixed-Price Quote</div><div class="text-[#a09880] text-[0.83rem]">You'll receive a detailed proposal with a fixed price — no surprises, no hourly billing.</div></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="text-[1.4rem] flex-shrink-0">📍</div>
+              <div><div class="font-semibold text-[0.92rem] mb-1">Based in Egypt</div><div class="text-[#a09880] text-[0.83rem]">Working with clients across Egypt, the Gulf, and Europe. Timezone: UTC+3.</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="mb-3"><a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="footer-link">LinkedIn</a><a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a><a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a><a href="contact.html" class="footer-link">Contact</a></div><p class="text-[0.82rem] text-[#5a5040]">&copy; <span id="copyright-year">2026</span> Yousef Ramadan. All rights reserved.</p></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="main.js"></script>
+<script>
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+  const successEl = document.getElementById('form-success');
+  const errorEl   = document.getElementById('form-error');
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  successEl.classList.add('hidden');
+  errorEl.classList.add('hidden');
+
+  const data = new FormData(form);
+  // Web3Forms — free tier, no backend needed.
+  // IMPORTANT: Replace the access_key value with your own key from https://web3forms.com
+  data.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
+  data.append('subject', 'New Project Inquiry — Yousef Ramadan');
+  data.append('from_name', 'Portfolio Contact Form');
+
+  try {
+    const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+    const json = await res.json();
+    if (json.success) {
+      successEl.classList.remove('hidden');
+      form.reset();
+    } else {
+      throw new Error(json.message);
+    }
+  } catch (err) {
+    console.error('Form error:', err);
+    errorEl.classList.remove('hidden');
+  } finally {
+    btn.innerHTML = 'Send Message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
