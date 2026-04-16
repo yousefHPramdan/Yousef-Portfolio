@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://youseframadan.me/">
-  <link rel="icon" type="image/png" href="img/avatar.png">
+  <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=Yousef+Ramadan&background=d4a843&color=0e0d0b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,6 +39,7 @@
 </head>
 
 <body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip to content</a>
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
   <div class="orb orb-1"></div>
@@ -52,25 +53,29 @@
   </div>
 
   <!-- NAV -->
-  <nav id="navbar" style="background:rgba(14,13,11,0.8)">
+  <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Yousef<span class="logo-dot">.</span></a>
-      <ul id="nav-links">
+      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
+      <ul id="nav-links" role="list">
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
-        <button id="theme-btn">🌙</button>
-        <button id="nav-toggle"><span></span><span></span><span></span></button>
+        <a href="index-ar.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">AR</a>
+        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="container w-full">
@@ -80,19 +85,18 @@
           Available for new projects
         </div>
         <h1 class="hero-title mb-6" id="hero-title"></h1>
-        <p class="text-[#a09880] text-[1.1rem] max-w-[540px] mb-10 leading-[1.85]"
-          style="opacity:0;animation:fadeUp 0.8s ease 0.9s forwards">
+        <p class="text-[#a09880] text-[1.1rem] max-w-[540px] mb-10 leading-[1.85]">
           Front-End Shopify Developer specializing in Shopify &amp; Shopify Plus. I combine an understanding of human behavior with technical expertise in HTML, CSS, JavaScript, and Liquid to build high-performing storefronts that drive conversions.
         </p>
-        <div class="flex flex-wrap gap-4 mb-16" style="opacity:0;animation:fadeUp 0.8s ease 1.1s forwards">
+        <div class="flex flex-wrap gap-4 mb-16">
           <a href="contact.html" class="btn-primary magnetic">Start a Project <svg width="18" height="18"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-              stroke-linejoin="round">
+              stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg></a>
           <a href="work.html" class="btn-secondary magnetic">View My Work</a>
         </div>
-        <div class="flex gap-12 flex-wrap" style="opacity:0;animation:fadeUp 0.8s ease 1.3s forwards">
+        <div class="flex gap-12 flex-wrap">
           <div>
             <div class="stat-num" data-target="12">0+</div>
             <div class="text-[#5a5040] text-[0.82rem] mt-1">Stores Built</div>
@@ -111,7 +115,7 @@
   </section>
 
   <!-- MARQUEE -->
-  <div class="marquee-track py-4 border-y" style="border-color:rgba(242,237,228,0.06);background:#161410">
+  <div class="marquee-track py-4 border-y" style="border-color:rgba(242,237,228,0.06);background:#161410" aria-hidden="true">
     <div class="marquee-inner">
       <span class="marquee-item">Tiavola</span><span class="marquee-item">Ocean Bottle</span><span class="marquee-item">Muscle Food</span><span class="marquee-item">Wildfarmed</span><span class="marquee-item">ByPavo</span><span class="marquee-item">Loading-eg</span><span class="marquee-item">O2morny</span><span class="marquee-item">DAME</span><span class="marquee-item">Mother Root</span><span class="marquee-item">Corporate Wear</span><span class="marquee-item">Mouza</span><span class="marquee-item">Home Things</span><span class="marquee-item">Droplet</span><span class="marquee-item">Harley Supplies</span><span class="marquee-item">Slipfree</span><span class="marquee-item">Milkis UK</span>
       <span class="marquee-item">Tiavola</span><span class="marquee-item">Ocean Bottle</span><span class="marquee-item">Muscle Food</span><span class="marquee-item">Wildfarmed</span><span class="marquee-item">ByPavo</span><span class="marquee-item">Loading-eg</span><span class="marquee-item">O2morny</span><span class="marquee-item">DAME</span><span class="marquee-item">Mother Root</span><span class="marquee-item">Corporate Wear</span><span class="marquee-item">Mouza</span><span class="marquee-item">Home Things</span><span class="marquee-item">Droplet</span><span class="marquee-item">Harley Supplies</span><span class="marquee-item">Slipfree</span><span class="marquee-item">Milkis UK</span>
@@ -122,7 +126,7 @@
   <section class="py-28">
     <div class="container">
       <div class="about-card reveal">
-        <img src="img/avatar.png" alt="Yousef Ramadan — Front-End Shopify Developer" class="about-avatar">
+        <img src="https://ui-avatars.com/api/?name=Yousef+Ramadan&background=d4a843&color=0e0d0b" alt="Yousef Ramadan — Front-End Shopify Developer" class="about-avatar" loading="lazy">
         <div>
           <h3 class="font-heading text-[1.5rem] font-bold mb-3">Hi, I'm Yousef. 👋</h3>
           <p class="text-[#a09880] text-[0.97rem] leading-[1.8] mb-3">I'm a <strong class="text-ink font-semibold">Front-End Shopify Developer</strong> specializing in Shopify &amp; Shopify Plus. With a unique background in <strong class="text-ink font-semibold">Sociology</strong>, I combine an understanding of human behavior with technical expertise in HTML, CSS, JavaScript, and Liquid to build high-performing, fast, and scalable e-commerce storefronts that deliver seamless user experiences and drive higher conversion rates.</p>
@@ -146,19 +150,19 @@
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 reveal">
         <div class="impact-card">
-          <div class="impact-number">+40%</div>
+          <div class="impact-number" aria-label="40 percent">+40%</div>
           <div class="text-[#a09880] text-[0.9rem]">Conversion Uplift (PAVO)</div>
         </div>
         <div class="impact-card">
-          <div class="impact-number">&lt;2s</div>
+          <div class="impact-number" aria-label="Less than 2 seconds">&lt;2s</div>
           <div class="text-[#a09880] text-[0.9rem]">Avg. Page Load Time</div>
         </div>
         <div class="impact-card">
-          <div class="impact-number">+22%</div>
+          <div class="impact-number" aria-label="22 percent">+22%</div>
           <div class="text-[#a09880] text-[0.9rem]">AOV via Custom Upsells</div>
         </div>
         <div class="impact-card">
-          <div class="impact-number">95+</div>
+          <div class="impact-number" aria-label="95 plus">95+</div>
           <div class="text-[#a09880] text-[0.9rem]">Lighthouse Score</div>
         </div>
       </div>
@@ -187,7 +191,7 @@
           <div class="p-8 lg:p-14 bg-[#1e1b16]/50">
             <div class="flex flex-col gap-6">
               <div>
-                <label class="font-heading text-[0.7rem] font-bold tracking-widest uppercase text-[#a09880] mb-3 block">Monthly Revenue ($)</label>
+                <label for="roi-revenue" class="font-heading text-[0.7rem] font-bold tracking-widest uppercase text-[#a09880] mb-3 block">Monthly Revenue ($)</label>
                 <input type="number" id="roi-revenue" class="contact-input" placeholder="e.g., 50000" value="50000" style="background:#0e0d0b">
               </div>
               <div class="mt-4 pt-8 border-t border-white/5">
@@ -226,9 +230,9 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- PROJECT 1 -->
-        <a href="work.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
+        <a href="case-tiavola.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
           <div class="aspect-[16/10] overflow-hidden">
-            <img src="img/tiavola_mockup.png" alt="Tiavola" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+            <img src="img/fullpage_screenshot_part_1 (1).png" alt="Tiavola Storefront Preview" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
           <div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -242,9 +246,9 @@
         </a>
 
         <!-- PROJECT 2 -->
-        <a href="work.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
+        <a href="case-bypavo.html" class="group block relative overflow-hidden rounded-3xl reveal" style="text-decoration:none">
           <div class="aspect-[16/10] overflow-hidden">
-            <img src="img/bypavo_mockup.png" alt="ByPavo" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+            <img src="img/PAVO.png" alt="ByPavo Storefront Preview" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
           <div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -265,7 +269,7 @@
     <div class="container">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <a href="services.html" class="card p-8 reveal group" style="text-decoration:none">
-          <div class="text-[2rem] mb-4">🏗️</div>
+          <div class="text-[2rem] mb-4" aria-hidden="true">🏗️</div>
           <h3 class="font-heading font-bold text-[1.15rem] mb-2">Services</h3>
           <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Store setup, theme dev, app builds, migrations,
             and CRO strategy.</p>
@@ -274,7 +278,7 @@
             →</span>
         </a>
         <a href="work.html" class="card p-8 reveal group" style="text-decoration:none">
-          <div class="text-[2rem] mb-4">🎨</div>
+          <div class="text-[2rem] mb-4" aria-hidden="true">🎨</div>
           <h3 class="font-heading font-bold text-[1.15rem] mb-2">Selected Work</h3>
           <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Real stores and apps I've designed and built for
             clients across Egypt and beyond.</p>
@@ -283,7 +287,7 @@
             Projects →</span>
         </a>
         <a href="store.html" class="card p-8 reveal group" style="text-decoration:none">
-          <div class="text-[2rem] mb-4">🛒</div>
+          <div class="text-[2rem] mb-4" aria-hidden="true">🛒</div>
           <h3 class="font-heading font-bold text-[1.15rem] mb-2">Shopioso Store</h3>
           <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">33+ ready-to-use Shopify code snippets to boost
             your store's conversion rate.</p>
@@ -304,21 +308,21 @@
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
           <p class="testi-text">"Yousef completely transformed our store. The custom theme he built loads incredibly
             fast and our conversion rate jumped 40% in the first month."</p>
           <div class="testi-author">Ahmed K.</div>
           <div class="testi-role">Fashion E-Commerce — PAVO</div>
         </div>
         <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
           <p class="testi-text">"The snippets from CodeCanyon saved me hundreds of dollars on apps. The free shipping
             bar alone increased our AOV by 22%. Highly recommended."</p>
           <div class="testi-author">Sarah M.</div>
           <div class="testi-role">Shopify Store Owner</div>
         </div>
         <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
+          <div class="testi-stars" aria-label="5 stars">★★★★★</div>
           <p class="testi-text">"Professional, fast, and truly understands Shopify. Yousef built our wishlist app exactly how we needed it and integrated our complex catalog perfectly."</p>
           <div class="testi-author">Omar T.</div>
           <div class="testi-role">E-Commerce Brand — Loading-eg</div>
@@ -340,6 +344,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -356,6 +361,7 @@
         Let's Talk</span></span></a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
 </body>
 

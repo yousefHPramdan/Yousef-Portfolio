@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── INJECT WHATSAPP WIDGET ──
-  // Replace +201234567890 with your actual WhatsApp number (international format, no spaces)
   const WA_NUMBER = '+201234567890';
   const WA_MSG    = encodeURIComponent('Hi Yousef! I saw your portfolio and I\'d like to discuss a Shopify project.');
   const waWidget  = document.createElement('div');
@@ -28,16 +27,46 @@ document.addEventListener('DOMContentLoaded', () => {
     waWidget.classList.toggle('visible', scrollTop > 400);
   }, { passive: true });
 
-  // ── CURSOR ──
+  // ── CURSOR (GSAP QUICKTO) ──
   const cursor     = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursor-ring');
-  if (cursor && cursorRing) {
+  if (cursor && cursorRing && typeof gsap !== 'undefined') {
+    gsap.set(cursor, {xPercent: -50, yPercent: -50});
+    gsap.set(cursorRing, {xPercent: -50, yPercent: -50});
+    
+    let xTo = gsap.quickTo(cursor, "x", {duration: 0.15, ease: "power3"});
+    let yTo = gsap.quickTo(cursor, "y", {duration: 0.15, ease: "power3"});
+    
+    let xRingTo = gsap.quickTo(cursorRing, "x", {duration: 0.45, ease: "power3"});
+    let yRingTo = gsap.quickTo(cursorRing, "y", {duration: 0.45, ease: "power3"});
+
+    window.addEventListener("mousemove", e => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+      xRingTo(e.clientX);
+      yRingTo(e.clientY);
+    });
+
+    const hoverTargets = document.querySelectorAll('a, button, .magnetic, .tilt');
+    hoverTargets.forEach(target => {
+      target.addEventListener('mouseenter', () => {
+        gsap.to(cursorRing, { width: 56, height: 56, opacity: 0.6, duration: 0.3 });
+        if(target.classList.contains('magnetic')) {
+          gsap.to(cursor, { scale: 2.5, duration: 0.3 });
+        }
+      });
+      target.addEventListener('mouseleave', () => {
+        gsap.to(cursorRing, { width: 36, height: 36, opacity: 1, duration: 0.3 });
+        gsap.to(cursor, { scale: 1, duration: 0.3 });
+      });
+    });
+  } else if (cursor && cursorRing) {
     let mx=0, my=0, rx=0, ry=0;
     document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
     (function animCursor(){
       rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
-      cursor.style.left     = mx+'px'; cursor.style.top = my+'px';
-      cursorRing.style.left = rx+'px'; cursorRing.style.top = ry+'px';
+      cursor.style.transform     = `translate(calc(-50% + ${mx}px), calc(-50% + ${my}px))`;
+      cursorRing.style.transform = `translate(calc(-50% + ${rx}px), calc(-50% + ${ry}px))`;
       requestAnimationFrame(animCursor);
     })();
   }
@@ -45,91 +74,240 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── PRELOADER & TRANSITIONS ──
   const bar = document.getElementById('pre-bar');
   const pre = document.getElementById('preloader');
+  
+  // ── SAFETY FALLBACK ──
+  // If GSAP fails or timeline stalls, ensure page is visible after 2.5s
+  setTimeout(() => {
+    if (pre && !pre.classList.contains('done')) {
+      pre.classList.add('done');
+      if (typeof gsap !== 'undefined') gsap.set(pre, { y: '-100%' });
+      else pre.style.transform = 'translateY(-100%)';
+      
+      // Force show hero elements
+      document.querySelectorAll('.hero-badge, .hero-title, .hero p, .hero .flex.gap-4, .hero .flex.gap-12')
+        .forEach(el => el.style.opacity = '1');
+        
+      // Force show all reveal elements
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+  }, 2500);
 
-  // Page Load Animation (In)
-  if (bar && pre && typeof gsap !== 'undefined') {
-    setTimeout(() => { if(bar) bar.style.width = '100%'; }, 50);
-    setTimeout(() => {
-      gsap.to(pre, {
+  const pageLoadTimeline = (typeof gsap !== 'undefined') ? gsap.timeline() : null;
+
+  if (bar && pre && pageLoadTimeline) {
+    // Initial State for pre-bar
+    gsap.to(bar, { width: '100%', duration: 0.8, ease: 'power2.inOut' });
+
+    pageLoadTimeline
+      .to(pre, {
         y: '-100%',
-        duration: 0.8,
+        duration: 1,
+        delay: 0.8,
         ease: 'power4.inOut',
         onComplete: () => {
           pre.classList.add('done');
-          gsap.set(pre, { y: '100%' }); // Position ready for next transition
+          gsap.set(pre, { y: '100%' }); 
         }
       });
-    }, 800);
+
+    // Staggered reveal of hero elements (if they exist)
+    const heroElements = [
+      '.hero-badge',
+      '.hero p',
+      '.hero .flex.gap-4',
+      '.hero .flex.gap-12'
+    ];
+    
+    pageLoadTimeline.fromTo(heroElements, 
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', stagger: 0.15 },
+      "-=0.4"
+    );
   } else if (pre) {
     setTimeout(() => pre.classList.add('done'), 1000);
   }
 
-  // Handle Internal Link Transitions (Out)
+  // Handle Internal Link Transitions
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || link.target === '_blank' || !href.endsWith('.html')) return;
     
-    // Skip if it's the current page
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     if (href === currentPath) return;
 
     link.addEventListener('click', e => {
       e.preventDefault();
-      if (!pre) { window.location.href = href; return; }
-      
-      pre.classList.remove('done');
-      gsap.to(pre, {
-        y: '0%',
-        duration: 0.6,
-        ease: 'power4.inOut',
-        onComplete: () => { window.location.href = href; }
-      });
+      if (typeof gsap !== 'undefined' && pre) {
+        pre.classList.remove('done');
+        gsap.set(pre, { y: '100%' });
+        gsap.to(pre, {
+          y: '0%',
+          duration: 0.6,
+          ease: 'power4.inOut',
+          onComplete: () => { window.location.href = href; }
+        });
+      } else {
+        window.location.href = href;
+      }
     });
   });
 
-  // ── THEME TOGGLE ──
-  const themeBtn = document.getElementById('theme-btn');
-  const html = document.documentElement;
-  const saved = localStorage.getItem('ys-theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  if (themeBtn) {
-    themeBtn.textContent = saved === 'dark' ? '🌙' : '☀️';
-    themeBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('ys-theme', next);
-      themeBtn.textContent = next === 'dark' ? '🌙' : '☀️';
+  // Ensure preloader reset on back button
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted && pre) {
+      pre.classList.add('done');
+    }
+  });
+
+  // ── HERO SPLIT CHARS ──
+  const heroEn = document.getElementById('hero-title');
+  const heroAr = document.getElementById('hero-title-ar');
+  const targetTitle = heroEn || heroAr;
+
+  if (targetTitle && typeof gsap !== 'undefined') {
+    const isAr = targetTitle.id === 'hero-title-ar';
+    const linesEn = [
+      { html: 'I build',                                        cls: 'block' },
+      { html: 'Shopify stores',                                 cls: 'block hero-accent-fill' },
+      { html: 'that <span class="hero-accent">actually</span> sell.', cls: 'block' },
+    ];
+    const linesAr = [
+      { html: 'بناء متاجر شوبيفاي',                                cls: 'block' },
+      { html: '<span class="text-gold">مصممة للتحويل والمبيعات.</span>', cls: 'block' }
+    ];
+    
+    const lines = isAr ? linesAr : linesEn;
+    targetTitle.innerHTML = ''; // Clear original
+    targetTitle.style.opacity = '1';
+
+    lines.forEach((line) => {
+      const row = document.createElement('span');
+      row.className = line.cls + ' whitespace-nowrap leading-[1.1] mb-2';
+      row.style.overflow = 'hidden'; 
+      const tmp = document.createElement('div');
+      tmp.innerHTML = line.html;
+      
+      Array.from(tmp.childNodes).forEach(node => {
+        if (node.nodeType === 3) {
+          node.textContent.split('').forEach(ch => {
+            const s = document.createElement('span');
+            s.className = 'split-char';
+            s.style.display = 'inline-block';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            row.appendChild(s);
+          });
+        } else {
+          node.textContent.split('').forEach(ch => {
+            const w = document.createElement('span');
+            w.className = (node.className || '') + ' split-char';
+            w.style.display = 'inline-block';
+            w.textContent = ch === ' ' ? '\u00A0' : ch;
+            row.appendChild(w);
+          });
+        }
+      });
+      targetTitle.appendChild(row);
     });
+
+    if (pageLoadTimeline) {
+      pageLoadTimeline.fromTo(targetTitle.querySelectorAll('.split-char'), 
+        { y: 80, rotationZ: 5, opacity: 0 },
+        { y: 0, rotationZ: 0, opacity: 1, duration: 0.8, ease: 'power4.out', stagger: 0.015 },
+        "-=1.2"
+      );
+    }
   }
 
-  // ── NAVBAR SCROLL ──
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      navbar.style.background = window.scrollY > 50
-        ? 'rgba(14,13,11,0.96)' : 'rgba(14,13,11,0.8)';
-    });
+  // ── HERO STAT COUNTERS ──
+  const counters = document.querySelectorAll('.stat-num[data-target]');
+  if (counters.length && typeof gsap !== 'undefined') {
+    let counted = false;
+    const heroEl = document.querySelector('.hero');
+    if (heroEl) {
+      new IntersectionObserver(entries => {
+        if (!counted && entries[0].isIntersecting) {
+          counted = true;
+          counters.forEach((c, i) => {
+            const target = parseInt(c.dataset.target);
+            gsap.to(c, {
+              innerHTML: target,
+              duration: 2,
+              ease: "power2.out",
+              snap: { innerHTML: 1 },
+              onUpdate: function() {
+                c.innerHTML = Math.round(this.targets()[0].innerHTML) + '+';
+              },
+              delay: 1.5 + i * 0.2
+            });
+          });
+        }
+      }, { threshold: 0.5 }).observe(heroEl);
+    }
   }
 
-  // ── NAV TOGGLE (mobile) ──
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks  = document.getElementById('nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  // ── SMOOTH SCROLL ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { 
+        e.preventDefault(); 
+        t.scrollIntoView({ behavior:'smooth', block:'start' }); 
+      }
+    });
+  });
+
+  // ── LANGUAGE SWITCHER ──
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navRight = document.querySelector('.nav-right');
+  
+  if (navRight) {
+    const isAr = document.documentElement.lang === 'ar';
+    const switchUrl = isAr ? currentPath.replace('-ar.html', '.html') : currentPath.replace('.html', '-ar.html');
+    const switchLabel = isAr ? 'EN' : 'AR';
+    
+    let switchLink = navRight.querySelector('a[href*="-ar.html"], a[href="index.html"]:not(.nav-logo)');
+    if (switchLink) {
+      switchLink.href = switchUrl;
+      switchLink.textContent = switchLabel;
+    }
   }
+
+  // ── DYNAMIC COPYRIGHT YEAR ──
+  const copyrightEl = document.getElementById('copyright-year');
+  if (copyrightEl) copyrightEl.textContent = new Date().getFullYear();
 
   // ── SCROLL REVEAL ──
   const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 70);
-        revealObs.unobserve(e.target);
-      }
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    revealEls.forEach((el) => {
+      gsap.fromTo(el, 
+        { opacity: 0, y: 50, scale: 0.98 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          duration: 1.2, 
+          ease: 'expo.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          onComplete: () => el.classList.add('visible')
+        }
+      );
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
+  } else {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+  }
 
   // ── 3D TILT ──
   document.querySelectorAll('.tilt').forEach(card => {
@@ -137,58 +315,52 @@ document.addEventListener('DOMContentLoaded', () => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
       const y = (e.clientY - r.top)  / r.height - 0.5;
-      card.style.transform = `perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-4px)`;
+      if (typeof gsap !== 'undefined') {
+        gsap.to(card, {
+          rotationY: x * 15,
+          rotationX: -y * 15,
+          z: 20,
+          duration: 0.4,
+          ease: "power2.out",
+          transformPerspective: 1000
+        });
+      } else {
+        card.style.transform = `perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-4px)`;
+      }
     });
-    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    card.addEventListener('mouseleave', () => { 
+      if (typeof gsap !== 'undefined') {
+        gsap.to(card, {
+          rotationY: 0,
+          rotationX: 0,
+          z: 0,
+          duration: 0.7,
+          ease: "elastic.out(1, 0.3)"
+        });
+      } else {
+        card.style.transform = '';
+      }
+    });
   });
 
   // ── MAGNETIC BUTTONS ──
   document.querySelectorAll('.magnetic').forEach(btn => {
     btn.addEventListener('mousemove', e => {
       const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width/2)  * 0.35;
-      const y = (e.clientY - r.top  - r.height/2) * 0.35;
-      btn.style.transform = `translate(${x}px,${y}px)`;
-    });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-  });
-
-  // ── STICKY WIDGET ──
-  const sw = document.getElementById('sticky-widget');
-  if (sw) {
-    window.addEventListener('scroll', () => {
-      sw.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-  }
-
-  // ── FAQ ACCORDION ──
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn = item.querySelector('.faq-q');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const active = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('active');
-        const a = i.querySelector('.faq-answer');
-        if (a) a.style.maxHeight = null;
-      });
-      if (!active) {
-        item.classList.add('active');
-        const ans = item.querySelector('.faq-answer');
-        if (ans) ans.style.maxHeight = ans.scrollHeight + 'px';
+      const x = (e.clientX - r.left - r.width/2)  * 0.4;
+      const y = (e.clientY - r.top  - r.height/2) * 0.4;
+      if (typeof gsap !== 'undefined') {
+        gsap.to(btn, { x: x, y: y, duration: 0.4, ease: "power2.out" });
+      } else {
+        btn.style.transform = `translate(${x}px,${y}px)`;
       }
     });
-  });
-
-  // ── SNIPPET FILTER ──
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      document.querySelectorAll('.snippet-card').forEach(c => {
-        c.classList.toggle('hidden', f !== 'all' && c.dataset.category !== f);
-      });
+    btn.addEventListener('mouseleave', () => { 
+      if (typeof gsap !== 'undefined') {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" }); 
+      } else {
+        btn.style.transform = '';
+      }
     });
   });
 
@@ -229,12 +401,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.closeModal = closeModal;
   document.querySelectorAll('[data-project]').forEach(c => c.addEventListener('click', () => openModal(c)));
-  
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
   // ── CASE STUDY NAVIGATION ──
   document.querySelectorAll('[data-case]').forEach(card => {
     card.addEventListener('click', () => {
       const caseId = card.dataset.case;
-      const url = `case-${caseId}.html`;
+      const isAr = document.documentElement.lang === 'ar';
+      const url = `case-${caseId}${isAr ? '-ar' : ''}.html`;
       
       if (typeof gsap !== 'undefined' && pre) {
         pre.classList.remove('done');
@@ -249,83 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-
-  if (modalOverlay) modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  // ── HERO SPLIT CHARS (index only) ──
-  const heroTitle = document.getElementById('hero-title');
-  if (heroTitle) {
-    const lines = [
-      { html: 'I build',                                        cls: 'block' },
-      { html: 'Shopify stores',                                 cls: 'block hero-accent-fill' },
-      { html: 'that <span class="hero-accent">actually</span> sell.', cls: 'block' },
-    ];
-    lines.forEach((line, li) => {
-      const row = document.createElement('span');
-      row.className = line.cls + ' whitespace-nowrap';
-      const tmp = document.createElement('div');
-      tmp.innerHTML = line.html;
-      let ci = 0;
-      Array.from(tmp.childNodes).forEach(node => {
-        if (node.nodeType === 3) {
-          node.textContent.split('').forEach(ch => {
-            const s = document.createElement('span');
-            s.className = 'split-char';
-            s.style.animationDelay = (1.2 + li*0.3 + ci*0.03) + 's';
-            s.textContent = ch === ' ' ? '\u00A0' : ch;
-            row.appendChild(s); ci++;
-          });
-        } else {
-          const w = document.createElement('span');
-          w.innerHTML = node.outerHTML;
-          w.className = 'split-char';
-          w.style.animationDelay = (1.2 + li*0.3 + ci*0.03) + 's';
-          row.appendChild(w); ci += node.textContent.length;
-        }
-      });
-      heroTitle.appendChild(row);
-      heroTitle.appendChild(document.createElement('br'));
-    });
-  }
-
-  // ── HERO STAT COUNTERS ──
-  const counters = document.querySelectorAll('.stat-num[data-target]');
-  if (counters.length) {
-    let counted = false;
-    const heroEl = document.querySelector('.hero');
-    if (heroEl) {
-      new IntersectionObserver(entries => {
-        if (!counted && entries[0].isIntersecting) {
-          counted = true;
-          counters.forEach(c => {
-            const target = parseInt(c.dataset.target);
-            let cur = 0;
-            const step = target / 30;
-            const int = setInterval(() => {
-              cur = Math.min(cur + step, target);
-              c.textContent = Math.round(cur) + '+';
-              if (cur >= target) clearInterval(int);
-            }, 40);
-          });
-        }
-      }, { threshold: 0.5 }).observe(heroEl);
-    }
-  }
-
-  // ── SMOOTH SCROLL ──
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
-    });
-  });
-
-  // ── DYNAMIC COPYRIGHT YEAR ──
-  const copyrightEl = document.getElementById('copyright-year');
-  if (copyrightEl) copyrightEl.textContent = new Date().getFullYear();
 
 });
 
@@ -345,7 +444,7 @@ function initBASlider() {
     pos = Math.max(0, Math.min(100, pos));
     
     before.style.width = `${pos}%`;
-    beforeImg.style.width = `${100 / (pos / 100)}%`;
+    beforeImg.style.width = `${container.offsetWidth}px`;
     handle.style.left = `${pos}%`;
   }
 
@@ -353,20 +452,20 @@ function initBASlider() {
   window.addEventListener('mouseup', () => isResizing = false);
   window.addEventListener('mousemove', (e) => {
     if (!isResizing) return;
-    setSlider(e.pageX);
+    setSlider(e.clientX);
   });
 
-  // Touch Support
-  container.addEventListener('touchstart', () => isResizing = true);
+  container.addEventListener('touchstart', (e) => {
+    isResizing = true;
+    if (e.cancelable) e.preventDefault();
+  }, { passive: false });
   window.addEventListener('touchend', () => isResizing = false);
   window.addEventListener('touchmove', (e) => {
     if (!isResizing) return;
-    setSlider(e.touches[0].pageX);
-  });
+    setSlider(e.touches[0].clientX);
+  }, { passive: false });
 }
 
-
-// Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
   initBASlider();
   initPricingToggle();
@@ -382,25 +481,26 @@ function initROICalculator() {
 
   function updateROI() {
     const revenue = parseFloat(revInput.value) || 0;
-    
-    // Conservative 15% lift on conversion efficiency
-    // This translates to a 15% revenue increase if traffic stays the same
     const liftRatio = 0.15; 
     const increase = revenue * liftRatio;
     const total = revenue + increase;
 
-    // Use GSAP to animate the numbers for a premium feel
     const currentVal = parseFloat(resultEl.textContent.replace(/[$,+]/g, '')) || 0;
     
-    gsap.to({ val: currentVal }, {
-      val: increase,
-      duration: 1,
-      ease: "power2.out",
-      onUpdate: function() {
-        resultEl.textContent = `+$${Math.round(this.targets()[0].val).toLocaleString()}`;
-        totalEl.textContent = `$${Math.round(revenue + this.targets()[0].val).toLocaleString()}`;
-      }
-    });
+    if (typeof gsap !== 'undefined') {
+      gsap.to({ val: currentVal }, {
+        val: increase,
+        duration: 1,
+        ease: "power2.out",
+        onUpdate: function() {
+          resultEl.textContent = '+$' + Math.round(this.targets()[0].val).toLocaleString();
+          totalEl.textContent = '$' + Math.round(revenue + this.targets()[0].val).toLocaleString();
+        }
+      });
+    } else {
+      resultEl.textContent = '+$' + Math.round(increase).toLocaleString();
+      totalEl.textContent = '$' + Math.round(total).toLocaleString();
+    }
   }
 
   revInput.addEventListener('input', updateROI);
@@ -409,11 +509,10 @@ function initROICalculator() {
 function initPricingToggle() {
   const toggleBtns = document.querySelectorAll('.pricing-toggle-btn');
   const priceCards = document.querySelectorAll('.pricing-card');
-  const periods    = document.querySelectorAll('.price-period');
 
   toggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const type = btn.dataset.pricing; // 'project' or 'retainer'
+      const type = btn.dataset.pricing;
       if (btn.classList.contains('active')) return;
 
       toggleBtns.forEach(b => b.classList.remove('active'));
@@ -426,20 +525,27 @@ function initPricingToggle() {
 
         const newPrice = el.getAttribute(`data-${type}`);
         
-        gsap.to(el, {
-          opacity: 0,
-          y: -10,
-          duration: 0.2,
-          onComplete: () => {
-            el.textContent = newPrice;
-            if (period) {
-              period.textContent = type === 'retainer' ? '/mo' : '';
-              // Special case for Enterprise plus sign
-              if (i === 2 && type === 'project') period.textContent = '+';
+        if (typeof gsap !== 'undefined') {
+          gsap.to(el, {
+            opacity: 0,
+            y: -10,
+            duration: 0.2,
+            onComplete: () => {
+              el.textContent = newPrice;
+              if (period) {
+                period.textContent = type === 'retainer' ? '/mo' : '';
+                if (i === 2 && type === 'project') period.textContent = '+';
+              }
+              gsap.to(el, { opacity: 1, y: 0, duration: 0.3 });
             }
-            gsap.to(el, { opacity: 1, y: 0, duration: 0.3 });
+          });
+        } else {
+          el.textContent = newPrice;
+          if (period) {
+            period.textContent = type === 'retainer' ? '/mo' : '';
+            if (i === 2 && type === 'project') period.textContent = '+';
           }
-        });
+        }
       });
     });
   });

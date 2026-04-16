@@ -1,122 +1,162 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ByPavo Case Study — Yousef Ramadan</title>
-  <meta name="description" content="Case study for ByPavo: Built custom UI from scratch with a performance-first approach, increasing conversion rates by 40%.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByPavo Case Study — Yousef Ramadan | Shopify Developer</title>
+  <meta name="description"
+    content="Case study: Building a premium fashion storefront for ByPavo with +40% conversion rate uplift.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Syne','sans-serif'],body:['Plus Jakarta Sans','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    "name": "ByPavo Case Study",
+    "name": "ByPavo Case Study — Yousef Ramadan | Shopify Developer",
+    "description": "Case study: Building a premium fashion storefront for ByPavo with +40% conversion rate uplift.",
     "author": {
       "@type": "Person",
       "name": "Yousef Ramadan"
-    },
-    "description": "Built custom UI from scratch with a performance-first approach, increasing conversion rates by 40%.",
-    "url": "https://youseframadan.me/case-bypavo.html"
+    }
   }
   </script>
 </head>
+
 <body>
-<div id="cursor"></div><div id="cursor-ring"></div>
-<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
-<div id="preloader"><div class="relative text-center"><div class="pre-text">Yousef<span class="pre-accent">.</span></div><div class="pre-bar" id="pre-bar"></div></div></div>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip to content</a>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
-<nav id="navbar" style="background:rgba(14,13,11,0.8)">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Yousef<span class="logo-dot">.</span></a>
-    <ul id="nav-links">
-      <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="work.html"     class="nav-link active">Work</a></li>
-      <li><a href="store.html"    class="nav-link">Store</a></li>
-      <li><a href="process.html"  class="nav-link">Process</a></li>
-      <li><a href="pricing.html"  class="nav-link">Pricing</a></li>
-      <li><a href="contact.html"  class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-right"><a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a><button id="theme-btn">🌙</button><button id="nav-toggle"><span></span><span></span><span></span></button></div>
-  </div>
-</nav>
-
-<div class="case-hero" style="background: linear-gradient(to bottom, #1a1410, #0e0d0b)">
-  <div class="container">
-    <div class="eyebrow mb-4">Shopify Liquid theme</div>
-    <h1>ByPavo</h1>
-    <p class="section-sub mx-auto">Full Store Development for a premium Egyptian fashion brand.</p>
-    <div class="flex gap-2 justify-center flex-wrap mt-6">
-      <span class="proj-tag bg-[#1e1b16] border border-[#332f26] px-4 py-2 text-[0.85rem] text-[#e84393]">Shopify Liquid</span>
-      <span class="proj-tag bg-[#1e1b16] border border-[#332f26] px-4 py-2 text-[0.85rem] text-[#e84393]">Custom UI</span>
-      <span class="proj-tag bg-[#1e1b16] border border-[#332f26] px-4 py-2 text-[0.85rem] text-[#e84393]">CRO</span>
-    </div>
-    <a href="https://bypavo.com" target="_blank" class="btn-primary mt-8 magnetic">Visit Live Store ↗</a>
-  </div>
-</div>
-
-<div class="case-screenshot reveal">
-  <img src="img/bypavo_mockup.png" alt="ByPavo Storefront Screenshot">
-</div>
-
-<div class="case-metrics reveal">
-  <div class="metric-item">
-    <span class="metric-label">Scope</span>
-    <span class="metric-value">Full Store Development</span>
-  </div>
-  <div class="metric-item">
-    <span class="metric-label">Timeline</span>
-    <span class="metric-value">6 Weeks</span>
-  </div>
-  <div class="metric-item">
-    <span class="metric-label">Tech Stack</span>
-    <span class="metric-value">Shopify Liquid · Custom UI</span>
-  </div>
-  <div class="metric-item">
-    <span class="metric-label">Key Result</span>
-    <span class="metric-value">+40% CRO Uplift</span>
-  </div>
-</div>
-
-<div class="case-section reveal">
-  <h2>The Challenge</h2>
-  <p>ByPavo, an Egyptian fashion brand, needed a premium e-commerce store that could compete visually with international brands while handling local payment and shipping requirements.</p>
-</div>
-
-<div class="case-section reveal">
-  <h2>The Approach</h2>
-  <p>Built custom UI from scratch — responsive product pages, optimized checkout, sticky add-to-cart, advanced variant UI. Performance-first approach with lazy loading and optimized assets.</p>
-</div>
-
-<div class="case-section reveal">
-  <h2>The Result</h2>
-  <p>An incredibly fast, highly optimized shopping experience that led to a +40% conversion rate uplift in month one after launch.</p>
-</div>
-
-<div class="case-nav">
-  <a href="case-tiavola.html">← Previous: Tiavola</a>
-  <a href="case-loading.html">Next Project: Loading-eg →</a>
-</div>
-
-<section class="py-20" style="background:#161410">
-  <div class="container">
-    <div class="cta-box reveal">
-      <h2>Build your next flagship</h2>
-      <p>I specialize in high-volume Shopify storefronts that don't compromise on design or speed. Let's talk about your project.</p>
-      <div class="flex gap-4 justify-center flex-wrap">
-        <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
-        <a href="work.html" class="btn-secondary magnetic">Back to Portfolio</a>
+  <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
+      <ul id="nav-links" role="list">
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
+        <a href="index-ar.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">AR</a>
+        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<footer><div class="container"><div class="mb-3"><a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="footer-link">LinkedIn</a><a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a><a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a><a href="contact.html" class="footer-link">Contact</a></div><p class="text-[0.82rem] text-[#5a5040]">&copy; 2026 Yousef Ramadan. All rights reserved.</p></div></footer>
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="container">
+        <div class="eyebrow mb-4">Shopify Theme</div>
+        <h1 class="reveal">ByPavo</h1>
+        <p class="text-[#a09880] max-w-[600px] mx-auto mb-8 reveal">Premium Cairo fashion label with a high-conversion storefront and custom UI.</p>
+        <div class="flex gap-4 justify-center flex-wrap reveal">
+          <span class="proj-tag">Fashion</span>
+          <span class="proj-tag">CRO +40%</span>
+          <span class="proj-tag">Performance</span>
+        </div>
+        <div class="mt-10 reveal">
+          <a href="https://bypavo.com" target="_blank" class="btn-primary magnetic">Visit Live Store ↗</a>
+        </div>
+      </div>
+    </header>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="main.js"></script>
+    <div class="case-screenshot reveal">
+      <img src="img/PAVO.png" alt="ByPavo Storefront Screenshot" loading="lazy">
+    </div>
+
+    <div class="case-metrics reveal">
+      <div class="metric-item">
+        <span class="metric-label">Role</span>
+        <span class="metric-value">Full Store Development</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Timeline</span>
+        <span class="metric-value">6 Weeks</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Tech Stack</span>
+        <span class="metric-value">Shopify Liquid · Custom UI</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">Key Result</span>
+        <span class="metric-value">+40% Conversion Uplift</span>
+      </div>
+    </div>
+
+    <section class="case-section reveal">
+      <h2>The Challenge</h2>
+      <p>ByPavo, an Egyptian fashion brand, needed a premium e-commerce store that could compete visually with international brands while handling local payment and shipping requirements. The goal was to elevate the brand's digital presence and drive measurable sales growth.</p>
+    </section>
+
+    <section class="case-section reveal">
+      <h2>The Approach</h2>
+      <p>I built a custom UI from scratch, focusing on a responsive, performance-first approach. This included optimizing the path to purchase with advanced UI elements designed to reduce friction.</p>
+      <ul class="space-y-4 text-[#a09880] mt-6 list-disc pl-6">
+        <li>Custom responsive product pages with sticky add-to-cart functionality.</li>
+        <li>Advanced variant UI with thumbnail swatches for better product visualization.</li>
+        <li>Localized checkout experience with Egyptian payment gateway integration.</li>
+        <li>Lazy loading and asset optimization resulting in high Core Web Vitals scores.</li>
+      </ul>
+    </section>
+
+    <section class="case-section reveal">
+      <h2>The Result</h2>
+      <p>The new storefront delivered a +40% conversion rate uplift in the first month post-launch. The brand successfully transitioned to a premium digital-first identity, significantly increasing its online revenue.</p>
+    </section>
+
+    <section class="py-20" style="background:#161410">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Like what you see?</h2>
+          <p>Let’s build your next store together. From custom fashion themes to data-driven CRO, I can help your brand grow.</p>
+          <div class="flex gap-4 justify-center flex-wrap">
+            <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
+            <a href="work.html" class="btn-secondary magnetic">Back to Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="case-nav reveal">
+      <a href="case-tiavola.html">← Previous Project</a>
+      <a href="case-loading.html">Next Project →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-[0.85rem] text-[#5a5040]">
+          © 2026 Yousef Ramadan. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a>
+          <a href="https://www.instagram.com/yousef.shopify/" target="_blank" class="footer-link">Instagram</a>
+          <a href="index-ar.html" class="footer-link">Arabic Version</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>

@@ -9,7 +9,21 @@
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://youseframadan.me/about.html">
-  <link rel="icon" type="image/png" href="img/avatar.png">
+  <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=Yousef+Ramadan&background=d4a843&color=0e0d0b">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yousef Ramadan",
+    "jobTitle": "Front-End Shopify Developer",
+    "description": "The story behind the code. From Sociology to Shopify Plus development. Learn about Yousef Ramadan's journey and technical philosophy.",
+    "url": "https://youseframadan.me",
+    "sameAs": [
+      "https://github.com/yousefHPramdan",
+      "https://www.instagram.com/yousef.shopify/"
+    ]
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,26 +31,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="cursor"></div><div id="cursor-ring"></div>
-<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
-<div id="preloader"><div class="relative text-center"><div class="pre-text">Yousef<span class="pre-accent">.</span></div><div class="pre-bar" id="pre-bar"></div></div></div>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip to content</a>
+  <div id="cursor"></div><div id="cursor-ring"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div id="preloader"><div class="relative text-center"><div class="pre-text">Yousef<span class="pre-accent">.</span></div><div class="pre-bar" id="pre-bar"></div></div></div>
 
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Yousef<span class="logo-dot">.</span></a>
-    <ul id="nav-links">
-      <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="work.html"     class="nav-link">Work</a></li>
-      <li><a href="store.html"    class="nav-link">Store</a></li>
-      <li><a href="process.html"  class="nav-link">Process</a></li>
-      <li><a href="pricing.html"  class="nav-link">Pricing</a></li>
-      <li><a href="about.html"    class="nav-link active">About</a></li>
-      <li><a href="contact.html"  class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-right"><a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a><button id="theme-btn">🌙</button><button id="nav-toggle"><span></span><span></span><span></span></button></div>
-  </div>
-</nav>
+<nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
+      <ul id="nav-links" role="list">
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
+        <a href="about-ar.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">AR</a>
+        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
 
+<main id="main-content">
 <div class="page-header">
   <div class="container">
     <div class="hero-badge mb-6 inline-flex">The Developer Story</div>
@@ -50,7 +72,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div class="reveal">
         <div class="aspect-[4/5] rounded-[24px] overflow-hidden border border-white/10 group">
-          <img src="img/avatar.png" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Yousef Ramadan">
+          <img src="https://ui-avatars.com/api/?name=Yousef+Ramadan&background=d4a843&color=0e0d0b" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Yousef Ramadan Portrait">
         </div>
       </div>
       <div class="reveal">
@@ -72,8 +94,8 @@
       <h2 class="section-title">The Career Timeline</h2>
     </div>
     
-    <div class="flex flex-col gap-12">
-      <div class="flex gap-8 reveal">
+    <div class="flex flex-col gap-12" role="list" aria-label="Career history timeline">
+      <div class="flex gap-8 reveal" role="listitem">
         <div class="flex-shrink-0 w-24 text-right pt-2 font-heading font-bold text-[#d4a843] text-[1.1rem]">Present</div>
         <div class="w-px bg-white/10 relative">
           <div class="absolute top-3 -left-1 w-3 h-3 rounded-full bg-jade shadow-[0_0_10px_rgba(78,201,148,0.5)]"></div>
@@ -81,7 +103,7 @@
         <div class="pb-12">
           <h3 class="font-heading font-bold text-[1.3rem] mb-1">Lead Front-End Developer @ Tiavola</h3>
           <p class="text-[#5a5040] text-[0.85rem] font-bold uppercase tracking-widest mb-4">Core Team · Remote</p>
-          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5">
+          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5" role="list">
             <li>Leading the architectural shift toward Shopify 2.0 best practices.</li>
             <li>Optimizing high-traffic seasonal campaigns for speed and conversion.</li>
             <li>Managing complex Metaobject structures to power dynamic storefront content.</li>
@@ -89,7 +111,7 @@
         </div>
       </div>
 
-      <div class="flex gap-8 reveal">
+      <div class="flex gap-8 reveal" role="listitem">
         <div class="flex-shrink-0 w-24 text-right pt-2 font-heading font-bold text-[#a09880] text-[1.1rem]">2022</div>
         <div class="w-px bg-white/10 relative">
           <div class="absolute top-3 -left-1 w-3 h-3 rounded-full bg-white/20"></div>
@@ -97,7 +119,7 @@
         <div class="pb-12">
           <h3 class="font-heading font-bold text-[1.3rem] mb-1">Shopify Developer @ Haydon Power</h3>
           <p class="text-[#5a5040] text-[0.85rem] font-bold uppercase tracking-widest mb-4">Shopify Plus Agency · London</p>
-          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5">
+          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5" role="list">
             <li>Developed bespoke themes for award-winning brands like <strong class="text-ink">Ocean Bottle</strong> and <strong class="text-ink">Muscle Food</strong>.</li>
             <li>Implemented complex subscription flows and custom checkout logic for enterprise clients.</li>
             <li>Conducted detailed performance audits, consistently achieving 90+ Lighthouse scores.</li>
@@ -105,7 +127,7 @@
         </div>
       </div>
 
-      <div class="flex gap-8 reveal">
+      <div class="flex gap-8 reveal" role="listitem">
         <div class="flex-shrink-0 w-24 text-right pt-2 font-heading font-bold text-[#a09880] text-[1.1rem]">2020</div>
         <div class="w-px bg-white/10 relative">
           <div class="absolute top-3 -left-1 w-3 h-3 rounded-full bg-white/20"></div>
@@ -113,7 +135,7 @@
         <div class="">
           <h3 class="font-heading font-bold text-[1.3rem] mb-1">Independent Developer & Open Source</h3>
           <p class="text-[#5a5040] text-[0.85rem] font-bold uppercase tracking-widest mb-4">Freelance · Global</p>
-          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5">
+          <ul class="flex flex-col gap-3 text-[#a09880] text-[0.95rem] list-disc pl-5" role="list">
             <li>Built foundational Shopify apps using the Liquid and App Bridge.</li>
             <li>Contributed to Shopify community forums and open-source Liquid snippets.</li>
             <li>Mastered the transition from sociological research into technical systems design.</li>
@@ -131,10 +153,10 @@
       <div class="eyebrow mb-3">Hard Skills</div>
       <h2 class="section-title">Technical Proficiency</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="card p-6 reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" role="list">
+      <div class="card p-6 reveal" role="listitem">
         <h4 class="text-jade font-heading font-bold text-[0.85rem] uppercase tracking-widest mb-4">Frontend</h4>
-        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium">
+        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium" role="list">
           <li>Shopify Liquid 2.0</li>
           <li>JavaScript (ES6+)</li>
           <li>Tailwind CSS</li>
@@ -142,9 +164,9 @@
           <li>React / Next.js</li>
         </ul>
       </div>
-      <div class="card p-6 reveal" style="transition-delay:0.1s">
+      <div class="card p-6 reveal" style="transition-delay:0.1s" role="listitem">
         <h4 class="text-gold font-heading font-bold text-[0.85rem] uppercase tracking-widest mb-4">Shopify Ecosystem</h4>
-        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium">
+        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium" role="list">
           <li>Shopify Plus</li>
           <li>Storefront API</li>
           <li>Metafields & Metaobjects</li>
@@ -152,9 +174,9 @@
           <li>Custom Checkout UI</li>
         </ul>
       </div>
-      <div class="card p-6 reveal" style="transition-delay:0.2s">
+      <div class="card p-6 reveal" style="transition-delay:0.2s" role="listitem">
         <h4 class="text-terra font-heading font-bold text-[0.85rem] uppercase tracking-widest mb-4">Performance</h4>
-        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium">
+        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium" role="list">
           <li>Core Web Vitals</li>
           <li>Asset Optimization</li>
           <li>Lazy-loading Strategies</li>
@@ -162,9 +184,9 @@
           <li>Third-party Deferral</li>
         </ul>
       </div>
-      <div class="card p-6 reveal" style="transition-delay:0.3s">
+      <div class="card p-6 reveal" style="transition-delay:0.3s" role="listitem">
         <h4 class="text-ink font-heading font-bold text-[0.85rem] uppercase tracking-widest mb-4">Tools</h4>
-        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium">
+        <ul class="flex flex-col gap-2 text-[0.9rem] font-medium" role="list">
           <li>Git / GitHub</li>
           <li>Figma</li>
           <li>Vercel / Netlify</li>
@@ -175,6 +197,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <section class="py-28" style="background:linear-gradient(to bottom, #0e0d0b, #1e1b16)">
   <div class="container text-center reveal">
@@ -191,7 +214,7 @@
   <div class="container">
     <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/5 pb-12 mb-12">
       <div class="max-w-xs text-center md:text-left">
-        <a href="index.html" class="nav-logo mb-4 inline-block">Yousef<span class="logo-dot">.</span></a>
+        <a href="index.html" class="nav-logo mb-4 inline-block relative z-[1001]">Yousef<span class="logo-dot">.</span></a>
         <p class="text-[#5a5040] text-[0.88rem] leading-relaxed">Developing elite Shopify storefronts for global brands. Based in Manchester, working worldwide.</p>
       </div>
       <div class="flex gap-12 text-center md:text-left">
@@ -229,8 +252,8 @@
   <span class="sw-text">Available for Work <span>· Let's Talk</span></span>
 </a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
