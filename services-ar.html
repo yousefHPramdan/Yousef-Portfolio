@@ -9,7 +9,7 @@
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://youseframadan.me/services-ar.html">
-  <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=Yousef+Ramadan&background=d4a843&color=0e0d0b">
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -32,6 +32,12 @@
   <style>
     body { font-family: 'Cairo', sans-serif; }
     .hero-title, .section-title, .font-heading { font-family: 'Cairo', sans-serif; }
+    .step-connector { width:2px; height:60px; background:linear-gradient(to bottom,rgba(212,168,67,0.4),rgba(212,168,67,0.05)); margin:0 auto; }
+    .step-card { background:#1e1b16; border:1px solid rgba(242,237,228,0.07); border-radius:20px; padding:36px; position:relative; overflow:hidden; transition:border-color 0.3s, transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s; }
+    .step-card::before { content:''; position:absolute; right:0; top:0; bottom:0; width:3px; background:linear-gradient(to bottom,#d4a843,#c95f3a); transform:scaleY(0); transform-origin:top; transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); }
+    .step-card:hover { border-color:rgba(212,168,67,0.2); transform:translateY(-4px); box-shadow:0 20px 48px rgba(212,168,67,0.07); }
+    .step-card:hover::before { transform:scaleY(1); }
+    .step-num { font-family:'Syne',sans-serif; font-size:4rem; font-weight:800; line-height:1; background:linear-gradient(135deg,#d4a843,#c95f3a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; opacity:0.25; margin-bottom:12px; }
   </style>
 </head>
 <body>
@@ -44,14 +50,16 @@
     <div class="nav-inner">
       <a href="index-ar.html" class="nav-logo relative z-[1001]" aria-label="يوسف Ramadan Home">يوسف<span class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
-        <li><a href="services-ar.html" class="nav-link active">الخدمات</a></li>
+
         <li><a href="work-ar.html" class="nav-link">الأعمال</a></li>
-        <li><a href="store-ar.html" class="nav-link">المتجر</a></li>
-        <li><a href="devtools-ar.html" class="nav-link">الأدوات</a></li>
-        <li><a href="process-ar.html" class="nav-link">مراحل العمل</a></li>
+
+        <li><a href="services-ar.html" class="nav-link active">الخدمات</a></li>
+
+        <li><a href="blog-ar.html" class="nav-link">المدونة</a></li>
+
         <li><a href="pricing-ar.html" class="nav-link">الأسعار</a></li>
-        <li><a href="contact-ar.html" class="nav-link">اتصل بي</a></li>
-      </ul>
+
+            </ul>
       <div class="nav-right">
         <a href="contact-ar.html" class="nav-cta desktop magnetic">لنتحدث</a>
         <a href="services.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">EN</a>
@@ -66,18 +74,53 @@
 <div class="page-header">
   <div class="container">
     <div class="eyebrow mb-4">ماذا أقدم</div>
-    <h1 class="section-title">الخدمات</h1>
-    <p class="section-sub mx-auto">كل ما تحتاجه لإطلاق متجرك ونموه والسيطرة على السوق من خلال شوبيفاي.</p>
+    <h1 class="section-title">تطوير شوبيفاي <br><span class="text-jade">&amp; تحسين معدل التحويل</span></h1>
+    <p class="section-sub mx-auto">مساعدة العلامات التجارية عالية النمو على التوسع من خلال قوالب مخصصة، تطبيقات خاصة، وضبط الأداء بناءً على البيانات.</p>
+  </div>
+</div>
+
+<div class="container mb-24 reveal">
+  <div class="flex flex-wrap justify-center gap-x-12 gap-y-8 opacity-60 grayscale hover:opacity-100 transition-all duration-500 border-y border-white/5 py-10">
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-jade/10 flex items-center justify-center text-jade font-mono font-bold">L</div>
+      <span class="font-heading font-bold text-[0.9rem]">Liquid</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center text-gold font-mono font-bold">S+</div>
+      <span class="font-heading font-bold text-[0.9rem]">Shopify Plus</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-terra/10 flex items-center justify-center text-terra font-mono font-bold">JS</div>
+      <span class="font-heading font-bold text-[0.9rem]">JavaScript</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 font-mono font-bold">R</div>
+      <span class="font-heading font-bold text-[0.9rem]">React</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 font-mono font-bold">P</div>
+      <span class="font-heading font-bold text-[0.9rem]">Polaris</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-sky-400/10 flex items-center justify-center text-sky-400 font-mono font-bold">TW</div>
+      <span class="font-heading font-bold text-[0.9rem]">Tailwind</span>
+    </div>
+    <div class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-green-400/10 flex items-center justify-center text-green-400 font-mono font-bold">G</div>
+      <span class="font-heading font-bold text-[0.9rem]">GSAP</span>
+    </div>
   </div>
 </div>
 
 <!-- SERVICES GRID -->
-<section class="py-20">
+<section class="py-32">
   <div class="container">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">🏗️</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">إعداد المتجر</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تهيئة كاملة لمتجر شوبيفاي من الصفر — إعداد القالب، الصفحات الأساسية، القوائم، المجموعات، المنتجات، وإعدادات الدفع والشحن. متجر جاهز للبيع من اليوم الأول.</p>
         <ul class="flex flex-col gap-2">
@@ -89,7 +132,9 @@
       </div>
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">🔄</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">النقل بين المنصات</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">انقل متجرك بسلاسة من ووكومرس، ماجينتو، أو أي منصة أخرى إلى شوبيفاي. يتم نقل المنتجات والعملاء وتاريخ الطلبات دون فقدان أي بيانات.</p>
         <ul class="flex flex-col gap-2">
@@ -101,7 +146,9 @@
       </div>
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">🎨</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير القوالب</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">قوالب شوبيفاي مخصصة مبنية من الصفر أو تعديلات عميقة على قوالب حالية. تصاميم دقيقة واحترافية تعكس علامتك التجارية وتحول الزوار إلى عملاء.</p>
         <ul class="flex flex-col gap-2">
@@ -113,7 +160,9 @@
       </div>
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">📱</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير التطبيقات</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تطبيقات شوبيفاي مخصصة مبنية باستخدام Polaris و App Bridge — قوائم أمنيات، تحسينات لصفحة الحساب، لوحات تحكم مخصصة، وأتمتة المهام بما يناسب احتياجاتك.</p>
         <ul class="flex flex-col gap-2">
@@ -125,7 +174,9 @@
       </div>
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">📈</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">تحسين معدل التحويل (CRO)</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تدقيق استراتيجي وتنفيذ عناصر تركز على التحويل. استخدام تقنيات مبنية على البيانات لزيادة ربحية متجرك دون الحاجة لزيادة ميزانية الإعلانات.</p>
         <ul class="flex flex-col gap-2">
@@ -137,7 +188,9 @@
       </div>
 
       <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto">⚡</div>
+        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
         <h3 class="font-heading text-[1.2rem] font-bold mb-3">الأداء والسرعة</h3>
         <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">المتجر البطيء يفقد العملاء. أقوم بتدقيق وتحسين الكود في قالبك لاجتياز معايير Core Web Vitals وتحقيق نتائج Lighthouse تفوق 90 درجة.</p>
         <ul class="flex flex-col gap-2">
@@ -153,7 +206,7 @@
 </section>
 
 <!-- TECHNICAL ECOSYSTEM -->
-<section class="py-20" style="background:#161410">
+<section class="py-32" style="background:#161410">
   <div class="container">
     <div class="text-center mb-16 reveal">
       <div class="eyebrow mb-3">التقنيات المستخدمة</div>
@@ -171,8 +224,118 @@
   </div>
 </section>
 
+<!-- عملية التطوير -->
+<section id="process" class="py-32">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">كيف أعمل</div>
+      <h2 class="section-title">عملية التطوير</h2>
+      <p class="section-sub mx-auto">عملية شفافة من 6 خطوات لبناء متاجر شوبيفاي متميزة.</p>
+    </div>
+    <div class="max-w-[800px] mx-auto">
+      <div class="flex flex-col gap-0 text-right">
+
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">الاكتشاف والتحليل</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">نبدأ بمكالمة منظمة أو استبيان لفهم علامتك التجارية، منتجاتك، جمهورك المستهدف، وأهداف عملك. سأطرح الأسئلة الصعبة التي يتجاهلها المطورون الآخرون.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>دليل العلامة التجارية والتوجه البصري</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>دراسة المنافسين والسوق</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>متطلبات الخصائص والتكاملات</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تحديد الجدول الزمني والميزانية</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">المقترح ونطاق العمل</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">أقوم بإعداد نطاق عمل مفصل، يتضمن تفصيلاً للخصائص، الجدول الزمني، وعرض سعر ثابت. لا مفاجآت ولا تكاليف إضافية. كل شيء موثق ومتفق عليه قبل كتابة كود واحد.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>قائمة كاملة للخصائص والمخرجات</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>سعر ثابت — لا توجد تكاليف خفية</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تقسيم المهام أسبوعياً</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>عربون 50٪ للبدء</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">تخطيط التصميم</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">قبل البرمجة، أخطط لكل صفحة وكل قسم وكل تفاعل. أشارك معك النماذج الأولية أو تصاميم Figma للمراجعة والاعتماد — لترى متجرك قبل بنائه.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تخطيط هيكلي لكل صفحة</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>مراجعة تصاميم Figma</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>نظام الألوان والخطوط والمساحات</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تحديد نقاط التجاوب للجوال والحاسوب</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">04</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">التطوير والبرمجة</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">كود شوبيفاي Liquid نظيف ومنظم. أبني المتجر على بيئة تطوير خاصة حتى لا يتأثر متجرك الحالي حتى يصبح كل شيء مثالياً. أشارك معك تحديثات التقدم أسبوعياً عبر الفيديو أو الصور.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>استخدام بنية Sections 2.0</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>متابعة أسبوعية للتقدم</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تطوير يركز على الجوال أولاً</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تحسين الأداء مدمج في الكود</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">05</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">المراجعة والتعديلات</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">تحصل على وصول كامل لمتجر التطوير للمراجعة. تشمل الخدمة جولتين من التعديلات لضبط أي شيء يحتاج لتحسين. يتم تنفيذ الملاحظات خلال 48 ساعة.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>جولتان من التعديلات مشمولة</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تنفيذ الملاحظات خلال 48 ساعة</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>اختبار شامل على مختلف المتصفحات والأجهزة</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>الموافقة النهائية قبل الإطلاق</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">06</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">الإطلاق والتسليم</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">بمجرد الموافقة، أنقل القالب للمتجر الحي، أضبط إعدادات الـ DNS والنطاقات إذا لزم الأمر، وأجري فحصاً نهائياً للأداء. تستلم وثيقة تسليم تشمل كل شيء، بالإضافة لمكالمة تدريبية لمدة 30 دقيقة.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>النشر المباشر وإعداد النطاق</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>فحص Lighthouse و Core Web Vitals</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>وثائق تسليم وشرح للمتجر</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>جلسة تدريبية لمدة 30 دقيقة</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- لماذا تعمل معي -->
+<section class="py-32" style="background:#161410">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">لماذا تعمل معي</div><h2 class="section-title">ما الذي يجعلني مختلفاً</h2></div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-right">
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🗂️</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">عملية منظمة</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">هياكل إدارة مشاريع مثبتة تضمن معرفتك الدائمة بالجدول الزمني، المسؤوليات، والخطوات التالية. تواصل استباقي طوال الوقت.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🏆</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">خبرة مثبتة</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">تخصص عميق في شوبيفاي. ساعدت علامات تجارية مثل Pavo و O2morny و Loading-eg وغيرها على الإطلاق والنمو بنجاح.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">💡</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">تسعير شفاف</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">فئات سعرية واضحة للمشاريع الشائعة وعروض أسعار مفصلة للأعمال المخصصة. لا رسوم خفية. التركيز على نتائج ملموسة لاستثمارك.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- COMPARISON SLIDER -->
-<section class="py-24 overflow-hidden">
+<section class="py-32 overflow-hidden">
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <div class="reveal text-right">
@@ -218,7 +381,7 @@
 </section>
 
 <!-- TECH PILLS -->
-<section class="py-20">
+<section class="py-32">
   <div class="container">
     <div class="text-center mb-12 reveal"><div class="eyebrow mb-3">المهارات التقنية</div><h2 class="section-title">الأدوات والتقنيات</h2></div>
     <div class="flex flex-wrap justify-center gap-4 reveal">
@@ -227,8 +390,22 @@
   </div>
 </section>
 
+<!-- الأسئلة الشائعة -->
+<section class="py-32">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">أسئلة شائعة</div><h2 class="section-title">الأسئلة المتكررة</h2></div>
+    <div class="flex flex-col gap-4 max-w-[800px] mx-auto reveal text-right">
+      <div class="faq-item"><button class="faq-q">ما هي عملية الحصول على قالب مخصص؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">سأطرح عليك أسئلة لفهم علامتك التجارية وأهدافك، ثم أضع خطة تصميم، وأبني القالب من الصفر، وأدمجه مع متجرك، وأختبر كل شيء بالكامل قبل الإطلاق.</div></div></div>
+      <div class="faq-item"><button class="faq-q">هل يمكنك تعديل قالبي الحالي بدلاً من بناء واحد جديد؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">نعم! يمكنني تحسين قالبك الحالي بإضافة أقسام مخصصة، وتحسين الأداء، وإضافة ميزات واجهة مستخدم تزيد من التحويل دون الحاجة للبدء من الصفر.</div></div></div>
+      <div class="faq-item"><button class="faq-q">كم يستغرق بناء متجر مخصص بالكامل؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">يستغرق بناء متجر شوبيفاي مخصص بالكامل عادة من 3 إلى 6 أسابيع، حسب التعقيد. سنحدد جدولاً زمنياً واضحاً خلال مرحلة الاكتشاف.</div></div></div>
+      <div class="faq-item"><button class="faq-q">هل سيكون متجري محسناً للجوال؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">نعم — كل متجر أبنيه يعتمد مبدأ "الجوال أولاً" بشكل صارم. أكثر من 70٪ من حركة التجارة الإلكترونية تتم عبر الجوال، لذا سيبدو متجرك ويعمل بشكل مثالي على جميع أحجام الشاشات.</div></div></div>
+      <div class="faq-item"><button class="faq-q">هل تساعد في تحسين محركات البحث وسرعة الصفحة؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">الأداء هو أولوية قصوى. أضمن أن متجرك يجتاز معايير Core Web Vitals، مع صور محسنة، وتأجيل النصوص البرمجية غير الضرورية، وكود نظيف لضمان سرعة التحميل وترتيب أفضل في نتائج البحث.</div></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="py-20" style="background:#161410">
+<section class="py-32" style="background:#161410">
   <div class="container">
     <div class="cta-box reveal">
       <h2>لنبدأ بناء متجرك.</h2>

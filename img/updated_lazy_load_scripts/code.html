@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Architect | Lazy Load App Scripts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b3c5ff",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-primary-container": "#0046b4",
+                        "on-secondary-fixed": "#001f28",
+                        "tertiary-fixed-dim": "#ffba49",
+                        "on-secondary-container": "#005266",
+                        "error-container": "#ffdad6",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#3c494e",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "secondary": "#00677f",
+                        "primary-container": "#aabfff",
+                        "secondary-container": "#00ccf9",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-primary": "#b3c5ff",
+                        "tertiary": "#815600",
+                        "on-tertiary-container": "#6b4700",
+                        "secondary-fixed-dim": "#4cd6ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#6c797f",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed": "#b7eaff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#feb127",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed": "#001849",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#0054d6",
+                        "outline-variant": "#bbc9cf",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae1ff",
+                        "primary": "#0054d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+        .spring-easing {
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f2f4f6] dark:bg-slate-950 flex flex-col py-6 gap-2 z-[60]">
+<div class="px-6 mb-8">
+<div class="text-lg font-black text-blue-700 dark:text-blue-400 uppercase tracking-tighter">System Admin</div>
+<div class="text-[10px] font-mono text-slate-500 uppercase tracking-widest mt-1">v2.4.0-Alpha</div>
+</div>
+<nav class="flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all spring-easing duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined text-xl">memory</span>
+<span class="font-inter font-medium text-sm">Engine Status</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 rounded-sm shadow-sm spring-easing duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined text-xl">speed</span>
+<span class="font-inter font-medium text-sm">Optimization</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all spring-easing duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span class="font-inter font-medium text-sm">Network Logs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all spring-easing duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined text-xl">shield</span>
+<span class="font-inter font-medium text-sm">Security</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all spring-easing duration-300 translate-x-1" href="#">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span class="font-inter font-medium text-sm">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto px-6">
+<div class="p-4 bg-primary-container/10 rounded-lg border border-primary/5">
+<div class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">Core Load</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[34%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<div class="ml-64 min-h-screen flex flex-col">
+<header class="w-full sticky top-0 z-50 bg-[#f7f9fb] dark:bg-slate-900 flex justify-between items-center px-8 h-16 max-w-[1440px]">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white uppercase">Clinical Architect</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="bg-surface-container-low border-none text-[10px] tracking-widest font-bold px-10 py-2 rounded-sm focus:ring-1 focus:ring-primary w-64 placeholder:text-slate-400" placeholder="SEARCH PARAMETERS..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-sm scale-95 active:transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors rounded-sm scale-95 active:transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-8 bg-slate-200 rounded-sm overflow-hidden">
+<img alt="User profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkLUog2myyBmuksbnv13M6eeamHOXuRt9_oXQGhjBCcwtkNqaPEyC941LUXv2bQgDnZzPDBmIOUw8y-rAPV-dPY02nAFWFhu1rSk_cnyomzg0Bi_rVSf2Anqk3ud2wwAdSHT-U9ZqDws-Z_endgDLOrCNg9rq6igNYMfQfZfcFD3d2MuaLvgusXZl5iUvdUH-iUL75q8eZ5HYv8vSxVwX6wjPjVEWMmb0QIBXcmGvEyV9kQDrGG1Xzi85cAznaM4XrQ8YAqeiz3iFd"/>
+</div>
+</div>
+</header>
+<main class="flex-1 p-10 max-w-[1440px]">
+<div class="flex flex-col gap-10">
+<section class="flex justify-between items-end">
+<div>
+<div class="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-2">Optimization Hub</div>
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight">Script Architecture</h1>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-surface-container-high text-on-secondary-container text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-surface-container-highest transition-all">
+                            Export Logs
+                        </button>
+<button class="px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary text-xs font-bold uppercase tracking-widest rounded-sm shadow-sm hover:opacity-90 transition-all">
+                            Apply Changes
+                        </button>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-sm">
+<div class="flex justify-between items-start mb-10">
+<div class="flex gap-6 items-center">
+<div class="h-16 w-16 bg-primary-container/20 flex items-center justify-center rounded-sm">
+<span class="material-symbols-outlined text-3xl text-primary" data-weight="fill">bolt</span>
+</div>
+<div>
+<h2 class="text-2xl font-bold tracking-tight mb-2">Massive Speed Improvement</h2>
+<p class="text-on-surface-variant text-sm max-w-xl leading-relaxed">
+                                            Aggressively defer heavy application scripts and third-party modules until explicit user interaction (click, scroll, or hover). This eliminates main-thread contention during initial paint.
+                                        </p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-16 h-8 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:translate-x-[32px] after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary transition-colors duration-200"></div>
+</label>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Active State</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="p-6 bg-surface-container-low rounded-sm relative overflow-hidden group">
+<div class="relative z-10">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">TTI Reduction</div>
+<div class="text-3xl font-black text-primary">-2.4s</div>
+<div class="mt-4 flex items-center gap-1.5">
+<span class="h-1.5 w-1.5 bg-primary rounded-full"></span>
+<span class="text-[10px] font-bold uppercase text-primary">Significant Gain</span>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 text-primary/5 transition-transform duration-500 group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl">shutter_speed</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-sm">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Interaction Ready</div>
+<div class="text-3xl font-black text-on-surface">Immediate</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-[10px] font-medium text-on-surface-variant">Main thread unblocked</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low rounded-sm">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Script Payload</div>
+<div class="text-3xl font-black text-on-surface">1.2mb</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">download_done</span>
+<span class="text-[10px] font-medium text-on-surface-variant">Deferred on load</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-8 rounded-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-sm font-bold uppercase tracking-widest">Identified for Deferral</h3>
+<span class="text-[10px] font-mono text-primary font-bold">5 SCRIPTS FOUND</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border border-transparent hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/40 text-lg">data_object</span>
+<div>
+<div class="text-xs font-bold text-on-surface">heavy-charts.v3.js</div>
+<div class="text-[10px] text-on-surface-variant">420kb • Data Visualization</div>
+</div>
+</div>
+<input checked="" class="rounded-sm text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border border-transparent hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/40 text-lg">chat_bubble</span>
+<div>
+<div class="text-xs font-bold text-on-surface">support-widget.min.js</div>
+<div class="text-[10px] text-on-surface-variant">185kb • Customer Support</div>
+</div>
+</div>
+<input checked="" class="rounded-sm text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-sm border border-transparent hover:border-primary/20 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary/40 text-lg">monitoring</span>
+<div>
+<div class="text-xs font-bold text-on-surface">marketing-pixels.js</div>
+<div class="text-[10px] text-on-surface-variant">92kb • Tracking</div>
+</div>
+</div>
+<input checked="" class="rounded-sm text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-sm relative overflow-hidden">
+<h3 class="text-sm font-bold uppercase tracking-widest mb-6">Real-time Performance</h3>
+<div class="absolute top-8 right-8 flex items-center gap-2">
+<div class="h-2 w-2 bg-primary rounded-full animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Live Monitor</span>
+</div>
+<div class="aspect-video bg-surface-container-lowest rounded-sm p-4 relative">
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<span class="material-symbols-outlined text-[120px]">analytics</span>
+</div>
+<div class="relative h-full w-full flex items-end justify-between px-2 pb-2">
+<div class="w-2 bg-primary/20 h-[40%]"></div>
+<div class="w-2 bg-primary/30 h-[60%]"></div>
+<div class="w-2 bg-primary/40 h-[55%]"></div>
+<div class="w-2 bg-primary/50 h-[80%]"></div>
+<div class="w-2 bg-primary/60 h-[70%]"></div>
+<div class="w-2 bg-primary/70 h-[90%]"></div>
+<div class="w-2 bg-primary h-[85%]"></div>
+</div>
+</div>
+<div class="mt-4 flex justify-between">
+<div class="text-[10px] font-mono text-on-surface-variant uppercase">340ms Latency</div>
+<div class="text-[10px] font-mono text-on-surface-variant uppercase">98.2 Core Vital</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-8 rounded-sm">
+<h3 class="text-sm font-bold uppercase tracking-widest mb-6">Critical Core Scripts</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 bg-surface-container-lowest flex items-center justify-center rounded-sm text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+<div class="flex-1">
+<div class="text-xs font-bold text-on-surface">gtm.main.js</div>
+<div class="text-[10px] text-on-surface-variant font-mono">142kb • Critical</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">lock</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 bg-surface-container-lowest flex items-center justify-center rounded-sm text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+<div class="flex-1">
+<div class="text-xs font-bold text-on-surface">auth-provider.js</div>
+<div class="text-[10px] text-on-surface-variant font-mono">48kb • Security</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">lock</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 bg-surface-container-lowest flex items-center justify-center rounded-sm text-slate-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+<div class="flex-1">
+<div class="text-xs font-bold text-on-surface">core-ui.lib.js</div>
+<div class="text-[10px] text-on-surface-variant font-mono">210kb • Render</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-sm">lock</span>
+</div>
+</div>
+<button class="w-full mt-8 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary hover:bg-primary/5 rounded-sm transition-all">
+                                Manage Core Whitelist
+                            </button>
+</div>
+<div class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-sm text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-sm font-bold uppercase tracking-widest mb-2 opacity-60">System Health</h3>
+<div class="text-4xl font-extrabold tracking-tighter mb-4">Stable</div>
+<p class="text-xs text-slate-400 leading-relaxed mb-6">
+                                    All telemetry sensors reporting nominal values. Script deferral has reduced CPU thermals by 4.2°C.
+                                </p>
+<div class="flex items-center gap-2">
+<div class="h-1.5 w-1.5 bg-green-400 rounded-full"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-green-400">Environment Validated</span>
+</div>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]">shield_with_heart</span>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-sm border border-white/40 shadow-sm">
+<h3 class="text-sm font-bold text-slate-900 uppercase tracking-widest mb-4">Architecture Insight</h3>
+<div class="text-xs text-slate-600 leading-relaxed">
+                                "The clinical approach to script loading ensures that the user's perception of speed is prioritized over background process completion."
+                            </div>
+<div class="mt-6 flex items-center gap-3">
+<div class="h-6 w-6 bg-blue-100 rounded-sm overflow-hidden">
+<img alt="Engineer profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsl-2YkJ7Yjz4NlubiTb-ua5p53V2s5ZwvCdAjAYnXq1EyhjmJNfa_Jf6tvlhH2YqwdeSnsags81Hu5nxcR6mg0XRBhAnFcRVqIFuGNqvLtVaWfVDBCAXF5JCgS7C8WukqCSUj4Czi0qebBWCWZyXSa2O6BHmx5Gc-wTioJfxjheYUZ_2Bn-Hoc4nr9mQs9LZNogYF13BX8gilX10sgCbVpawW4ouFRP6ibxwkMJW4mEWmbuEdP3Kx7vjEKHLMksPnwHPQ3nGsunbP"/>
+</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Chief Systems Officer</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

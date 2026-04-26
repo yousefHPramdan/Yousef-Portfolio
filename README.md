@@ -39,11 +39,10 @@ A premium, custom-coded portfolio for a Shopify Developer specializing in high-p
 ```
 Yousef-Portfolio/
 ├── index.html              # Home page
-├── services.html           # Services page
+├── services.html           # Services & Development Process page
 ├── work.html               # Work/Projects page (English)
 ├── work-ar.html            # Work/Projects page (Arabic)
 ├── store.html              # Store page
-├── process.html            # Development process page
 ├── pricing.html            # Pricing page
 ├── contact.html            # Contact page
 ├── 404.html                # Custom 404 page

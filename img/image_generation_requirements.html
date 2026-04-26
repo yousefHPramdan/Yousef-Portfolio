@@ -1,0 +1,360 @@
+# Image Generation Requirements
+The following is a list of all the newly added snippet concepts that currently lack an image. You can hand this document to a designer so they understand exactly **what** to design, and **where** the final image tag needs to be placed in the source code.
+> [!TIP]
+> **Instructions for the Web Developer:**
+> When the designer provides you with the image, upload it to your project folder and insert the following line just above the `<h3>` tag in the corresponding snippet card:
+> `<img src="your-new-image.jpg" class="snippet-image" alt="Snippet Name">`
+---
+## 🛒 Cart Snippets
+### 1. Cart Upsell/Cross-sell
+- **Description:** Displays additional products in the side drawer to suggest related items.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Cart Upsell/Cross-sell</h3>
+  <p class="snippet-desc">Displays additional products in the side drawer to suggest related items.</p>
+  ...
+</div>
+```
+### 2. Free Gift Unlocker
+- **Description:** A code that automatically adds a free gift to the cart when the customer reaches a certain spending threshold.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Free Gift Unlocker</h3>
+  <p class="snippet-desc">A code that automatically adds a free gift to the cart when the customer reaches a certain spending threshold.</p>
+  ...
+</div>
+```
+### 3. "You Saved" Calculator
+- **Description:** Displays the customer's total savings (in green) in the cart to encourage them to complete the purchase.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>"You Saved" Calculator</h3>
+  <p class="snippet-desc">Displays the customer's total savings (in green) in the cart to encourage them to complete the purchase.</p>
+  ...
+</div>
+```
+### 4. Cart Terms & Conditions Checkbox
+- **Description:** A box that the customer must check to agree to the terms before the checkout button appears.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Cart Terms & Conditions Checkbox</h3>
+  <p class="snippet-desc">A box that the customer must check to agree to the terms before the checkout button appears.</p>
+  ...
+</div>
+```
+### 5. Empty Cart Recommender
+- **Description:** When the cart is empty, the store displays "best-selling products" instead of leaving the cart completely empty.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Empty Cart Recommender</h3>
+  ...
+</div>
+```
+### 6. Estimated Delivery Date in Cart
+- **Description:** Displays the estimated delivery date based on the current time (e.g., "Order now and receive between May 10th and May 14th").
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="cart">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Estimated Delivery Date in Cart</h3>
+  ...
+</div>
+```
+---
+## 📦 Product Page Snippets
+### 7. Low Stock Scarcity (Inventory Bar)
+- **Description:** A bar that shows the remaining stock (e.g., "Hurry! Only 3 items left").
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Low Stock Scarcity (Inventory Bar)</h3>
+  ...
+</div>
+```
+### 8. Frequently Bought Together (Amazon Style)
+- **Description:** Allows the customer to add 3 products together with a single click from the product page.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Frequently Bought Together (Amazon Style)</h3>
+  ...
+</div>
+```
+### 9. Variant Image Swatches
+- **Description:** Transform the boring dropdown menu of sizes and colors into buttons containing a thumbnail image of the product's color or shape.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Variant Image Swatches</h3>
+  ...
+</div>
+```
+### 10. Product Accordions/Tabs
+- **Description:** Collapse lengthy product descriptions, shipping policies, and returns into dropdown menus (tabs) to clean up the page layout.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Product Accordions/Tabs</h3>
+  ...
+</div>
+```
+### 11. Size Chart Popup
+- **Description:** A button next to the sizes opens a pop-up window (Modal) containing the size chart.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Size Chart Popup</h3>
+  ...
+</div>
+```
+### 12. Live Visitor Counter
+- **Description:** A (fake or real) counter that displays "24 people are viewing this product right now" to create a sense of high demand.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Live Visitor Counter</h3>
+  ...
+</div>
+```
+### 13. Back-in Stock Notification Form
+- **Description:** Replace the "Add to Cart" button for out-of-stock products with a form to collect customer email addresses.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Back-in Stock Notification Form</h3>
+  ...
+</div>
+```
+### 14. Dynamic Trust Badges
+- **Description:** Customizable secure payment icons (Visa, PayPal, etc.) appear directly below the checkout button.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="products">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Dynamic Trust Badges</h3>
+  ...
+</div>
+```
+---
+## 📈 Sales and Conversion Boost Codes
+### 15. Tiered Volume Discount
+- **Description:** A table showing quantity discounts (e.g., "Buy 1 for $20 | Buy 2 and get 10% off | Buy 3 and get 20% off").
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="sales">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Tiered Volume Discount</h3>
+  ...
+</div>
+```
+### 16. Product Page Countdown Timer
+- **Description:** A countdown timer for the offer's end (hours, minutes, seconds).
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="sales">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Product Page Countdown Timer</h3>
+  ...
+</div>
+```
+### 17. Sales Pop Notifications (Recent Sales)
+- **Description:** A pop-up that appears at the bottom of the screen informing the visitor about recent purchases.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="sales">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Sales Pop Notifications (Recent Sales)</h3>
+  ...
+</div>
+```
+### 18. Click-to-Copy Promo Code
+- **Description:** An advertisement containing a discount code; once the customer clicks on it, the code is copied for use at checkout.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="sales">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Click-to-Copy Promo Code</h3>
+  ...
+</div>
+```
+### 19. Exit-Intent Popup
+- **Description:** A window that appears only when the customer tries to close the website, offering a 10% discount if they buy now.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="sales">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Exit-Intent Popup</h3>
+  ...
+</div>
+```
+---
+## 🖌️ Design and User Experience
+### 20. Marquee/Scrolling Announcement Bar
+- **Description:** A constantly scrolling top announcement bar (news ticker) displaying messages like Free Shipping.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Marquee/Scrolling Announcement Bar</h3>
+  ...
+</div>
+```
+### 21. Mobile Bottom Navigation Bar
+- **Description:** A bottom navigation bar similar to those found in mobile apps (Home, Cart, Search, Account).
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Mobile Bottom Navigation Bar</h3>
+  ...
+</div>
+```
+### 22. Mega Menu Builder
+- **Description:** Code that transforms the standard top menu into a large menu with category images and a professional layout.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Mega Menu Builder</h3>
+  ...
+</div>
+```
+### 23. Infinite Scroll for Collections
+- **Description:** Instead of clicking on pages 2 and 3, products are automatically loaded as the customer scrolls down.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Infinite Scroll for Collections</h3>
+  ...
+</div>
+```
+### 24. Before & After Image Slider
+- **Description:** Two images combined with an arrow in the middle, which the customer can drag to see the difference.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Before & After Image Slider</h3>
+  ...
+</div>
+```
+### 25. Shoppable Lookbook (Image Hotspots)
+- **Description:** A large image with dots (+) that, when clicked, reveal product details.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Shoppable Lookbook (Image Hotspots)</h3>
+  ...
+</div>
+```
+### 26. Quick View Popup
+- **Description:** A "Quick Look" button on the collection page allows customers to purchase products without visiting the product page.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Quick View Popup</h3>
+  ...
+</div>
+```
+### 27. Page Preloader
+- **Description:** An animation or logo that moves for a few seconds while the page fully loads.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Page Preloader</h3>
+  ...
+</div>
+```
+### 28. Back to Top Button
+- **Description:** A small button that appears when scrolling down; a single click takes the customer to the top of the page.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Back to Top Button</h3>
+  ...
+</div>
+```
+### 29. Custom Age Verification Popup
+- **Description:** A window asking "Are you over 18?" The website will only open upon confirmation.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="design">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Custom Age Verification Popup</h3>
+  ...
+</div>
+```
+---
+## 💬 Social & Communication Snippets
+### 30. Floating WhatsApp Chat Button
+- **Description:** A floating WhatsApp icon at the bottom of the screen that opens a direct chat with technical support.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="social">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Floating WhatsApp Chat Button</h3>
+  ...
+</div>
+```
+### 31. Social Share Buttons
+- **Description:** Modernly designed buttons for sharing products on Twitter, Pinterest, Facebook, and Telegram.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="social">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Social Share Buttons</h3>
+  ...
+</div>
+```
+### 32. Custom FAQ Page Layout
+- **Description:** A ready-made template for a "Frequently Asked Questions" page with a smooth and elegant accordion design.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="social">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Custom FAQ Page Layout</h3>
+  ...
+</div>
+```
+### 33. Store Features Banner (Icon + Text)
+- **Description:** A section containing 3 or 4 icons (Fast Shipping, High Quality, 24/7 Support) that can be added anywhere.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="social">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Store Features Banner</h3>
+  ...
+</div>
+```
+### 34. Auto-Select User Currency
+- **Description:** A code that detects the visitor's country and automatically changes the store's currency based on their location.
+- **Target Source Code Area:**
+```html
+<div class="snippet-card reveal" data-category="social">
+  <!-- 🎨 ADD IMAGE TAG HERE -->
+  <h3>Auto-Select User Currency</h3>
+  ...
+</div>
+```

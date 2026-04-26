@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clinical Architect | Optimization Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#4cd6ff",
+                      "outline-variant": "#bbc9cf",
+                      "inverse-primary": "#b3c5ff",
+                      "on-secondary-container": "#005266",
+                      "primary-fixed-dim": "#b3c5ff",
+                      "error": "#ba1a1a",
+                      "surface": "#f7f9fb",
+                      "on-surface-variant": "#3c494e",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#00ccf9",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-low": "#f2f4f6",
+                      "on-secondary-fixed-variant": "#004e60",
+                      "tertiary-fixed": "#ffddb1",
+                      "surface-container": "#eceef0",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed": "#dae1ff",
+                      "tertiary": "#815600",
+                      "on-tertiary-fixed": "#291800",
+                      "tertiary-container": "#feb127",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#001f28",
+                      "primary-container": "#aabfff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#001849",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#0046b4",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#191c1e",
+                      "on-primary-fixed-variant": "#003fa4",
+                      "outline": "#6c797f",
+                      "on-tertiary-fixed-variant": "#624000",
+                      "on-tertiary-container": "#6b4700",
+                      "tertiary-fixed-dim": "#ffba49",
+                      "on-surface": "#191c1e",
+                      "secondary-fixed": "#b7eaff",
+                      "surface-container-high": "#e6e8ea",
+                      "secondary": "#00677f",
+                      "surface-variant": "#e0e3e5",
+                      "inverse-surface": "#2d3133",
+                      "surface-tint": "#0054d6",
+                      "primary": "#0054d6",
+                      "background": "#f7f9fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-island-shift {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50 flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tight text-blue-700 font-headline">Clinical Architect</h1>
+<div class="hidden md:flex items-center bg-slate-100 px-3 py-1.5 rounded-lg border-none">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-slate-600 ml-2 w-64" placeholder="Search parameters..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">
+                JD
+            </div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-slate-100 flex flex-col p-4 space-y-2">
+<div class="mb-6 px-2">
+<p class="font-headline font-extrabold text-blue-700 uppercase tracking-widest text-xs">System Admin</p>
+<p class="text-[10px] text-slate-500 font-medium">Clinical Control</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-200 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-blue-700" data-icon="speed">speed</span>
+<span class="font-medium text-sm">Engine Status</span>
+</a>
+<a class="flex items-center px-3 py-2.5 rounded-lg bg-white text-blue-700 shadow-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="tune">tune</span>
+<span class="font-medium text-sm">Optimization</span>
+</a>
+<a class="flex items-center px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-200 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-slate-400 group-hover:text-blue-700" data-icon="analytics">analytics</span>
+<span class="font-medium text-sm">Analytics</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200/50 space-y-1">
+<a class="flex items-center px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-200 transition-all text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-sm" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-200 transition-all text-sm" href="#">
+<span class="material-symbols-outlined mr-3 text-sm" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10">
+<h2 class="text-3xl font-headline font-bold text-slate-900 tracking-tight">Optimization Settings</h2>
+<p class="text-on-surface-variant font-body text-sm mt-1">Configure clinical-grade performance enhancements for your e-commerce storefront.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Primary Action Card: Sticky Add To Cart -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low rounded-lg p-8 relative overflow-hidden">
+<div class="flex justify-between items-start relative z-10">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Conversion Engine</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-slate-900 mb-4">Sticky Add To Cart</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                                Enhances mobile and desktop conversion by pinning the primary call-to-action at the screen boundary as customers scroll through product details. Ensures purchase friction is minimized throughout the customer journey.
+                            </p>
+<div class="flex items-center gap-4">
+<!-- Modern Toggle Switch -->
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors duration-200">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ease-in-out"></span>
+</button>
+<span class="text-sm font-semibold text-slate-900">Feature Active</span>
+</div>
+</div>
+<!-- Visual Reference/Graphic -->
+<div class="hidden md:block w-48 h-64 bg-surface-container-lowest rounded-md shadow-sm border border-outline-variant/10 p-4">
+<div class="w-full h-4 bg-slate-100 rounded-sm mb-4"></div>
+<div class="w-2/3 h-2 bg-slate-50 rounded-sm mb-2"></div>
+<div class="w-full h-2 bg-slate-50 rounded-sm mb-2"></div>
+<div class="w-1/2 h-2 bg-slate-50 rounded-sm mb-8"></div>
+<div class="mt-auto pt-12">
+<div class="w-full h-10 bg-gradient-to-br from-primary to-primary-container rounded-sm flex items-center justify-center text-white text-[10px] font-bold shadow-md">
+                                    ADD TO CART
+                                </div>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Optimization Metrics: Lazy Load App Scripts -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-lg p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Performance Yield</p>
+<p class="text-2xl font-headline font-bold text-slate-900">+14.2%</p>
+</div>
+</div>
+<h4 class="text-sm font-bold text-slate-900 mb-1">Lazy Load App Scripts</h4>
+<p class="text-xs text-on-surface-variant mb-6">Delay execution of non-critical JavaScript until interaction.</p>
+<!-- Sparkline Chart -->
+<div class="mt-auto h-24 w-full relative">
+<svg class="w-full h-full" viewbox="0 0 100 40">
+<defs>
+<lineargradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgba(0, 84, 214, 0.2)"></stop>
+<stop offset="100%" style="stop-color:rgba(247, 249, 251, 0)"></stop>
+</lineargradient>
+</defs>
+<path d="M0 35 Q 20 30, 30 15 T 60 20 T 100 5 L 100 40 L 0 40 Z" fill="url(#gradient)"></path>
+<path d="M0 35 Q 20 30, 30 15 T 60 20 T 100 5" fill="none" stroke="#0054d6" stroke-width="2"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-slate-900 text-white text-[10px] px-2 py-1 rounded">Optimizing...</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<button class="relative inline-flex h-5 w-9 items-center rounded-full bg-surface-container-highest transition-colors">
+<span class="translate-x-1 inline-block h-3 w-3 transform rounded-full bg-white transition-transform"></span>
+</button>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Inactive</span>
+</div>
+</div>
+<!-- Secondary Setting: Defer Third-Party -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-low rounded-lg p-6">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h4 class="text-sm font-bold text-slate-900">Defer Third-Party Scripts</h4>
+<p class="text-xs text-on-surface-variant mt-1">Move analytics and social pixels to post-LCP load.</p>
+</div>
+<span class="material-symbols-outlined text-slate-400" data-icon="history_toggle_off">history_toggle_off</span>
+</div>
+<div class="flex items-center gap-3 mt-6">
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-white transition-transform"></span>
+</button>
+<span class="text-xs font-semibold text-slate-700">Prioritize LCP</span>
+</div>
+</div>
+<!-- High-Tech Info Card -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-low rounded-lg p-6 border-l-4 border-tertiary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="warning">warning</span>
+<div>
+<h4 class="text-sm font-bold text-slate-900">Script Conflict Detected</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">
+                                Optimization Engine identified a potential race condition between "Sticky Add To Cart" and "Legacy Theme Modal". Recommend disabling theme modals for maximum performance gain.
+                            </p>
+</div>
+</div>
+<button class="mt-4 text-xs font-bold text-primary hover:underline transition-all">Review Optimization Log</button>
+</div>
+<!-- Asymmetric Status Column -->
+<div class="col-span-12 lg:col-span-4 bg-slate-900 rounded-lg p-6 text-white overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Real-time Engine Status</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="text-sm text-slate-300">Total Scripts Latency</span>
+<span class="text-sm font-mono font-bold text-secondary-fixed-dim">142ms</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full w-[14%]"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm text-slate-300">Layout Shifts (CLS)</span>
+<span class="text-sm font-mono font-bold text-emerald-400">0.012</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-emerald-400 h-full w-[5%]"></div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm text-slate-300">Optimization Yield</span>
+<span class="text-sm font-mono font-bold text-primary-container">Excellent</span>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-6xl" data-icon="hub">hub</span>
+</div>
+</div>
+</div>
+<!-- Footer Action Row -->
+<div class="mt-12 flex items-center justify-between border-t border-slate-200/50 pt-8">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global CDN Synchronized</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 text-sm font-bold text-slate-600 hover:bg-slate-200/50 rounded transition-colors">
+                        Reset Defaults
+                    </button>
+<button class="px-8 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-bold rounded shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all active:scale-[0.98]">
+                        Apply Changes
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Glassmorphism Floating Helper -->
+<div class="fixed bottom-8 right-8 w-80 bg-white/60 backdrop-blur-xl border border-white/20 rounded-lg p-4 shadow-2xl z-40 hidden xl:block">
+<div class="flex items-center gap-3 mb-2">
+<div class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<p class="text-sm font-bold text-slate-900">Architect AI Suggestion</p>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Based on your traffic patterns, enabling <strong class="text-slate-900">Sticky Add To Cart</strong> is predicted to increase mobile conversion by <span class="text-emerald-600 font-bold">2.4%</span>.
+        </p>
+</div>
+</body></html>
