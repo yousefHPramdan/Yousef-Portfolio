@@ -40,16 +40,15 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
-
-        <li><a href="work.html" class="nav-link">Work</a></li>
-
         <li><a href="services.html" class="nav-link">Services</a></li>
-
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
-
+        <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
-
-            </ul>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
         <a href="pricing-ar.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">AR</a>
@@ -66,6 +65,26 @@
     <h1 class="section-title">Simple, Transparent Pricing</h1>
     <p class="section-sub mx-auto">Clear packages for every stage of your Shopify journey. No hidden fees, no surprises.</p>
     
+    <script>
+      // ── INJECT HUD OVERLAY ──
+      if (!document.getElementById('hud-status')) {
+        const hudContainer = document.createElement('div');
+        hudContainer.className = 'hud-overlay desktop';
+        hudContainer.innerHTML = `
+          <div class="hud-header">SYS_MONITOR_V2.0</div>
+          <div id="hud-status" class="hud-status">
+            <div class="hud-line">SYS_CORE: <span class="hud-value">INITIALIZING...</span></div>
+          </div>
+          <div class="hud-footer">LOCATION: 30.0444° N, 31.2357° E</div>
+        `;
+        document.body.appendChild(hudContainer);
+      }
+      initHUDRendering();
+
+      // ── NEURAL NETWORK CANVAS ──
+      initNeuralCanvas();
+    </script>
+
     <div class="flex justify-center mt-12 reveal">
       <div class="pricing-toggle-container">
         <button class="pricing-toggle-btn active" data-pricing="project">One-Time Project</button>
@@ -142,14 +161,73 @@
 
     </div>
 
+    <!-- Micro-Services (Gigs from Business Plan) -->
+    <div class="mt-24 reveal">
+      <div class="text-center mb-10">
+        <div class="eyebrow mb-3">Launch Day Specials</div>
+        <h2 class="section-title text-[1.8rem]">Micro-Services & Fast Fixes</h2>
+        <p class="text-[#a09880] mt-3 text-[0.93rem]">High-impact, low-cost solutions to kickstart your store optimization.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">Speed Audit Report</h4>
+            <span class="text-jade font-bold">$10</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">Comprehensive performance audit across all device types with actionable fixes.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Get Report →</a>
+        </div>
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">Custom Liquid Section</h4>
+            <span class="text-jade font-bold">$15</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">One custom, fully responsive Liquid section tailored to your brand's unique needs.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Build Now →</a>
+        </div>
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">Arabic RTL Fix</h4>
+            <span class="text-jade font-bold">$20</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">Fix alignment and layout issues for Arabic users on your existing Shopify theme.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Fix RTL →</a>
+        </div>
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">Bug Fix Spec</h4>
+            <span class="text-jade font-bold">$5</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">Quick resolution for a single annoying theme bug or layout inconsistency.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Fix Bug →</a>
+        </div>
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">SEO Technical Audit</h4>
+            <span class="text-jade font-bold">$10</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">Identification of 404s, missing meta tags, and schema errors killing your rank.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Audit SEO →</a>
+        </div>
+        <div class="card p-6 border-l-2 border-gold/30">
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-heading font-bold text-[1.1rem]">Video Store Audit</h4>
+            <span class="text-jade font-bold">$10</span>
+          </div>
+          <p class="text-[#a09880] text-[0.82rem] mb-4">A 5-minute screencast where I walk through your store and reveal conversion gaps.</p>
+          <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Watch Audit →</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Add-ons -->
     <div class="mt-16 reveal">
-      <div class="text-center mb-10"><div class="eyebrow mb-3">À La Carte</div><h2 class="section-title text-[1.8rem]">Add-Ons &amp; Extras</h2><p class="text-[#a09880] mt-3 text-[0.93rem]">Need something specific? Add it to any package.</p></div>
+      <div class="text-center mb-10"><div class="eyebrow mb-3">À La Carte</div><h2 class="section-title text-[1.8rem]">Premium Add-Ons</h2><p class="text-[#a09880] mt-3 text-[0.93rem]">Bespoke features for established brands.</p></div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">🔄</div><h4 class="font-heading font-bold mb-2">Platform Migration</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $150</div><p class="text-[#a09880] text-[0.82rem] mt-2">WooCommerce, Magento, BigCommerce → Shopify</p></div>
-        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">📱</div><h4 class="font-heading font-bold mb-2">Custom App Build</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $350</div><p class="text-[#a09880] text-[0.82rem] mt-2">Bespoke Shopify apps with Polaris &amp; App Bridge</p></div>
-        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">⚡</div><h4 class="font-heading font-bold mb-2">Speed Audit &amp; Fix</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">$120</div><p class="text-[#a09880] text-[0.82rem] mt-2">Core Web Vitals optimization &amp; Lighthouse 90+ score</p></div>
-        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">🎨</div><h4 class="font-heading font-bold mb-2">CRO Implementation</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $175</div><p class="text-[#a09880] text-[0.82rem] mt-2">Upsells, trust signals, conversion snippet pack</p></div>
+        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">🔄</div><h4 class="font-heading font-bold mb-2">Platform Migration</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $150</div><p class="text-[#a09880] text-[0.82rem] mt-2">WooCommerce, Magento → Shopify</p></div>
+        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">📱</div><h4 class="font-heading font-bold mb-2">Custom App Build</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $350</div><p class="text-[#a09880] text-[0.82rem] mt-2">Bespoke Shopify apps with Polaris</p></div>
+        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">⚡</div><h4 class="font-heading font-bold mb-2">Speed Optimization</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $50</div><p class="text-[#a09880] text-[0.82rem] mt-2">Core Web Vitals & Lighthouse 90+</p></div>
+        <div class="card p-6 text-center"><div class="text-[1.8rem] mb-3">🎨</div><h4 class="font-heading font-bold mb-2">CRO Implementation</h4><div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $100</div><p class="text-[#a09880] text-[0.82rem] mt-2">Upsells & conversion snippet pack</p></div>
       </div>
     </div>
   </div>

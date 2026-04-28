@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دراسة حالة تعديل حساب الزبون</title>
+  <meta name="description" content="تطوير واجهة حساب عميل مخصصة لشوبيفاي باستخدام Polaris وApp Bridge." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "دراسة حالة تعديل حساب الزبون",
+    "description": "تطوير واجهة حساب عميل مخصصة لشوبيفاي باستخدام Polaris وApp Bridge.",
+    "author": {"@type": "Person", "name": "Yousef Ramadan"},
+    "image": "https://youseframadan.me/img/Mother Root.png",
+    "url": "https://youseframadan.me/case-customer-account-extension-ar.html"
+  }
+  </script>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">المحتوى</a>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo relative z-[1001]">Yousef<span class="logo-dot">.</span></a>
+      <ul id="nav-links" role="list">
+        <li><a href="services-ar.html" class="nav-link">الخدمات</a></li>
+        <li><a href="work-ar.html" class="nav-link active">الأعمال</a></li>
+        <li><a href="store-ar.html" class="nav-link">المتجر</a></li>
+        <li><a href="devtools-ar.html" class="nav-link">أدوات المطورين</a></li>
+        <li><a href="blog-ar.html" class="nav-link">المدونة</a></li>
+        <li><a href="process-ar.html" class="nav-link">العملية</a></li>
+        <li><a href="pricing-ar.html" class="nav-link">الأسعار</a></li>
+        <li><a href="contact-ar.html" class="nav-link">اتصل</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="case-customer-account-extension.html" class="nav-cta desktop magnetic" aria-label="Switch language">EN</a>
+        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <header class="case-hero" style="background: radial-gradient(circle at top, #1c2a38 0%, #0e0d0b 70%);">
+      <div class="container">
+        <div class="eyebrow mb-4">تعديل حساب</div>
+        <h1 class="reveal text-white">تعديل حساب الزبون</h1>
+        <p class="text-[#a09880] max-w-[600px] mx-auto mb-8 reveal">مكوّن حساب عميل مخصص باستخدام Polaris وApp Bridge ليوفّر تجربة أصلية للمستخدم.</p>
+        <div class="flex gap-4 justify-center flex-wrap reveal">
+          <span class="proj-tag">App Extension</span>
+          <span class="proj-tag">Polaris</span>
+          <span class="proj-tag">React</span>
+        </div>
+        <div class="mt-10 reveal">
+          <a href="https://shopify.dev" class="btn-primary" target="_blank" rel="noopener">المستندات ↗</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="case-screenshot reveal">
+      <img src="img/Mother Root.png" alt="Account Extension Screenshot" loading="lazy">
+    </div>
+
+    <div class="case-metrics reveal">
+      <div class="metric-item"><span class="metric-label">الدور</span><span class="metric-value">مطور تطبيقات كامل‑المكدس</span></div>
+      <div class="metric-item"><span class="metric-label">الجدول الزمني</span><span class="metric-value">3 أسابيع</span></div>
+      <div class="metric-item"><span class="metric-label">التقنيات</span><span class="metric-value">React · Polaris · App Bridge</span></div>
+      <div class="metric-item"><span class="metric-label">النتيجة</span><span class="metric-value">تجربة حساب أصلية</span></div>
+    </div>
+
+    <section class="case-section reveal"><h2>التحدي</h2>
+      <p>تقديم تجربة حساب عميل أصلية تتفوق على تجربة Shopify الافتراضية وتدعم احتياجات التاجر.</p>
+    </section>
+
+    <section class="case-section reveal"><h2>النهج</h2>
+      <p>بناء تعديل حساب عميل مخصص باستخدام Polaris وApp Bridge لدمجه داخل تجربة Shopify كمنصة أصلية للمستخدم.</p>
+      <ul class="space-y-4 text-[#a09880] mt-6 list-disc pl-6">
+        <li>دمج متعمّق مع بيانات العملاء عبر GraphQL Admin API.</li>
+        <li>واجهات تدفق مستخدم خاصة للملف الشخصي، الطلبات، والتفضيلات.</li>
+        <li>توثيق داخلي وتعليقات كود لسهولة الصيانة.</li>
+      </ul>
+    </section>
+
+    <section class="case-section reveal"><h2>النتيجة</h2>
+      <p>تجربة حساب أصلية تتماشى مع مظهر Shopify مع قدرات مخصّصة حسب احتياجات العمل.</p>
+    </section>
+
+    <nav class="case-nav reveal">
+      <a href="case-horizon-ar.html" class="magnetic">← المشروع السابق</a>
+      <a href="case-spydr-ar.html" class="magnetic">المشروع التالي →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <div class="container"><div class="text-center">© 2026 Yousef Ramadan. All rights reserved.</div></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

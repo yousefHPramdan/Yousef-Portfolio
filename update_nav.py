@@ -1,93 +1,56 @@
-import re
 import os
+import re
 
-files_to_update = {
-    "EN_WORK": ["work.html", "case-oceanbottle.html", "case-bypavo.html", "case-loading.html", "case-o2morny.html", "case-tiavola.html", "case-wishlist.html"],
-    "EN_SERVICES": ["services.html"],
-    "EN_BLOG": ["blog.html", "article-cro-strategy.html", "article-liquid-performance.html", "article-shopify-apps.html"],
-    "EN_PRICING": ["pricing.html"],
-    "EN_NONE": ["about.html", "contact.html", "store.html", "process.html", "404.html"],
-    "AR_WORK": ["work-ar.html", "case-oceanbottle-ar.html", "case-bypavo-ar.html", "case-loading-ar.html", "case-o2morny-ar.html", "case-tiavola-ar.html", "case-wishlist-ar.html"],
-    "AR_SERVICES": ["services-ar.html"],
-    "AR_BLOG": ["blog-ar.html", "article-cro-strategy-ar.html", "article-liquid-performance-ar.html", "article-shopify-apps-ar.html"],
-    "AR_PRICING": ["pricing-ar.html"],
-    "AR_NONE": ["about-ar.html", "contact-ar.html", "store-ar.html", "process-ar.html", "404-ar.html"]
-}
+directory = r"e:\yousef dev\Yousef-Portfolio"
+files = [f for f in os.listdir(directory) if f.endswith('.html')]
 
-def get_new_menu(group):
-    if group.startswith("EN"):
-        links = [
-            ('work.html', 'Work'),
-            ('services.html', 'Services'),
-            ('blog.html', 'Blog'),
-            ('pricing.html', 'Pricing')
-        ]
-        active_target = group.split("_")[1].lower()
-        active_file = active_target + ".html"
-        
-        items = []
-        for href, text in links:
-            is_active = False
-            if active_target == "work" and href == "work.html": is_active = True
-            elif active_target == "services" and href == "services.html": is_active = True
-            elif active_target == "blog" and href == "blog.html": is_active = True
-            elif active_target == "pricing" and href == "pricing.html": is_active = True
-            
-            cls = "nav-link active" if is_active else "nav-link"
-            items.append(f'        <li><a href="{href}" class="{cls}">{text}</a></li>')
-            
-        return '      <ul id="nav-links" role="list">\n' + '\n'.join(items) + '\n      </ul>'
+for file in files:
+    file_path = os.path.join(directory, file)
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # We want to replace everything from <ul id="nav-links" to </ul>
+    is_ar = "-ar.html" in file
+    
+    # Active class logic based on file name
+    def get_class(target):
+        base_file = file.replace("-ar.html", ".html")
+        if target == "services" and base_file.startswith("services"): return "nav-link active"
+        if target == "work" and (base_file.startswith("work") or base_file.startswith("case-")): return "nav-link active"
+        if target == "store" and base_file.startswith("store"): return "nav-link active"
+        if target == "devtools" and base_file.startswith("devtools"): return "nav-link active"
+        if target == "blog" and (base_file.startswith("blog") or base_file.startswith("article")): return "nav-link active"
+        if target == "process" and base_file.startswith("process"): return "nav-link active"
+        if target == "pricing" and base_file.startswith("pricing"): return "nav-link active"
+        if target == "contact" and base_file.startswith("contact"): return "nav-link active"
+        return "nav-link"
+
+    if is_ar:
+        new_nav = f"""<ul id="nav-links" role="list">
+        <li><a href="services-ar.html" class="{get_class('services')}">الخدمات</a></li>
+        <li><a href="work-ar.html" class="{get_class('work')}">الأعمال</a></li>
+        <li><a href="store-ar.html" class="{get_class('store')}">المتجر</a></li>
+        <li><a href="devtools-ar.html" class="{get_class('devtools')}">أدوات المطورين</a></li>
+        <li><a href="blog-ar.html" class="{get_class('blog')}">المدونة</a></li>
+        <li><a href="process-ar.html" class="{get_class('process')}">العملية</a></li>
+        <li><a href="pricing-ar.html" class="{get_class('pricing')}">الأسعار</a></li>
+        <li><a href="contact-ar.html" class="{get_class('contact')}">اتصل</a></li>
+      </ul>"""
     else:
-        links = [
-            ('work-ar.html', 'الأعمال'),
-            ('services-ar.html', 'الخدمات'),
-            ('blog-ar.html', 'المدونة'),
-            ('pricing-ar.html', 'الأسعار')
-        ]
-        active_target = group.split("_")[1].lower()
-        active_file = active_target + "-ar.html"
-        
-        items = []
-        for href, text in links:
-            is_active = False
-            if active_target == "work" and href == "work-ar.html": is_active = True
-            elif active_target == "services" and href == "services-ar.html": is_active = True
-            elif active_target == "blog" and href == "blog-ar.html": is_active = True
-            elif active_target == "pricing" and href == "pricing-ar.html": is_active = True
-            
-            cls = "nav-link active" if is_active else "nav-link"
-            items.append(f'        <li><a href="{href}" class="{cls}">{text}</a></li>')
-            
-        return '      <ul id="nav-links" role="list">\n' + '\n'.join(items) + '\n      </ul>'
+        new_nav = f"""<ul id="nav-links" role="list">
+        <li><a href="services.html" class="{get_class('services')}">Services</a></li>
+        <li><a href="work.html" class="{get_class('work')}">Work</a></li>
+        <li><a href="store.html" class="{get_class('store')}">Store</a></li>
+        <li><a href="devtools.html" class="{get_class('devtools')}">DevTools</a></li>
+        <li><a href="blog.html" class="{get_class('blog')}">Blog</a></li>
+        <li><a href="process.html" class="{get_class('process')}">Process</a></li>
+        <li><a href="pricing.html" class="{get_class('pricing')}">Pricing</a></li>
+        <li><a href="contact.html" class="{get_class('contact')}">Contact</a></li>
+      </ul>"""
 
-nav_regex = re.compile(r'\s*<ul id="nav-links" role="list">.*?</ul>', re.DOTALL)
-
-for group, files in files_to_update.items():
-    new_menu = get_new_menu(group)
-    for filename in files:
-        if not os.path.exists(filename):
-            print(f"Skipping {filename} - not found")
-            continue
-        with open(filename, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        match = nav_regex.search(content)
-        if match:
-            # Preserve original indentation if possible
-            orig_nav = match.group(0)
-            indent = orig_nav[:orig_nav.find('<ul')]
-            
-            # Re-format new_menu with correct indentation
-            lines = new_menu.strip().split('\n')
-            formatted_menu = indent + lines[0] + '\n'
-            for line in lines[1:-1]:
-                # adjust internal indentation
-                formatted_menu += indent + "  " + line.strip() + '\n'
-            formatted_menu += indent + lines[-1]
-            
-            new_content = nav_regex.sub(formatted_menu, content)
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            print(f"Updated {filename}")
-        else:
-            print(f"Could not find nav in {filename}")
+    new_content = re.sub(r'<ul id="nav-links".*?</ul>', new_nav, content, flags=re.DOTALL)
+    
+    if new_content != content:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f"Updated {file}")

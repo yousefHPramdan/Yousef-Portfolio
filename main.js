@@ -1,5 +1,49 @@
 // Consolidate DOMContentLoaded logic
+function initHUDRendering() {
+  const hud = document.getElementById('hud-status');
+  if (!hud) return;
+
+  const stats = {
+    cpu: 0,
+    memory: 0,
+    latency: 0,
+    integrity: 99.9,
+    traffic: 0
+  };
+
+  const updateHUD = () => {
+    stats.cpu = Math.floor(Math.random() * 15) + 5;
+    stats.memory = (Math.random() * 2 + 1.5).toFixed(1);
+    stats.latency = Math.floor(Math.random() * 20) + 10;
+    stats.traffic = (Math.random() * 500 + 100).toFixed(0);
+    
+    hud.innerHTML = `
+      <div class="hud-line">SYS_CORE: <span class="hud-value">ACTIVE</span></div>
+      <div class="hud-line">CPU_LOAD: <span class="hud-value">${stats.cpu}%</span></div>
+      <div class="hud-line">MEM_USED: <span class="hud-value">${stats.memory}GB</span></div>
+      <div class="hud-line">TRAFFIC: <span class="hud-value">${stats.traffic} req/s</span></div>
+      <div class="hud-line">LATENCY: <span class="hud-value">${stats.latency}ms</span></div>
+      <div class="hud-line">INTEGRITY: <span class="hud-value">${stats.integrity}%</span></div>
+      <div class="hud-line">MODE: <span class="hud-value">AI_AUGMENTED</span></div>
+    `;
+  };
+
+  updateHUD();
+  setInterval(updateHUD, 3000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ── INJECT SCAN LINE ──
+  const scanLine = document.createElement('div');
+  scanLine.className = 'scan-line';
+  document.body.appendChild(scanLine);
+
+  // ── NEURAL NETWORK CANVAS ──
+  initNeuralCanvas();
+
+  // ── DATA STREAM MARQUEE BACKGROUND ──
+  initDataStream();
 
   // ── INJECT WHATSAPP WIDGET ──
   const WA_NUMBER = '+201014124465'; // Updated to match contact page
@@ -132,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── HERO SPLIT CHARS ──
+  // ── AI-TYPED HERO TEXT ──
   const heroEn = document.getElementById('hero-title');
   const heroAr = document.getElementById('hero-title-ar');
   const targetTitle = heroEn || heroAr;
@@ -157,6 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.createElement('span');
       row.className = line.cls + ' whitespace-nowrap leading-[1.1] mb-2';
       row.style.overflow = 'hidden'; 
+      row.style.display = 'block';
+      
       const tmp = document.createElement('div');
       tmp.innerHTML = line.html;
       
@@ -164,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (node.nodeType === 3) {
           node.textContent.split('').forEach(ch => {
             const s = document.createElement('span');
-            s.className = 'split-char';
+            s.className = 'type-char';
             s.style.display = 'inline-block';
             s.textContent = ch === ' ' ? '\u00A0' : ch;
             row.appendChild(s);
@@ -172,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           node.textContent.split('').forEach(ch => {
             const w = document.createElement('span');
-            w.className = (node.className || '') + ' split-char';
+            w.className = (node.className || '') + ' type-char';
             w.style.display = 'inline-block';
             w.textContent = ch === ' ' ? '\u00A0' : ch;
             row.appendChild(w);
@@ -182,11 +228,21 @@ document.addEventListener('DOMContentLoaded', () => {
       targetTitle.appendChild(row);
     });
 
+    const cursorEl = document.createElement('span');
+    cursorEl.className = 'ai-cursor inline-block w-[12px] h-[40px] bg-gold ml-2 align-middle';
+    targetTitle.appendChild(cursorEl);
+
     if (pageLoadTimeline) {
-      pageLoadTimeline.fromTo(targetTitle.querySelectorAll('.split-char'), 
-        { y: 80, rotationZ: 5, opacity: 0 },
-        { y: 0, rotationZ: 0, opacity: 1, duration: 0.8, ease: 'power4.out', stagger: 0.012 },
+      pageLoadTimeline.fromTo(targetTitle.querySelectorAll('.type-char'), 
+        { opacity: 0, display: 'none' },
+        { opacity: 1, display: 'inline-block', duration: 0.01, ease: 'steps(1)', stagger: 0.04 },
         "-=1.2"
+      );
+      
+      pageLoadTimeline.fromTo(cursorEl, 
+        { opacity: 1 },
+        { opacity: 0, duration: 0.4, repeat: -1, ease: 'steps(1)', yoyo: true },
+        "<" // Starts at the same time as typing ends
       );
     }
   }
@@ -348,6 +404,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── HOLOGRAPHIC CARDS ──
+  document.querySelectorAll('.holo-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
   // ── TEXT REVEAL (Digital reveal on titles) ──
   const titles = document.querySelectorAll('.section-title');
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -372,7 +439,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initBASlider();
   initPricingToggle();
   initROICalculator();
-  initFAQ();
+  initPreloader();
+  initNeuralCanvas();
+  initDataStream();
+  initHUDRendering();
+  initCustomCursor();
 });
 
 // ── COMPONENT INITIALIZERS ──
@@ -468,3 +539,158 @@ function initFAQ() {
     });
   });
 }
+
+// ── NEURAL NETWORK PARTICLE CANVAS ──
+function initNeuralCanvas() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  // Inject HUD grid
+  const hudGrid = document.createElement('div');
+  hudGrid.className = 'hud-grid';
+  hero.insertBefore(hudGrid, hero.firstChild);
+
+  const canvas = document.createElement('canvas');
+  canvas.id = 'neural-canvas';
+  hero.insertBefore(canvas, hero.firstChild);
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: -999, y: -999 };
+  let animFrame;
+
+  function resize() {
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  hero.addEventListener('mousemove', e => {
+    const rect = hero.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    mouse.x = -999;
+    mouse.y = -999;
+  });
+
+  const PARTICLE_COUNT = Math.min(80, Math.floor(window.innerWidth / 18));
+  const CONNECTION_DIST = 150;
+  const MOUSE_DIST = 200;
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = Math.random() * 2 + 1;
+      this.isGold = Math.random() > 0.6;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+      // Mouse attraction
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_DIST) {
+        const force = (MOUSE_DIST - dist) / MOUSE_DIST * 0.015;
+        this.vx += dx * force;
+        this.vy += dy * force;
+      }
+
+      // Dampen velocity
+      this.vx *= 0.99;
+      this.vy *= 0.99;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.isGold ? 'rgba(212, 168, 67, 0.6)' : 'rgba(78, 201, 148, 0.4)';
+      ctx.fill();
+
+      // Glow
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius * 3, 0, Math.PI * 2);
+      ctx.fillStyle = this.isGold ? 'rgba(212, 168, 67, 0.08)' : 'rgba(78, 201, 148, 0.05)';
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push(new Particle());
+  }
+
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECTION_DIST) {
+          const opacity = (1 - dist / CONNECTION_DIST) * 0.25;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(212, 168, 67, ${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+
+      // Mouse connections
+      const mdx = mouse.x - particles[i].x;
+      const mdy = mouse.y - particles[i].y;
+      const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (mDist < MOUSE_DIST) {
+        const opacity = (1 - mDist / MOUSE_DIST) * 0.5;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(78, 201, 148, ${opacity})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    drawConnections();
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  // Use IntersectionObserver to only animate when visible
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animate();
+    } else {
+      cancelAnimationFrame(animFrame);
+    }
+  }, { threshold: 0.1 });
+  observer.observe(hero);
+}
+
+// ── DATA STREAM MARQUEE BACKGROUND ──
+function initDataStream() {
+  const marqueeTrack = document.querySelector('.marquee-track');
+  if (!marqueeTrack) return;
+
+  const chars = '01001010 0xA7F3 0xD4A8 LIQUID GSAP NODE 01100110 0xFF00 SHOPIFY 10110010 REACT 0xE8C8 01010101';
+  const stream = document.createElement('div');
+  stream.className = 'marquee-data-bg';
+  stream.textContent = (chars + ' ').repeat(8);
+  marqueeTrack.insertBefore(stream, marqueeTrack.firstChild);
+}
+
