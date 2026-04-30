@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -71,8 +72,22 @@
       </div>
     </header>
 
-    <div class="case-screenshot reveal">
-      <img src="img/Mother Root.png" alt="Account Extension Screenshot" loading="lazy">
+    <div class="case-slider-section reveal my-12 overflow-hidden">
+      <div class="main-carousel">
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <img src="img/Mother Root.png" alt="Account Extension Screenshot" class="w-full h-auto object-cover" loading="lazy">
+        </div>
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <div class="aspect-[16/9] bg-[#1e1b16] flex items-center justify-center border border-white/5">
+            <span class="text-[#5a5040] font-mono text-sm">Customer Profile UI</span>
+          </div>
+        </div>
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <div class="aspect-[16/9] bg-[#1e1b16] flex items-center justify-center border border-white/5">
+            <span class="text-[#5a5040] font-mono text-sm">Order History View</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="case-metrics reveal">
@@ -131,6 +146,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

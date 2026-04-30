@@ -1,16 +1,306 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Process - Yousef Portfolio</title>
-  <meta name="description" content="Development process overview for Shopify projects." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process | Yousef Ramadan | Front-End Shopify Developer</title>
+  <meta name="description" content="My 6-step Shopify development process: discovery, design, build, test, launch, and support. Transparent and client-focused.">
+  <meta property="og:title" content="My Process | Yousef Ramadan | Shopify Developer">
+  <meta property="og:description" content="A transparent, 6-step process for building premium Shopify stores from brief to launch.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://youseframadan.me/process.html">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Syne','sans-serif'],body:['Plus Jakarta Sans','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yousef Ramadan",
+    "jobTitle": "Front-End Shopify Developer",
+    "description": "My 6-step Shopify development process: discovery, design, build, test, launch, and support. Transparent and client-focused.",
+    "url": "https://youseframadan.me",
+    "sameAs": [
+      "https://github.com/yousefHPramdan",
+      "https://www.instagram.com/youpify.dev/"
+    ]
+  }
+  </script>
+  <style>
+    .step-connector { width:2px; height:60px; background:linear-gradient(to bottom,rgba(212,168,67,0.4),rgba(212,168,67,0.05)); margin:0 auto; }
+    .step-card { background:#1e1b16; border:1px solid rgba(242,237,228,0.07); border-radius:20px; padding:36px; position:relative; overflow:hidden; transition:border-color 0.3s, transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s; }
+    .step-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(to bottom,#d4a843,#c95f3a); transform:scaleY(0); transform-origin:top; transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); }
+    .step-card:hover { border-color:rgba(212,168,67,0.2); transform:translateY(-4px); box-shadow:0 20px 48px rgba(212,168,67,0.07); }
+    .step-card:hover::before { transform:scaleY(1); }
+    .step-num { font-family:'Syne',sans-serif; font-size:4rem; font-weight:800; line-height:1; background:linear-gradient(135deg,#d4a843,#c95f3a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; opacity:0.25; margin-bottom:12px; }
+    .timeline-dot { width:14px; height:14px; border-radius:50%; background:#d4a843; border:3px solid #0e0d0b; box-shadow:0 0 0 2px rgba(212,168,67,0.3); flex-shrink:0; }
+  </style>
 </head>
 <body>
-  <header class="container"><h1>Process</h1></header>
-  <main class="container">
-    <p>This page is a placeholder for the development process overview. It will describe discovery, planning, design, development, QA, and deployment steps for Shopify projects.</p>
-  </main>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip to content</a>
+<div id="cursor"></div><div id="cursor-ring"></div>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+<div id="preloader"><div class="relative text-center"><div class="pre-text">Yousef<span class="pre-accent">.</span></div><div class="pre-bar" id="pre-bar"></div></div></div>
+
+<nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
+    <ul id="nav-links" role="list">
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="work.html" class="nav-link">Work</a></li>
+      <li><a href="store.html" class="nav-link">Store</a></li>
+      <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="process.html" class="nav-link active">Process</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
+      <a href="process-ar.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">AR</a>
+      <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+      <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="page-header">
+<div class="container">
+  <div class="eyebrow mb-4">How I Work</div>
+  <h1 class="section-title">My Process</h1>
+  <p class="section-sub mx-auto">Simple, transparent, and focused on delivering results on time.</p>
+</div>
+</div>
+<!-- STEPS -->
+<section class="py-20">
+  <div class="container max-w-[800px] mx-auto">
+    <div class="flex flex-col gap-0">
+
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Discovery &amp; Briefing</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">We start with a structured call or questionnaire to understand your brand, products, target audience, and business goals. I'll ask the hard questions other developers skip.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Brand guidelines &amp; visual direction</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Competitors &amp; market research</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Feature requirements &amp; integrations</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Timeline &amp; budget alignment</div>
+        </div>
+      </div>
+
+      <div class="step-connector reveal"></div>
+
+      <div class="step-card reveal">
+        <div class="step-num">02</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Proposal &amp; Scope</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">I prepare a detailed project scope, feature breakdown, timeline, and fixed-price quote. No surprises, no scope creep. Everything is documented and agreed upon before a single line of code is written.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Full feature list &amp; deliverables</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Fixed price — no hidden costs</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Week-by-week milestone breakdown</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>50% deposit to begin</div>
+        </div>
+      </div>
+
+      <div class="step-connector reveal"></div>
+
+      <div class="step-card reveal">
+        <div class="step-num">03</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Design Planning</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Before writing code, I plan every page, every section, and every interaction. Wireframes or Figma mockups are shared for review and approval — so you see it before it's built.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Page-by-page layout planning</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Figma / wireframe review</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Color, typography &amp; spacing system</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Mobile &amp; desktop breakpoints</div>
+        </div>
+      </div>
+
+      <div class="step-connector reveal"></div>
+
+      <div class="step-card reveal">
+        <div class="step-num">04</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Development</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Clean, well-structured Shopify Liquid code. I build on a development store so your live store is never touched until everything is perfect. Weekly progress updates are shared via video or screenshot previews.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Sections 2.0 architecture</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Weekly progress check-ins</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Mobile-first development</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Performance optimization built-in</div>
+        </div>
+      </div>
+
+      <div class="step-connector reveal"></div>
+
+      <div class="step-card reveal">
+        <div class="step-num">05</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Review &amp; Revisions</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">You get full access to the development store for review. I include 2 rounds of revisions to fine-tune anything that needs adjusting. Feedback is implemented within 48 hours.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>2 rounds of revisions included</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>48-hour turnaround on feedback</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Cross-browser &amp; device testing</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Final approval before going live</div>
+        </div>
+      </div>
+
+      <div class="step-connector reveal"></div>
+
+      <div class="step-card reveal">
+        <div class="step-num">06</div>
+        <h3 class="font-heading text-[1.3rem] font-bold mb-3">Launch &amp; Handoff</h3>
+        <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Once approved, I push the theme live, configure DNS and domains if needed, and run a final performance check. You receive a handoff document covering everything in your store, plus a 30-minute training call.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Live deployment &amp; DNS setup</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Lighthouse &amp; Core Web Vitals check</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Handoff documentation</div>
+          <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>30-min onboarding call</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONBOARDING -->
+<section class="py-24" style="background:#161410">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="eyebrow mb-4">The First 24 Hours</div>
+        <h2 class="section-title text-left mb-6">Seamless Onboarding</h2>
+        <p class="text-[#a09880] text-[1.05rem] leading-[1.8] mb-8">
+          Once the deposit is paid, we don't waste time. My onboarding system is designed to get all the technical hurdles out of the way so we can focus on building.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">1</div>
+            <div>
+              <h4 class="font-heading font-bold text-ink mb-1">Collaborator Access</h4>
+              <p class="text-[#a09880] text-[0.88rem]">I'll send a request to your Shopify admin. You don't need to share passwords, keeping your account secure.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">2</div>
+            <div>
+              <h4 class="font-heading font-bold text-ink mb-1">Asset Handover</h4>
+              <p class="text-[#a09880] text-[0.88rem]">A simple shared folder for your logos, brand guidelines, and high-res photography to ensure design consistency.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">3</div>
+            <div>
+              <h4 class="font-heading font-bold text-ink mb-1">Communication Channel</h4>
+              <p class="text-[#a09880] text-[0.88rem]">We set up a dedicated Slack, WhatsApp, or Trello board to keep all updates, feedback, and files in one place.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal relative">
+        <div class="aspect-square bg-card border border-ink/5 rounded-3xl p-10 flex flex-col justify-center items-center text-center overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent"></div>
+          <div class="text-[5rem] mb-6">🚀</div>
+          <h3 class="font-heading text-[1.6rem] font-bold mb-4">Fast-Track Your Launch</h3>
+          <p class="text-[#a09880] text-[0.95rem] mb-8">Systemized onboarding means most projects start within 48 hours of initial contact.</p>
+          <a href="contact.html" class="btn-primary magnetic">Start Onboarding</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="py-24">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">Transparency</div>
+      <h2 class="section-title">My Success Stack</h2>
+      <p class="section-sub mx-auto text-[1rem]">The professional toolset I use to build world-class Shopify storefronts.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🛍️</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">Shopify CLI</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Local Dev Environment</p>
+      </div>
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🧪</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">Liquid</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Advanced Templating</p>
+      </div>
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🌊</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">Tailwind</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Utility-First Styling</p>
+      </div>
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🪄</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">GSAP</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Smooth UI Animation</p>
+      </div>
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🎨</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">Figma</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Prototyping & UX</p>
+      </div>
+      <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+        <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">📈</div>
+        <h4 class="font-heading font-bold text-[0.9rem]">Lighthouse</h4>
+        <p class="text-[0.7rem] text-[#5a5040] mt-1">Performance Benchmarks</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="py-24" style="background:#161410">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">Why Work With Me</div><h2 class="section-title">What Makes This Different</h2></div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🗂️</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Streamlined Process</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Proven project management structures ensure you always know the schedule, responsibilities, and next steps. Proactive communication throughout.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🏆</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Proven Expertise</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Deep specialization in Shopify. I've empowered brands like Pavo, O2morny, Loading-eg and more to launch, migrate, and scale successfully.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">💡</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Transparent Pricing</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Clear, upfront pricing tiers for common projects and detailed quotes for custom work. No hidden fees. Focus on measurable results for your investment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">Questions</div><h2 class="section-title">FAQ</h2></div>
+    <div class="flex flex-col gap-4 max-w-[800px] mx-auto reveal">
+      <div class="faq-item"><button class="faq-q">What is the process of getting a custom theme?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">I'll ask you questions to understand your brand and goals, create a design plan, build the theme from scratch, integrate it with your store, and test everything fully before launch.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Can you customize my existing theme instead of building a new one?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes! I can improve your current theme with custom sections, performance optimizations, and conversion-boosting UI features without starting from scratch.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How long does it take to build a complete custom store?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A full custom Shopify store typically takes 3 to 6 weeks, depending on complexity. We'll establish a clear timeline during the discovery phase.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Will my store be optimized for mobile?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — every store I build is strictly mobile-first. Over 70% of e-commerce traffic is mobile, so your store will look and perform flawlessly on all screen sizes.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Do you help with SEO and page speed?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Performance is a priority. I ensure your store passes Core Web Vitals, with optimized images, deferred scripts, and clean code for fast load times and better search rankings.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20" style="background:#161410">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>Ready to get started?</h2>
+      <p>The process is clear. The results speak for themselves. Let's build something great.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
+        <a href="pricing.html" class="btn-secondary magnetic">View Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="container"><div class="mb-3"><a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="footer-link">LinkedIn</a><a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a><a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a><a href="contact.html" class="footer-link">Contact</a></div><p class="text-[0.82rem] text-[#5a5040]">© 2026 Yousef Ramadan. All rights reserved.</p></div></footer>
+<a href="contact.html" id="sticky-widget"><span class="sw-dot"></span><span class="sw-text">Available for Work <span>· Let's Talk</span></span></a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

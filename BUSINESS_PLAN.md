@@ -1061,7 +1061,7 @@ Run these checks on youseframadan.me:
 
 # PART 45 — PASSIVE INCOME STREAMS
 
-## Stream 1: Shopioso Snippet Store (Active)
+## Stream 1: Youpify Snippet Store (Active)
 
 **Current status:** Live at youseframadan.me/store
 **Revenue potential:** $500–$2,000/mo by Month 6
@@ -1302,7 +1302,7 @@ Behind the scenes, your journey, your thinking.
 Attracts: clients who want to KNOW you, not just hire a dev
 
 Pillar 4 — OFFER (10% of content)
-Direct promotion of services, Fiverr, Shopioso, SPYDR.
+Direct promotion of services, Fiverr, Youpify, SPYDR.
 Maximum 1 in 10 posts. More than this feels spammy.
 ```
 
@@ -1344,7 +1344,7 @@ If you have more leads than time:
 If you have more time than leads:
 → Double outreach (cold DMs, proposals, content)
 → Ask every happy client for 1 referral
-→ Launch SPYDR / Shopioso with a promotion
+→ Launch SPYDR / Youpify with a promotion
 → Reach out to 5 agencies about subcontract work
 
 If you have leads and time but low conversion:
@@ -1362,7 +1362,7 @@ If you have leads and time but low conversion:
 Revenue composition at $3,000/mo:
 ├── 1 retainer at $1,200/mo (Tier 2)
 ├── 2–3 mid-size projects at $400–$600 each
-├── Shopioso snippets: $300–$500/mo
+├── Youpify snippets: $300–$500/mo
 ├── Khamsat/Fiverr: $200–$400/mo
 └── SPYDR passive: $200–$500/mo
 ```
@@ -1375,7 +1375,7 @@ Revenue composition at $3,000/mo:
 Revenue composition at $5,000/mo:
 ├── 2 retainers at $1,500/mo each = $3,000
 ├── 1 direct project at $1,200
-├── Products (Shopioso + SPYDR): $800/mo
+├── Products (Youpify + SPYDR): $800/mo
 └── Overflow Fiverr/Khamsat: $200/mo
 
 Key shifts:
@@ -1392,7 +1392,7 @@ Key shifts:
 ```
 Month 4+: Delegate writing (use AI for first drafts of posts/proposals)
 Month 6+: Delegate small Fiverr gigs (hire a junior dev for $5 gigs)
-Month 8+: Delegate customer service for Shopioso (hire VA, $200/mo)
+Month 8+: Delegate customer service for Youpify (hire VA, $200/mo)
 Month 10+: Delegate social media posting (hire content VA, $300/mo)
 
 Your time: only on: strategy, complex builds, client relationships, content recording

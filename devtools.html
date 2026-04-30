@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTools | Yousef Ramadan | Front-End Shopify Developer</title>
+  <meta name="description" content="Free Shopify development tools and generators. Coming soon.">
+  <link rel="icon" href="img/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen">
+  <header class="py-6 px-4 md:px-8 flex justify-between items-center fixed w-full top-0 z-50 glass">
+    <a href="index.html" class="logo font-heading font-bold text-2xl tracking-tighter">Yousef<span class="text-gold">.</span></a>
+    <nav class="hidden md:flex gap-8 items-center bg-surface px-8 py-3 rounded-full border border-white/5 shadow-2xl">
+      <a href="index.html" class="nav-link font-medium">Home</a>
+      <a href="work.html" class="nav-link font-medium">Work</a>
+      <a href="services.html" class="nav-link font-medium">Services</a>
+      <a href="pricing.html" class="nav-link font-medium">Pricing</a>
+      <a href="process.html" class="nav-link font-medium">Process</a>
+      <a href="store.html" class="nav-link font-medium">Store <span class="bg-gold text-bg text-[10px] px-2 py-0.5 rounded-full ml-1 font-bold">50+</span></a>
+      <a href="devtools.html" class="nav-link font-medium active">DevTools</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button id="theme-btn" class="text-xl hover:scale-110 transition-transform" aria-label="Toggle theme">🌙</button>
+      <a href="devtools-ar.html" class="font-heading font-bold text-sm bg-surface px-3 py-1 rounded-full border border-white/10 hover:border-gold transition-colors">عربي</a>
+      <a href="contact.html" class="btn-primary hidden md:inline-flex">Hire Me</a>
+      <button class="md:hidden text-2xl" id="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+  <main class="flex-grow flex items-center justify-center text-center px-4 pt-32">
+    <div>
+      <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">Coming <span class="text-gold">Soon</span></h1>
+      <p class="text-xl text-ink-2 max-w-2xl mx-auto mb-10">I'm building a suite of free, powerful tools specifically designed for Shopify developers and merchants. Stay tuned!</p>
+      <a href="index.html" class="btn-primary">Back to Home</a>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

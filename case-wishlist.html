@@ -14,6 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -76,8 +77,22 @@
       </div>
     </header>
 
-    <div class="case-screenshot reveal">
-      <img src="assets/snippets/wishlist-pro.png" alt="Wishlist Pro App Admin Dashboard" loading="lazy">
+    <div class="case-slider-section reveal my-12 overflow-hidden">
+      <div class="main-carousel">
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <img src="assets/snippets/wishlist-pro.png" alt="Wishlist Pro App Admin Dashboard" class="w-full h-auto object-cover" loading="lazy">
+        </div>
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <div class="aspect-[16/9] bg-[#1e1b16] flex items-center justify-center border border-white/5">
+            <span class="text-[#5a5040] font-mono text-sm">Wishlist Storefront View</span>
+          </div>
+        </div>
+        <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
+          <div class="aspect-[16/9] bg-[#1e1b16] flex items-center justify-center border border-white/5">
+            <span class="text-[#5a5040] font-mono text-sm">Analytics Dashboard</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="case-metrics reveal">
@@ -148,7 +163,7 @@
         <div class="flex gap-6">
           <a href="index.html#about" class="footer-link">About</a>
           <a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a>
-          <a href="https://www.instagram.com/yousef.shopify/" target="_blank" class="footer-link">Instagram</a>
+          <a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a>
           <a href="index-ar.html" class="footer-link">Arabic Version</a>
         </div>
       </div>
@@ -157,6 +172,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="main.js"></script>
 </body>
 

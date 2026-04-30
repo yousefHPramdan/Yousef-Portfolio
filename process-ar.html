@@ -1,17 +1,298 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>العملية - ملف يوسف</title>
-  <meta name="description" content="نظرة عامة على عملية التطوير لمشاريع شوبيفاي." />
-  <link rel="stylesheet" href="style.css" />
-  <style>body{font-family: Cairo, sans-serif;}</style>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>العملية | يوسف رمضان | مطور شوبيفاي</title>
+  <meta name="description" content="عملية تطوير شوبيفاي المكونة من 6 خطوات: الاستكشاف، التصميم، البناء، الاختبار، الإطلاق، والدعم. شفافة ومركزة على العميل.">
+  <meta property="og:title" content="عمليتي | يوسف رمضان | مطور شوبيفاي">
+  <meta property="og:description" content="عملية شفافة من 6 خطوات لبناء متاجر شوبيفاي متميزة من الوجيز حتى الإطلاق.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Cairo','sans-serif'],body:['Cairo','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+    .step-connector { width:2px; height:60px; background:linear-gradient(to bottom,rgba(212,168,67,0.4),rgba(212,168,67,0.05)); margin:0 auto; }
+    .step-card { background:#1e1b16; border:1px solid rgba(242,237,228,0.07); border-radius:20px; padding:36px; position:relative; overflow:hidden; transition:border-color 0.3s, transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s; text-align: right; }
+    .step-card::before { content:''; position:absolute; right:0; top:0; bottom:0; width:3px; background:linear-gradient(to bottom,#d4a843,#c95f3a); transform:scaleY(0); transform-origin:top; transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); }
+    .step-card:hover { border-color:rgba(212,168,67,0.2); transform:translateY(-4px); box-shadow:0 20px 48px rgba(212,168,67,0.07); }
+    .step-card:hover::before { transform:scaleY(1); }
+    .step-num { font-family:'Cairo',sans-serif; font-size:4rem; font-weight:800; line-height:1; background:linear-gradient(135deg,#d4a843,#c95f3a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; opacity:0.25; margin-bottom:12px; }
+  </style>
 </head>
-<body>
-  <header class="container"><h1>العملية</h1></header>
-  <main class="container">
-    <p>هذه صفحة افتراضية لعرض عملية التطوير للمشاريع، من الاكتشاف والتخطيط إلى الإطلاق.</p>
+<body dir="rtl">
+  <div id="cursor"></div><div id="cursor-ring"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+  <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index-ar.html" class="nav-logo relative z-[1001]" aria-label="يوسف رمضان Home">يوسف<span class="logo-dot">.</span></a>
+      <ul id="nav-links" role="list">
+        <li><a href="services-ar.html" class="nav-link">الخدمات</a></li>
+        <li><a href="work-ar.html" class="nav-link">الأعمال</a></li>
+        <li><a href="store-ar.html" class="nav-link">المتجر</a></li>
+        <li><a href="devtools-ar.html" class="nav-link">أدوات المطورين</a></li>
+        <li><a href="blog-ar.html" class="nav-link">المدونة</a></li>
+        <li><a href="process-ar.html" class="nav-link active">العملية</a></li>
+        <li><a href="pricing-ar.html" class="nav-link">الأسعار</a></li>
+        <li><a href="contact-ar.html" class="nav-link">اتصل</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="contact-ar.html" class="nav-cta desktop magnetic">لنتحدث</a>
+        <a href="process.html" class="nav-cta desktop magnetic ml-2" style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;" aria-label="Switch language">EN</a>
+        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <div class="eyebrow mb-4">كيف أعمل</div>
+        <h1 class="section-title">عمليتي</h1>
+        <p class="section-sub mx-auto">بسيطة، شفافة، ومركزة على تقديم النتائج في الوقت المحدد.</p>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <section class="py-20">
+      <div class="container max-w-[800px] mx-auto">
+        <div class="flex flex-col gap-0">
+
+          <div class="step-card reveal">
+            <div class="step-num">01</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">الاستكشاف والوجيز</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">نبدأ بمكالمة منظمة أو استبيان لفهم علامتك التجارية، منتجاتك، جمهورك المستهدف، وأهداف عملك. سأطرح الأسئلة الصعبة التي يتجاهلها المطورون الآخرون.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>إرشادات العلامة التجارية والتوجه البصري</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>أبحاث المنافسين والسوق</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>متطلبات الميزات والتكاملات</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>محاذاة الجدول الزمني والميزانية</div>
+            </div>
+          </div>
+
+          <div class="step-connector reveal"></div>
+
+          <div class="step-card reveal">
+            <div class="step-num">02</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">المقترح والنطاق</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">أجهز نطاق عمل مفصلاً، وتفصيلاً للميزات، وجدولاً زمنياً، واقتباس سعر ثابت. لا مفاجآت، لا تمدد في النطاق. كل شيء موثق ومتفق عليه قبل كتابة سطر واحد من الكود.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>قائمة الميزات الكاملة والمخرجات</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>سعر ثابت — لا تكاليف خفية</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تفصيل المعالم أسبوعاً بأسبوع</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>إيداع 50% للبدء</div>
+            </div>
+          </div>
+
+          <div class="step-connector reveal"></div>
+
+          <div class="step-card reveal">
+            <div class="step-num">03</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">تخطيط التصميم</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">قبل كتابة الكود، أخطط لكل صفحة، وكل قسم، وكل تفاعل. يتم مشاركة نماذج أولية أو تصاميم Figma للمراجعة والموافقة — حتى تراها قبل بنائها.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تخطيط هيكلية الصفحات</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>مراجعة تصاميم Figma</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>نظام الألوان، الخطوط والمسافات</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>توافق شاشات الهاتف والحاسوب</div>
+            </div>
+          </div>
+
+          <div class="step-connector reveal"></div>
+
+          <div class="step-card reveal">
+            <div class="step-num">04</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">التطوير</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">كود شوبيفاي Liquid نظيف ومنظم جيداً. أبني على متجر تطوير حتى لا يتم لمس متجرك المباشر أبداً حتى يصبح كل شيء مثالياً. يتم مشاركة تحديثات التقدم الأسبوعية.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>هيكلية Sections 2.0</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>متابعة التقدم الأسبوعية</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تطوير يركز على الهاتف أولاً</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تحسين الأداء مدمج في الكود</div>
+            </div>
+          </div>
+
+          <div class="step-connector reveal"></div>
+
+          <div class="step-card reveal">
+            <div class="step-num">05</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">المراجعة والتنقيح</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">تحصل على وصول كامل لمتجر التطوير للمراجعة. أدرج جولتين من المراجعات لضبط أي شيء يحتاج إلى تعديل. يتم تنفيذ الملاحظات في غضون 48 ساعة.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>جولتان من المراجعات مشمولة</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>تنفيذ الملاحظات خلال 48 ساعة</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>اختبار على مختلف المتصفحات والأجهزة</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>الموافقة النهائية قبل الإطلاق</div>
+            </div>
+          </div>
+
+          <div class="step-connector reveal"></div>
+
+          <div class="step-card reveal">
+            <div class="step-num">06</div>
+            <h3 class="font-heading text-[1.3rem] font-bold mb-3">الإطلاق والتسليم</h3>
+            <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">بمجرد الموافقة، أنشر القالب مباشرة، وأقوم بإعداد DNS والنطاقات، وأجري فحصاً نهائياً للأداء. تتلقى وثيقة تسليم كاملة، بالإضافة إلى مكالمة تدريب.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>النشر المباشر وإعداد DNS</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>فحص Lighthouse و Core Web Vitals</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>وثائق التسليم الكاملة</div>
+              <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>مكالمة تدريب لمدة 30 دقيقة</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ONBOARDING -->
+    <section class="py-24" style="background:#161410">
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <div class="eyebrow mb-4">أول 24 ساعة</div>
+            <h2 class="section-title text-right mb-6">تجربة انضمام سلسة</h2>
+            <p class="text-[#a09880] text-[1.05rem] leading-[1.8] mb-8">
+              بمجرد دفع العربون، لا نضيع الوقت. تم تصميم نظام الانضمام الخاص بي للتخلص من جميع العقبات التقنية حتى نتمكن من التركيز على البناء.
+            </p>
+            <div class="flex flex-col gap-6">
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">١</div>
+                <div>
+                  <h4 class="font-heading font-bold text-ink mb-1">وصول المتعاون</h4>
+                  <p class="text-[#a09880] text-[0.88rem]">سأرسل طلباً إلى لوحة تحكم شوبيفاي الخاصة بك. لا حاجة لمشاركة كلمات المرور، مما يحافظ على أمان حسابك.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">٢</div>
+                <div>
+                  <h4 class="font-heading font-bold text-ink mb-1">تسليم الأصول</h4>
+                  <p class="text-[#a09880] text-[0.88rem]">مجلد مشترك بسيط لشعاراتك، إرشادات علامتك التجارية، والتصوير عالي الجودة لضمان اتساق التصميم.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold font-bold shrink-0">٣</div>
+                <div>
+                  <h4 class="font-heading font-bold text-ink mb-1">قناة التواصل</h4>
+                  <p class="text-[#a09880] text-[0.88rem]">نقوم بإعداد قناة مخصصة على Slack أو WhatsApp أو Trello لإبقاء جميع التحديثات والملاحظات في مكان واحد.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal relative">
+            <div class="aspect-square bg-card border border-ink/5 rounded-3xl p-10 flex flex-col justify-center items-center text-center overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent"></div>
+              <div class="text-[5rem] mb-6">🚀</div>
+              <h3 class="font-heading text-[1.6rem] font-bold mb-4">أسرع عملية إطلاق</h3>
+              <p class="text-[#a09880] text-[0.95rem] mb-8">عملية الانضمام المنظمة تعني أن معظم المشاريع تبدأ في غضون 48 ساعة من الاتصال الأول.</p>
+              <a href="contact-ar.html" class="btn-primary magnetic">ابدأ الآن</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="py-24">
+      <div class="container">
+        <div class="text-center mb-16 reveal">
+          <div class="eyebrow mb-3">الشفافية</div>
+          <h2 class="section-title">أدوات النجاح</h2>
+          <p class="section-sub mx-auto text-[1rem]">مجموعة الأدوات المهنية التي أستخدمها لبناء واجهات متجر شوبيفاي عالمية المستوى.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🛍️</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">Shopify CLI</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">بيئة تطوير محلية</p>
+          </div>
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🧪</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">Liquid</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">قوالب متقدمة</p>
+          </div>
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🌊</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">Tailwind</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">تنسيق CSS فعال</p>
+          </div>
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🪄</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">GSAP</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">حركات واجهة مستخدم</p>
+          </div>
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">🎨</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">Figma</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">تصميم UX/UI</p>
+          </div>
+          <div class="card p-6 flex flex-col items-center text-center group hover:border-gold/30 transition-all">
+            <div class="text-[2.2rem] mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">📈</div>
+            <h4 class="font-heading font-bold text-[0.9rem]">Lighthouse</h4>
+            <p class="text-[0.7rem] text-[#5a5040] mt-1">معايير الأداء</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ME -->
+    <section class="py-24" style="background:#161410">
+      <div class="container">
+        <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">لماذا تعمل معي</div><h2 class="section-title">ما الذي يجعل هذا مختلفاً</h2></div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="why-card reveal"><div class="text-[2rem] mb-4">🗂️</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">عملية منظمة</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">تضمن هياكل إدارة المشاريع المجربة معرفتك دائماً بالجدول الزمني والمسؤوليات والخطوات التالية. تواصل استباقي طوال الوقت.</p></div>
+          <div class="why-card reveal"><div class="text-[2rem] mb-4">🏆</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">خبرة مثبتة</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">تخصص عميق في شوبيفاي. لقد مكنت علامات تجارية مثل Pavo و O2morny و Loading-eg وغيرها من الإطلاق بنجاح.</p></div>
+          <div class="why-card reveal"><div class="text-[2rem] mb-4">💡</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">تسعير شفاف</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">فئات تسعير واضحة ومسبقة للمشاريع الشائعة واقتباسات مفصلة للعمل المخصص. لا رسوم خفية. تركيز على نتائج ملموسة.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+      <div class="container">
+        <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">أسئلة</div><h2 class="section-title">الأسئلة الشائعة</h2></div>
+        <div class="flex flex-col gap-4 max-w-[800px] mx-auto reveal">
+          <div class="faq-item"><button class="faq-q">ما هي عملية الحصول على قالب مخصص؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">سأطرح عليك أسئلة لفهم علامتك التجارية وأهدافك، وأنشئ خطة تصميم، وأبني القالب من الصفر، وأدمجه مع متجرك، وأختبر كل شيء بالكامل قبل الإطلاق.</div></div></div>
+          <div class="faq-item"><button class="faq-q">هل يمكنك تخصيص قالبي الحالي بدلاً من بناء قالب جديد؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">نعم! يمكنني تحسين قالبك الحالي بأقسام مخصصة، وتحسينات في الأداء، وميزات واجهة مستخدم تعزز التحويل دون البدء من الصفر.</div></div></div>
+          <div class="faq-item"><button class="faq-q">كم من الوقت يستغرق بناء متجر مخصص بالكامل؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">يستغرق بناء متجر شوبيفاي مخصص بالكامل عادةً من 3 إلى 6 أسابيع، حسب التعقيد. سنضع جدولاً زمنياً واضحاً خلال مرحلة الاستكشاف.</div></div></div>
+          <div class="faq-item"><button class="faq-q">هل سيكون متجري متوافقاً مع الجوال؟<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">نعم — كل متجر أبنيه يعتمد مبدأ "الجوال أولاً" بشكل صارم. أكثر من 70% من حركة تجارة التجزئة تأتي من الجوال، لذا سيبدو متجرك ويعمل بشكل مثالي على جميع الشاشات.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20" style="background:#161410">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>جاهز للبدء؟</h2>
+          <p>العملية واضحة. النتائج تتحدث عن نفسها. لنبني شيئاً رائعاً.</p>
+          <div class="flex gap-4 justify-center flex-wrap">
+            <a href="contact-ar.html" class="btn-primary magnetic">ابدأ مشروعك</a>
+            <a href="pricing-ar.html" class="btn-secondary magnetic">عرض الأسعار</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <div class="mb-3">
+        <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="footer-link">LinkedIn</a>
+        <a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a>
+        <a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a>
+        <a href="contact-ar.html" class="footer-link">اتصل</a>
+      </div>
+      <p class="text-[0.82rem] text-[#5a5040]">© 2026 يوسف رمضان. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

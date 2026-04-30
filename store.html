@@ -1,116 +1,127 @@
-{
-"@context": "https://schema.org",
-"@type": "Person",
-"name": "Yousef Ramadan",
-"jobTitle": "Front-End Shopify Developer",
-"description": "Browse 33+ ready-to-use Shopify code snippets. Slide carts, countdown timers, upsells, sales pops —
-built to boost your store's conversion rate.",
-"url": "https://youseframadan.me",
-"sameAs": [
-"https://github.com/yousefHPramdan",
-"https://www.instagram.com/yousef.shopify/"
-]
-}
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-  rel="stylesheet">
-<script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
-<link rel="stylesheet" href="style.css">
-<style>
-  .code-block {
-    background: #161410;
-    border: 1px solid rgba(242, 237, 228, 0.08);
-    border-radius: 12px;
-    padding: 20px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    overflow-x: auto;
-    position: relative;
-  }
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
 
-  .code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(242, 237, 228, 0.05);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store | Yousef Ramadan | Shopify Developer</title>
+  <meta name="description"
+    content="Browse 50+ ready-to-use Shopify code snippets to boost your store's conversion rate.">
+  <link rel="icon" href="img/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yousef Ramadan",
+    "jobTitle": "Front-End Shopify Developer",
+    "description": "Browse 50+ ready-to-use Shopify code snippets. Slide carts, countdown timers, upsells, sales pops — built to boost your store's conversion rate.",
+    "url": "https://youseframadan.me",
+    "sameAs": [
+      "https://github.com/yousefHPramdan",
+      "https://www.instagram.com/youpify.dev/"
+    ]
   }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .code-block {
+      background: #161410;
+      border: 1px solid rgba(242, 237, 228, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      position: relative;
+    }
 
-  .sh-keyword {
-    color: #c678dd;
-  }
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(242, 237, 228, 0.05);
+    }
 
-  .sh-string {
-    color: #98c379;
-  }
+    .sh-keyword {
+      color: #c678dd;
+    }
 
-  .sh-function {
-    color: #61afef;
-  }
+    .sh-string {
+      color: #98c379;
+    }
 
-  .sh-comment {
-    color: #5c6370;
-    font-style: italic;
-  }
+    .sh-function {
+      color: #61afef;
+    }
 
-  .sh-variable {
-    color: #e06c75;
-  }
+    .sh-comment {
+      color: #5c6370;
+      font-style: italic;
+    }
 
-  .sh-property {
-    color: #d19a66;
-  }
+    .sh-variable {
+      color: #e06c75;
+    }
 
-  .sh-number {
-    color: #d19a66;
-  }
+    .sh-property {
+      color: #d19a66;
+    }
 
-  .table-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    padding: 16px 24px;
-    border-bottom: 1px solid rgba(242, 237, 228, 0.05);
-    align-items: center;
-  }
+    .sh-number {
+      color: #d19a66;
+    }
 
-  .table-header {
-    background: rgba(212, 168, 67, 0.03);
-    border-radius: 12px 12px 0 0;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: #d4a843;
-  }
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(242, 237, 228, 0.05);
+      align-items: center;
+    }
 
-  .integration-logo {
-    width: 48px;
-    height: 48px;
-    background: #1e1b16;
-    border: 1px solid rgba(242, 237, 228, 0.08);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    filter: grayscale(1);
-    opacity: 0.6;
-  }
+    .table-header {
+      background: rgba(212, 168, 67, 0.03);
+      border-radius: 12px 12px 0 0;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #d4a843;
+    }
 
-  .integration-logo:hover {
-    filter: grayscale(0);
-    opacity: 1;
-    border-color: #d4a843;
-    transform: translateY(-4px);
-  }
-</style>
+    .integration-logo {
+      width: 48px;
+      height: 48px;
+      background: #1e1b16;
+      border: 1px solid rgba(242, 237, 228, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      filter: grayscale(1);
+      opacity: 0.6;
+    }
+
+    .integration-logo:hover {
+      filter: grayscale(0);
+      opacity: 1;
+      border-color: #d4a843;
+      transform: translateY(-4px);
+    }
+  </style>
 </head>
 
 <body>
@@ -159,8 +170,8 @@ built to boost your store's conversion rate.",
     <div class="page-header">
       <div class="container">
         <div class="eyebrow mb-4">Premium Features | Premium Snippets</div>
-        <h1 class="section-title">Shopioso Store</h1>
-        <p class="section-sub mx-auto">Over 33 ready-to-use Shopify customizations. Copy, paste, and sell more.</p>
+        <h1 class="section-title">Youpify Store</h1>
+        <p class="section-sub mx-auto">Over 50 ready-to-use Shopify customizations. Copy, paste, and sell more.</p>
         <p class="text-[0.82rem] mt-3" style="color:#d4a843"><em>Premium Shopify Snippets — Built and tested personally
             by me.</em></p>
       </div>
@@ -169,329 +180,34 @@ built to boost your store's conversion rate.",
     <section class="py-16">
       <div class="container">
 
-        <!-- FILTER BAR -->
-        <div class="flex flex-wrap justify-center gap-3 mb-14 reveal">
-          <button class="filter-btn active" data-filter="all">All (33)</button>
-          <button class="filter-btn" data-filter="cart">🛒 Cart (7)</button>
-          <button class="filter-btn" data-filter="products">📦 Products (9)</button>
-          <button class="filter-btn" data-filter="sales">🚀 Sales &amp; CRO (5)</button>
-          <button class="filter-btn" data-filter="design">🎨 Design &amp; UX (10)</button>
-          <button class="filter-btn" data-filter="social">💬 Social (5)</button>
-          <button class="filter-btn" data-filter="apps">Apps</button>
-          <button class="filter-btn" data-filter="performance">Performance</button>
+        <!-- FEATURED SLIDER -->
+        <div class="mb-24 reveal">
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-heading font-bold">Featured Best-Sellers</h2>
+            <span class="text-gold text-sm font-bold uppercase tracking-widest flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+              Top Rated
+            </span>
+          </div>
+          <div id="featured-grid">
+            <!-- Featured snippets injected by data-loader.js -->
+          </div>
+        </div>        <!-- FILTER BAR -->
+        <div class="mb-14 reveal">
+          <div class="filter-carousel">
+            <button class="filter-btn active carousel-cell mr-3 min-w-max" data-filter="all">All (63)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="cart">🛒 Cart (10)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="products">📦 Products (14)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="sales">🚀 Sales & CRO (9)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="design">🎨 Design & UX (14)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="social">💬 Social (7)</button>
+            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="apps">Apps (5)</button>
+            <button class="filter-btn carousel-cell min-w-max" data-filter="performance">Performance (4)</button>
+          </div>
         </div>
 
-        <!-- GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="snippets-grid">
-
-          <!-- CART -->
-          <div class="snippet-card reveal" data-category="cart"><span class="snippet-badge badge-pop">Popular</span><img
-              src="assets/snippets/cart-progress.png" class="snippet-img" alt="" loading="lazy">
-            <h3>Free Shipping Progress Bar</h3>
-            <p>Shows how much more to spend to unlock free shipping. Drives AOV every single time.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$18.50</span><span
-                class="price-old">$39.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/upsell-popup.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Cart Upsell / Cross-sell</h3>
-            <p>Displays related product suggestions in the side drawer at the right moment to increase AOV.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$59.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/free-gift-unlocker.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Free Gift Unlocker</h3>
-            <p>Auto-adds a free gift to the cart once the customer hits a spending threshold. Native Liquid.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/cart-savings.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>"You Saved" Calculator</h3>
-            <p>Highlights total order savings in the cart summary to push customers to complete their purchase.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$25.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/cart-terms.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Cart Terms &amp; Conditions Checkbox</h3>
-            <p>Customer must accept terms before the checkout button appears. Essential for European stores.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/empty-cart.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Empty Cart Recommender</h3>
-            <p>When the cart is empty, bestsellers appear automatically instead of a blank page. Never miss a sale.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$39.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="cart"><img src="assets/snippets/estimated-delivery.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Estimated Delivery Date in Cart</h3>
-            <p>"Order now and receive between May 10–14th" — builds trust and reduces checkout abandonment.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$29.00</span></div>
-          </div>
-
-          <!-- PRODUCTS -->
-          <div class="snippet-card reveal" data-category="products"><span
-              class="snippet-badge badge-pop">Popular</span><img src="assets/snippets/sticky-atc.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Sticky Add To Cart</h3>
-            <p>ATC bar sticks to the bottom of the screen as customers scroll — especially powerful on mobile.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$29.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/low-stock-bar.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Low Stock Scarcity Bar</h3>
-            <p>"Hurry! Only 3 items left." A visual inventory bar that triggers based on real stock levels.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$39.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><span class="snippet-badge badge-new">New</span><img
-              src="assets/snippets/fbt-section.png" class="snippet-img" alt="" loading="lazy">
-            <h3>Frequently Bought Together</h3>
-            <p>Amazon-style bundling — lets customers add 3 products in one click directly from the product page.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$24.90</span><span
-                class="price-old">$65.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/variant-swatches.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Variant Image Swatches</h3>
-            <p>Turns boring color/size dropdowns into visual thumbnail buttons. Cleaner UX, higher conversion.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/product-tabs.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Product Accordions / Tabs</h3>
-            <p>Collapse long descriptions, shipping policies, and returns into clean accordion dropdowns.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$39.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/size-chart.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Size Chart Popup</h3>
-            <p>A button next to sizes opens a modal with the full size chart. Reduces returns and refund requests.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/visitor-counter.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Live Visitor Counter</h3>
-            <p>"24 people are viewing this right now." Creates social proof and demand — real or simulated.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$35.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/back-in-stock.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Back-in-Stock Notification Form</h3>
-            <p>Replaces the disabled ATC button with an email form — captures revenue from out-of-stock products.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$49.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="products"><img src="assets/snippets/trust-badges.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Dynamic Trust Badges</h3>
-            <p>Customizable payment icons (Visa, PayPal, etc.) appear directly below the checkout button.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-
-          <!-- SALES & CRO -->
-          <div class="snippet-card reveal" data-category="sales"><img src="assets/snippets/volume-discount.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Tiered Volume Discount</h3>
-            <p>"Buy 1 for $20 | Buy 2 get 10% off | Buy 3 get 20% off" — drives bulk orders without an app.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$49.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="sales"><img src="assets/snippets/countdown-timer.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Product Page Countdown Timer</h3>
-            <p>Hours, minutes, seconds ticking down on the offer. One of the strongest urgency tools available.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$29.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="sales"><img src="assets/snippets/sales-pop.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Sales Pop Notifications</h3>
-            <p>"Mohammed from Saudi Arabia just bought this 2 minutes ago." Builds trust through social proof.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$35.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="sales"><img src="assets/snippets/promo-code.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Click-to-Copy Promo Code</h3>
-            <p>Customer clicks the banner → discount code copies automatically. Zero friction to the checkout.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="sales"><img src="assets/snippets/exit-intent.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Exit-Intent Popup</h3>
-            <p>A popup fires when the cursor leaves the page, offering a last-chance discount to recovering visitors.
-            </p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-
-          <!-- DESIGN & UX -->
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/marquee-bar.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Marquee Announcement Bar</h3>
-            <p>A scrolling news ticker: "Free Shipping · Cash on Delivery · Free Returns." Always visible.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$25.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/mobile-nav.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Mobile Bottom Navigation Bar</h3>
-            <p>App-style bottom bar (Home, Cart, Search, Account) for smooth mobile browsing.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$24.90</span><span
-                class="price-old">$59.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/mega-menu.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Mega Menu Builder</h3>
-            <p>Transforms the standard header into a full mega menu with category images and professional layout.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$29.90</span><span
-                class="price-old">$89.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/infinite-scroll.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Infinite Scroll for Collections</h3>
-            <p>Products load automatically as the customer scrolls — no more clicking through page 2, 3, 4.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/ba-slider.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Before &amp; After Image Slider</h3>
-            <p>Drag-to-compare slider. Perfect for skincare, cleaning products, and any transformation story.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$35.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/lookbook.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Shoppable Lookbook (Hotspots)</h3>
-            <p>Dots (+) on lifestyle images reveal product details when clicked. Converts inspiration to purchase.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$49.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/quick-view.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Quick View Popup</h3>
-            <p>"Quick Look" on collection pages — customers add to cart without ever leaving the collection.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$35.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/preloader.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Page Preloader</h3>
-            <p>Animated logo or spinner that fills the screen while the page loads — adds a premium feel.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/back-to-top.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Back to Top Button</h3>
-            <p>Appears after scrolling down — one click teleports customers back to the top of any page.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$15.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/age-verification.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Age Verification Popup</h3>
-            <p>"Are you 18+?" Gate required for vape, tobacco, and other age-restricted product stores.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$29.00</span></div>
-          </div>
-
-          <!-- SOCIAL -->
-          <div class="snippet-card reveal" data-category="social"><img src="assets/snippets/whatsapp.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Floating WhatsApp Chat Button</h3>
-            <p>A floating WhatsApp icon opens direct support chat — instant trust builder for MENA stores.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="social"><img src="assets/snippets/social-share.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Social Share Buttons</h3>
-            <p>Clean share buttons for Twitter, Pinterest, Facebook, and Telegram directly on product pages.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$9.90</span><span
-                class="price-old">$19.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="social"><img src="assets/snippets/faq-layout.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Custom FAQ Page Layout</h3>
-            <p>Ready-made FAQ page template with a smooth accordion design. Handles pre-sale questions instantly.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="social"><img src="assets/snippets/features-banner.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Store Features Banner</h3>
-            <p>3–4 icon + text blocks (Fast Shipping, High Quality, 24/7 Support) — drop anywhere in the store.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$14.90</span><span
-                class="price-old">$35.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="social"><img src="assets/snippets/currency-selector.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Auto-Select User Currency</h3>
-            <p>Detects the visitor's country and automatically switches the store currency — no manual switching.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$49.00</span></div>
-          </div>
-
-          <!-- APPS -->
-          <div class="snippet-card reveal" data-category="apps"><span class="snippet-badge badge-pop">Popular</span><img
-              src="assets/snippets/wishlist-pro.png" class="snippet-img" alt="" loading="lazy">
-            <h3>Wishlist Pro App</h3>
-            <p>Full Shopify embedded app — save products, share wishlists, back-in-stock email notifications.</p>
-            <div class="flex items-center gap-3"><span class="price-now">Custom</span></div>
-          </div>
-
-          <!-- PERFORMANCE -->
-          <div class="snippet-card reveal" data-category="performance"><span
-              class="snippet-badge badge-new">New</span><img src="assets/snippets/speed-booster.png" class="snippet-img"
-              alt="" loading="lazy">
-            <h3>Speed Booster Snippet</h3>
-            <p>Lazy-load scripts, defer third-party apps, and improve Core Web Vitals — without touching your theme.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.00</span><span
-                class="price-old">$59.00</span></div>
-          </div>
-
-          <!-- ADVANCED TOOLS -->
-          <div class="snippet-card reveal" data-category="performance"><span
-              class="snippet-badge badge-pop">Expert</span><img src="assets/snippets/perf-analytics.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Liquid Telemetry Dashboard</h3>
-            <p>Inject a performance monitoring dashboard into your store — track actual Liquid render times per section
-              for merchants.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$44.90</span><span
-                class="price-old">$120.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="design"><img src="assets/snippets/size-chart.png"
-              class="snippet-img" alt="" loading="lazy">
-            <h3>Advanced Size Guide Drawer</h3>
-            <p>Custom size chart that pulls from Metafields/Metaobjects — appears as a smooth side drawer with tabbed
-              charts.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$19.90</span><span
-                class="price-old">$45.00</span></div>
-          </div>
-          <div class="snippet-card reveal" data-category="apps"><span class="snippet-badge badge-new">AI</span><img
-              src="assets/snippets/upsell-modal.png" class="snippet-img" alt="" loading="lazy">
-            <h3>AI Product Upsell UI</h3>
-            <p>Modern "Complete the Look" UI logic that integrates with Shopify Search &amp; Discovery for AI
-              recommendations.</p>
-            <div class="flex items-center gap-3"><span class="price-now">$24.90</span><span
-                class="price-old">$55.00</span></div>
-          </div>
+        <!-- CAROUSEL (Rendered Dynamically) -->
+        <div class="snippets-carousel" id="snippets-grid">
 
         </div>
 
@@ -668,31 +384,9 @@ built to boost your store's conversion rate.",
       <span>· Let's Talk</span></span></a>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('#snippets-grid .snippet-card');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filter = btn.getAttribute('data-filter');
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          cards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-              card.style.display = 'block';
-              if (typeof gsap !== 'undefined') {
-                gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, clearProps: 'all' });
-              }
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="data.js"></script>
+  <script src="data-loader.js"></script>
   <script src="main.js"></script>
 </body>
 

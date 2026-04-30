@@ -40,6 +40,7 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <script>tailwind.config = { theme: { extend: { fontFamily: { heading: ['Syne', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }, colors: { bg: '#0e0d0b', surface: '#161410', card: '#1e1b16', 'card-h': '#26221b', ink: '#f2ede4', 'ink-2': '#a09880', 'ink-3': '#5a5040', gold: '#d4a843', 'gold-l': '#e8c878', terra: '#c95f3a', jade: '#4ec994' } } } }</script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -266,26 +267,34 @@
           <h2 class="section-title">Impact &amp; Metrics</h2>
           <p class="section-sub mx-auto mt-4">Numbers are what actually sell. Here's how I've helped my clients.</p>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 reveal">
-          <div class="impact-card">
-            <div class="impact-number" aria-label="40 percent">+40%</div>
-            <div class="text-[#a09880] text-[0.85rem] mb-1">Conversion Uplift (PAVO)</div>
-            <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* As reported by client</div>
+        <div class="main-carousel reveal">
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/4 px-3">
+            <div class="impact-card">
+              <div class="impact-number" aria-label="40 percent">+40%</div>
+              <div class="text-[#a09880] text-[0.85rem] mb-1">Conversion Uplift (PAVO)</div>
+              <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* As reported by client</div>
+            </div>
           </div>
-          <div class="impact-card">
-            <div class="impact-number" aria-label="Less than 2 seconds">&lt;2s</div>
-            <div class="text-[#a09880] text-[0.85rem] mb-1">Avg. Page Load Time</div>
-            <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Core Web Vitals optimized</div>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/4 px-3">
+            <div class="impact-card">
+              <div class="impact-number" aria-label="Less than 2 seconds">&lt;2s</div>
+              <div class="text-[#a09880] text-[0.85rem] mb-1">Avg. Page Load Time</div>
+              <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Core Web Vitals optimized</div>
+            </div>
           </div>
-          <div class="impact-card">
-            <div class="impact-number" aria-label="22 percent">+22%</div>
-            <div class="text-[#a09880] text-[0.85rem] mb-1">AOV via Custom Upsells</div>
-            <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Post-launch audit results</div>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/4 px-3">
+            <div class="impact-card">
+              <div class="impact-number" aria-label="22 percent">+22%</div>
+              <div class="text-[#a09880] text-[0.85rem] mb-1">AOV via Custom Upsells</div>
+              <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Post-launch audit results</div>
+            </div>
           </div>
-          <div class="impact-card">
-            <div class="impact-number" aria-label="95 plus">95+</div>
-            <div class="text-[#a09880] text-[0.85rem] mb-1">Lighthouse Score</div>
-            <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Desktop & Mobile avg.</div>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/4 px-3">
+            <div class="impact-card">
+              <div class="impact-number" aria-label="95 plus">95+</div>
+              <div class="text-[#a09880] text-[0.85rem] mb-1">Lighthouse Score</div>
+              <div class="text-[#5a5040] text-[0.65rem] uppercase tracking-tighter">* Desktop & Mobile avg.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -375,112 +384,120 @@
           <a href="work.html" class="btn-secondary magnetic mb-2">View All Work</a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="main-carousel reveal">
           <!-- PROJECT 1 -->
-          <a href="case-tiavola.html" class="group block relative overflow-hidden rounded-3xl reveal md:col-span-2"
-            style="text-decoration:none">
-            <div class="aspect-[16/10] md:aspect-[2/1] overflow-hidden">
-              <img src="img/fullpage_screenshot_part_1 (1).png" alt="Tiavola Storefront Preview"
-                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                loading="lazy">
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-            </div>
-            <div
-              class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div class="flex gap-2 mb-3">
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
-                  Plus</span>
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Lead
-                  Developer</span>
+          <div class="carousel-cell w-full px-3">
+            <a href="case-tiavola.html" class="group block relative overflow-hidden rounded-3xl"
+              style="text-decoration:none">
+              <div class="aspect-[16/10] md:aspect-[2/1] overflow-hidden">
+                <img src="img/fullpage_screenshot_part_1 (1).png" alt="Tiavola Storefront Preview"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  loading="lazy">
               </div>
-              <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Tiavola</h3>
-              <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                Leading frontend architecture for a high-growth Shopify Plus storefront.</p>
-            </div>
-          </a>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex gap-2 mb-3">
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
+                    Plus</span>
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Lead
+                    Developer</span>
+                </div>
+                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Tiavola</h3>
+                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Leading frontend architecture for a high-growth Shopify Plus storefront.</p>
+              </div>
+            </a>
+          </div>
 
           <!-- PROJECT 2 -->
-          <a href="case-bypavo.html" class="group block relative overflow-hidden rounded-3xl reveal"
-            style="text-decoration:none">
-            <div class="aspect-[16/10] overflow-hidden">
-              <img src="img/PAVO.png" alt="ByPavo Storefront Preview"
-                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                loading="lazy">
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-            </div>
-            <div
-              class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div class="flex gap-2 mb-3">
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-jade/10 text-jade border border-jade/20 rounded-full backdrop-blur-md">CRO</span>
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Luxury
-                  Fashion</span>
+          <div class="carousel-cell w-full sm:w-1/2 px-3">
+            <a href="case-bypavo.html" class="group block relative overflow-hidden rounded-3xl"
+              style="text-decoration:none">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img src="img/PAVO.png" alt="ByPavo Storefront Preview"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  loading="lazy">
               </div>
-              <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">ByPavo</h3>
-              <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                Premium fashion store with a focus on high-performance and conversion optimization.</p>
-            </div>
-          </a>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex gap-2 mb-3">
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-jade/10 text-jade border border-jade/20 rounded-full backdrop-blur-md">CRO</span>
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Luxury
+                    Fashion</span>
+                </div>
+                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">ByPavo</h3>
+                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Premium fashion store with a focus on high-performance and conversion optimization.</p>
+              </div>
+            </a>
+          </div>
 
           <!-- PROJECT 3 -->
-          <a href="case-loading.html" class="group block relative overflow-hidden rounded-3xl reveal"
-            style="text-decoration:none">
-            <div class="aspect-[16/10] overflow-hidden">
-              <img src="img/loading.png" alt="Loading-eg Storefront Preview"
-                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                loading="lazy">
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-            </div>
-            <div
-              class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div class="flex gap-2 mb-3">
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 text-ink border border-white/20 rounded-full backdrop-blur-md">Retail</span>
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Multi-Brand</span>
+          <div class="carousel-cell w-full sm:w-1/2 px-3">
+            <a href="case-loading.html" class="group block relative overflow-hidden rounded-3xl"
+              style="text-decoration:none">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img src="img/loading.png" alt="Loading-eg Storefront Preview"
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  loading="lazy">
               </div>
-              <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Loading-eg</h3>
-              <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                Complex multi-brand catalog with advanced filtering and seamless UX.</p>
-            </div>
-          </a>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex gap-2 mb-3">
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 text-ink border border-white/20 rounded-full backdrop-blur-md">Retail</span>
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Multi-Brand</span>
+                </div>
+                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Loading-eg</h3>
+                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Complex multi-brand catalog with advanced filtering and seamless UX.</p>
+              </div>
+            </a>
+          </div>
 
           <!-- PROJECT 4 -->
-          <a href="case-wishlist.html" class="group block relative overflow-hidden rounded-3xl reveal md:col-span-2"
-            style="text-decoration:none">
-            <div
-              class="aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-gradient-to-br from-[#1e1b16] to-[#d4a843]/20 flex items-center justify-center">
-              <div class="text-center z-10 opacity-30 group-hover:opacity-50 transition-opacity">
-                <span class="text-[4rem] font-bold font-heading text-white tracking-tighter">APP UI</span>
+          <div class="carousel-cell w-full px-3">
+            <a href="case-wishlist.html" class="group block relative overflow-hidden rounded-3xl"
+              style="text-decoration:none">
+              <div
+                class="aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-gradient-to-br from-[#1e1b16] to-[#d4a843]/20 flex items-center justify-center">
+                <div class="text-center z-10 opacity-30 group-hover:opacity-50 transition-opacity">
+                  <span class="text-[4rem] font-bold font-heading text-white tracking-tighter">APP UI</span>
+                </div>
               </div>
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-            </div>
-            <div
-              class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-              <div class="flex gap-2 mb-3">
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
-                  App</span>
-                <span
-                  class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">React
-                  / Node</span>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
               </div>
-              <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Wishlist Pro</h3>
-              <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                Full-stack Shopify app development delivering native-feel admin extensions.</p>
-            </div>
-          </a>
+              <div
+                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex gap-2 mb-3">
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
+                    App</span>
+                  <span
+                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">React
+                    / Node</span>
+                </div>
+                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Wishlist Pro</h3>
+                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Full-stack Shopify app development delivering native-feel admin extensions.</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -496,51 +513,57 @@
           <a href="blog.html" class="btn-secondary magnetic mb-2">Read All Posts</a>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="main-carousel reveal">
           <!-- POST 1: Authority -->
-          <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="card p-0 overflow-hidden reveal group block" style="text-decoration:none">
-            <div class="p-6 border-l-4 border-gold h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-[0.7rem] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">Insights</span>
-                <span class="text-[0.75rem] text-[#5a5040]">Just Now</span>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
+              <div class="p-6 border-l-4 border-gold h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">Insights</span>
+                  <span class="text-[0.75rem] text-[#5a5040]">Just Now</span>
+                </div>
+                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">I Audited 50+ Shopify Stores This Year</h3>
+                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
+                  Here is what almost all had in common: LCP above 4s, no social proof, 75%+ abandon rate, broken mobile...
+                </p>
+                <span class="text-[0.85rem] font-bold text-gold flex items-center gap-2">Read on LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span>
               </div>
-              <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">I Audited 50+ Shopify Stores This Year</h3>
-              <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                Here is what almost all had in common: LCP above 4s, no social proof, 75%+ abandon rate, broken mobile...
-              </p>
-              <span class="text-[0.85rem] font-bold text-gold flex items-center gap-2">Read on LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span>
-            </div>
-          </a>
+            </a>
+          </div>
 
           <!-- POST 2: Case Study -->
-          <a href="case-tiavola.html" class="card p-0 overflow-hidden reveal group block" style="text-decoration:none; transition-delay: 0.1s;">
-            <div class="p-6 border-l-4 border-jade h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-[0.7rem] font-bold uppercase tracking-widest text-jade bg-jade/10 px-2 py-1 rounded">Case Study</span>
-                <span class="text-[0.75rem] text-[#5a5040]">Recently</span>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="case-tiavola.html" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
+              <div class="p-6 border-l-4 border-jade h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-jade bg-jade/10 px-2 py-1 rounded">Case Study</span>
+                  <span class="text-[0.75rem] text-[#5a5040]">Recently</span>
+                </div>
+                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Lighthouse 41 to 93 in One Week</h3>
+                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
+                  Client store scored 41 on Lighthouse. Spending $8K/month on ads. Traffic but no sales. See how I fixed it.
+                </p>
+                <span class="text-[0.85rem] font-bold text-jade flex items-center gap-2">View Portfolio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </div>
-              <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Lighthouse 41 to 93 in One Week</h3>
-              <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                Client store scored 41 on Lighthouse. Spending $8K/month on ads. Traffic but no sales. See how I fixed it.
-              </p>
-              <span class="text-[0.85rem] font-bold text-jade flex items-center gap-2">View Portfolio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </div>
-          </a>
+            </a>
+          </div>
 
           <!-- POST 6: Hot Take -->
-          <a href="contact.html" class="card p-0 overflow-hidden reveal group block" style="text-decoration:none; transition-delay: 0.2s;">
-            <div class="p-6 border-l-4 border-terra h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-[0.7rem] font-bold uppercase tracking-widest text-terra bg-terra/10 px-2 py-1 rounded">Hot Take</span>
-                <span class="text-[0.75rem] text-[#5a5040]">Trending</span>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="contact.html" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
+              <div class="p-6 border-l-4 border-terra h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-terra bg-terra/10 px-2 py-1 rounded">Hot Take</span>
+                  <span class="text-[0.75rem] text-[#5a5040]">Trending</span>
+                </div>
+                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Most Shopify Apps Hurt Your Store</h3>
+                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
+                  Every app adds scripts, slows load time, and costs $15-$50/month. Better approach: build it in Liquid.
+                </p>
+                <span class="text-[0.85rem] font-bold text-terra flex items-center gap-2">Let's audit your apps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
               </div>
-              <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Most Shopify Apps Hurt Your Store</h3>
-              <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                Every app adds scripts, slows load time, and costs $15-$50/month. Better approach: build it in Liquid.
-              </p>
-              <span class="text-[0.85rem] font-bold text-terra flex items-center gap-2">Let's audit your apps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -548,53 +571,59 @@
     <!-- MINI SECTIONS ROW -->
     <section class="py-32">
       <div class="container">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <a href="services.html" class="card p-8 reveal group" style="text-decoration:none">
-            <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                </path>
-              </svg>
-            </div>
-            <h3 class="font-heading font-bold text-[1.15rem] mb-2">Services</h3>
-            <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Store setup, theme dev, app builds, migrations,
-              and CRO strategy.</p>
-            <span
-              class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Explore
-              →</span>
-          </a>
-          <a href="work.html" class="card p-8 reveal group" style="text-decoration:none">
-            <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-            </div>
-            <h3 class="font-heading font-bold text-[1.15rem] mb-2">Selected Work</h3>
-            <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Real stores and apps I've designed and built for
-              clients across Egypt and beyond.</p>
-            <span
-              class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">View
-              Projects →</span>
-          </a>
-          <a href="store.html" class="card p-8 reveal group" style="text-decoration:none">
-            <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
-              </svg>
-            </div>
-            <h3 class="font-heading font-bold text-[1.15rem] mb-2">Shopioso Store</h3>
-            <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">33+ ready-to-use Shopify code snippets to boost
-              your store's conversion rate.</p>
-            <span
-              class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Browse
-              Snippets →</span>
-          </a>
+        <div class="main-carousel reveal">
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="services.html" class="card p-8 group h-full block" style="text-decoration:none">
+              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Services</h3>
+              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Store setup, theme dev, app builds, migrations,
+                and CRO strategy.</p>
+              <span
+                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Explore
+                →</span>
+            </a>
+          </div>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="work.html" class="card p-8 group h-full block" style="text-decoration:none">
+              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Selected Work</h3>
+              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Real stores and apps I've designed and built for
+                clients across Egypt and beyond.</p>
+              <span
+                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">View
+                Projects →</span>
+            </a>
+          </div>
+          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
+            <a href="store.html" class="card p-8 group h-full block" style="text-decoration:none">
+              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Youpify Store</h3>
+              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">50+ ready-to-use Shopify code snippets to boost
+                your store's conversion rate.</p>
+              <span
+                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Browse
+                Snippets →</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -632,10 +661,7 @@
             <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
             LinkedIn
           </a>
-          <a href="https://www.facebook.com/Group" target="_blank" class="platform-badge holo-card" data-platform="facebook">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
-            Facebook
-          </a>
+
         </div>
       </div>
     </section>
@@ -711,6 +737,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="main.js"></script>
 </body>
 

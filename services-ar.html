@@ -15,6 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Cairo','sans-serif'],body:['Cairo','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
   <link rel="stylesheet" href="style.css">
+  <!-- Flickity -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,7 +28,7 @@
     "url": "https://youseframadan.me",
     "sameAs": [
       "https://github.com/yousefHPramdan",
-      "https://www.instagram.com/yousef.shopify/"
+      "https://www.instagram.com/youpify.dev/"
     ]
   }
   </script>
@@ -114,90 +117,102 @@
 <!-- SERVICES GRID -->
 <section class="py-32">
   <div class="container">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="main-carousel" role="list">
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">إعداد المتجر</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تهيئة كاملة لمتجر شوبيفاي من الصفر — إعداد القالب، الصفحات الأساسية، القوائم، المجموعات، المنتجات، وإعدادات الدفع والشحن. متجر جاهز للبيع من اليوم الأول.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>اختيار وتهيئة القالب المناسب</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>الصفحات الأساسية: الرئيسية، اتصل بنا، من نحن، السياسات</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إضافة المنتجات والمجموعات وتصميم القوائم</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إعداد بوابات الدفع وطرق الشحن</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">إعداد المتجر</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تهيئة كاملة لمتجر شوبيفاي من الصفر — إعداد القالب، الصفحات الأساسية، القوائم، المجموعات، المنتجات، وإعدادات الدفع والشحن. متجر جاهز للبيع من اليوم الأول.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>اختيار وتهيئة القالب المناسب</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>الصفحات الأساسية: الرئيسية، اتصل بنا، من نحن، السياسات</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إضافة المنتجات والمجموعات وتصميم القوائم</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إعداد بوابات الدفع وطرق الشحن</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">النقل بين المنصات</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">انقل متجرك بسلاسة من ووكومرس، ماجينتو، أو أي منصة أخرى إلى شوبيفاي. يتم نقل المنتجات والعملاء وتاريخ الطلبات دون فقدان أي بيانات.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>النقل من ووكومرس / ماجينتو / بيج كومرس</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>نقل كامل لبيانات المنتجات والعملاء</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>الحفاظ على بنية الروابط وتحويلات SEO</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>خطة نقل تضمن عدم توقف المتجر</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">النقل بين المنصات</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">انقل متجرك بسلاسة من ووكومرس، ماجينتو، أو أي منصة أخرى إلى شوبيفاي. يتم نقل المنتجات والعملاء وتاريخ الطلبات دون فقدان أي بيانات.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>النقل من ووكومرس / ماجينتو / بيج كومرس</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>نقل كامل لبيانات المنتجات والعملاء</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>الحفاظ على بنية الروابط وتحويلات SEO</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>خطة نقل تضمن عدم توقف المتجر</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير القوالب</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">قوالب شوبيفاي مخصصة مبنية من الصفر أو تعديلات عميقة على قوالب حالية. تصاميم دقيقة واحترافية تعكس علامتك التجارية وتحول الزوار إلى عملاء.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>بنية Sections 2.0 الحديثة</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>استخدام Metafields و Metaobjects</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحريكات GSAP وتفاعلات دقيقة</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تصميم متوافق مع الجوال ومحسن لـ Core Web Vitals</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير القوالب</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">قوالب شوبيفاي مخصصة مبنية من الصفر أو تعديلات عميقة على قوالب حالية. تصاميم دقيقة واحترافية تعكس علامتك التجارية وتحول الزوار إلى عملاء.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>بنية Sections 2.0 الحديثة</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>استخدام Metafields و Metaobjects</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحريكات GSAP وتفاعلات دقيقة</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تصميم متوافق مع الجوال ومحسن لـ Core Web Vitals</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير التطبيقات</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تطبيقات شوبيفاي مخصصة مبنية باستخدام Polaris و App Bridge — قوائم أمنيات، تحسينات لصفحة الحساب، لوحات تحكم مخصصة، وأتمتة المهام بما يناسب احتياجاتك.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>واجهات React + Polaris</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تكامل مع Admin و Storefront API</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>خلفية برمجية باستخدام Prisma + Node.js</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>استخدام Shopify App Bridge 3</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">تطوير التطبيقات</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تطبيقات شوبيفاي مخصصة مبنية باستخدام Polaris و App Bridge — قوائم أمنيات، تحسينات لصفحة الحساب، لوحات تحكم مخصصة، وأتمتة المهام بما يناسب احتياجاتك.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>واجهات React + Polaris</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تكامل مع Admin و Storefront API</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>خلفية برمجية باستخدام Prisma + Node.js</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>استخدام Shopify App Bridge 3</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">تحسين معدل التحويل (CRO)</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تدقيق استراتيجي وتنفيذ عناصر تركز على التحويل. استخدام تقنيات مبنية على البيانات لزيادة ربحية متجرك دون الحاجة لزيادة ميزانية الإعلانات.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين تجربة إتمام الشراء (Checkout)</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تنفيذ استراتيجيات البيع الإضافي والتبادلي</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إضافة علامات الثقة والدليل الاجتماعي</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>اختبارات A/B وتحليل الخرائط الحرارية</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">تحسين معدل التحويل (CRO)</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">تدقيق استراتيجي وتنفيذ عناصر تركز على التحويل. استخدام تقنيات مبنية على البيانات لزيادة ربحية متجرك دون الحاجة لزيادة ميزانية الإعلانات.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين تجربة إتمام الشراء (Checkout)</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تنفيذ استراتيجيات البيع الإضافي والتبادلي</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>إضافة علامات الثقة والدليل الاجتماعي</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>اختبارات A/B وتحليل الخرائط الحرارية</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal text-right">
-        <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full text-right" role="listitem">
+          <div class="service-icon mb-5 mr-0 ml-auto text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">الأداء والسرعة</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">المتجر البطيء يفقد العملاء. أقوم بتدقيق وتحسين الكود في قالبك لاجتياز معايير Core Web Vitals وتحقيق نتائج Lighthouse تفوق 90 درجة.</p>
+          <ul class="flex flex-col gap-2">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>ضغط الصور والتحميل الكسول (Lazy loading)</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تأجيل النصوص البرمجية وتحسين CSS</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين قيم LCP و CLS و FID</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين أداء إضافات التطبيقات</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">الأداء والسرعة</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">المتجر البطيء يفقد العملاء. أقوم بتدقيق وتحسين الكود في قالبك لاجتياز معايير Core Web Vitals وتحقيق نتائج Lighthouse تفوق 90 درجة.</p>
-        <ul class="flex flex-col gap-2">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>ضغط الصور والتحميل الكسول (Lazy loading)</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تأجيل النصوص البرمجية وتحسين CSS</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين قيم LCP و CLS و FID</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade">✓</span>تحسين أداء إضافات التطبيقات</li>
-        </ul>
       </div>
 
     </div>

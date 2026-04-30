@@ -14,7 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script>tailwind.config={theme:{extend:{fontFamily:{heading:['Syne','sans-serif'],body:['Plus Jakarta Sans','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{bg:'#0e0d0b',surface:'#161410',card:'#1e1b16','card-h':'#26221b',ink:'#f2ede4','ink-2':'#a09880','ink-3':'#5a5040',gold:'#d4a843','gold-l':'#e8c878',terra:'#c95f3a',jade:'#4ec994'}}}}</script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,7 +27,7 @@
     "url": "https://youseframadan.me",
     "sameAs": [
       "https://github.com/yousefHPramdan",
-      "https://www.instagram.com/yousef.shopify/"
+      "https://www.instagram.com/youpify.dev/"
     ]
   }
   </script>
@@ -113,90 +115,102 @@
 <!-- SERVICES GRID -->
 <section class="py-32">
   <div class="container">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" role="list">
+    <div class="main-carousel" role="list">
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Store Setup</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Complete Shopify store configuration from scratch — theme setup, core pages, navigation, collections, products, and payment &amp; shipping configuration. Ready to sell from day one.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Theme selection &amp; configuration</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Core pages: Home, Contact, About, Policies</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Products, collections &amp; navigation</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Payment &amp; shipping gateway setup</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">Store Setup</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Complete Shopify store configuration from scratch — theme setup, core pages, navigation, collections, products, and payment &amp; shipping configuration. Ready to sell from day one.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Theme selection &amp; configuration</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Core pages: Home, Contact, About, Policies</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Products, collections &amp; navigation</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Payment &amp; shipping gateway setup</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Platform Migration</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Seamlessly move your store from WooCommerce, Magento, or any other platform to Shopify. Products, customers, and order history transferred with zero data loss.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>WooCommerce / Magento / BigCommerce</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Full product &amp; customer data transfer</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>SEO redirects &amp; URL structure preserved</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Zero downtime migration plan</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">Platform Migration</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Seamlessly move your store from WooCommerce, Magento, or any other platform to Shopify. Products, customers, and order history transferred with zero data loss.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>WooCommerce / Magento / BigCommerce</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Full product &amp; customer data transfer</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>SEO redirects &amp; URL structure preserved</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Zero downtime migration plan</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Theme Development</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Custom Shopify themes built from scratch or deep customizations of existing themes. Pixel-perfect, mobile-first designs that reflect your brand and convert visitors into customers.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Sections 2.0 architecture</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Metafields &amp; Metaobjects</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>GSAP animations &amp; microinteractions</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Mobile-first, Core Web Vitals optimized</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">Theme Development</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Custom Shopify themes built from scratch or deep customizations of existing themes. Pixel-perfect, mobile-first designs that reflect your brand and convert visitors into customers.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Sections 2.0 architecture</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Metafields &amp; Metaobjects</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>GSAP animations &amp; microinteractions</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Mobile-first, Core Web Vitals optimized</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">App Development</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Bespoke Shopify apps built with Polaris and App Bridge — wishlists, account extensions, custom dashboards, and workflow automations tailored precisely to your store's needs.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>React + Polaris UI components</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Admin &amp; Storefront API integration</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Prisma + Node.js backend</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Shopify App Bridge 3</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">App Development</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Bespoke Shopify apps built with Polaris and App Bridge — wishlists, account extensions, custom dashboards, and workflow automations tailored precisely to your store's needs.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>React + Polaris UI components</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Admin &amp; Storefront API integration</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Prisma + Node.js backend</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Shopify App Bridge 3</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Conversion Optimization (CRO)</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Strategic audits and implementation of conversion-focused elements. Using data-driven techniques to increase your store's profitability without increasing ad spend.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Checkout flow optimization</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Upsell &amp; cross-sell implementation</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Trust signals &amp; social proof</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>A/B testing &amp; heatmap analysis</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">Conversion Optimization (CRO)</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Strategic audits and implementation of conversion-focused elements. Using data-driven techniques to increase your store's profitability without increasing ad spend.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Checkout flow optimization</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Upsell &amp; cross-sell implementation</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Trust signals &amp; social proof</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>A/B testing &amp; heatmap analysis</li>
-        </ul>
       </div>
 
-      <div class="card tilt p-9 reveal" role="listitem">
-        <div class="service-icon mb-5 text-gold" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Performance &amp; Speed</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">A slow store loses customers. I audit, optimize, and refactor your Shopify theme to pass Core Web Vitals and achieve Lighthouse scores above 90.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Image compression &amp; lazy loading</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Script deferral &amp; critical CSS</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>LCP, CLS, FID optimization</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>App script lazy-loading</li>
+          </ul>
         </div>
-        <h3 class="font-heading text-[1.2rem] font-bold mb-3">Performance &amp; Speed</h3>
-        <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">A slow store loses customers. I audit, optimize, and refactor your Shopify theme to pass Core Web Vitals and achieve Lighthouse scores above 90.</p>
-        <ul class="flex flex-col gap-2" role="list">
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Image compression &amp; lazy loading</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Script deferral &amp; critical CSS</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>LCP, CLS, FID optimization</li>
-          <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>App script lazy-loading</li>
-        </ul>
       </div>
 
     </div>
