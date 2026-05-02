@@ -2,6 +2,12 @@
 <html lang="en" dir="ltr" data-theme="dark">
 
 <head>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store | Yousef Ramadan | Shopify Developer</title>
@@ -148,7 +154,7 @@
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link active">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="store.html#devtools" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
@@ -192,63 +198,99 @@
           <div id="featured-grid">
             <!-- Featured snippets injected by data-loader.js -->
           </div>
-        </div>        <!-- FILTER BAR -->
-        <div class="mb-14 reveal">
-          <div class="filter-carousel">
-            <button class="filter-btn active carousel-cell mr-3 min-w-max" data-filter="all">All (63)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="cart">🛒 Cart (10)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="products">📦 Products (14)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="sales">🚀 Sales & CRO (9)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="design">🎨 Design & UX (14)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="social">💬 Social (7)</button>
-            <button class="filter-btn carousel-cell mr-3 min-w-max" data-filter="apps">Apps (5)</button>
-            <button class="filter-btn carousel-cell min-w-max" data-filter="performance">Performance (4)</button>
+          <!-- FILTER BAR -->
+          <div class="flex flex-wrap justify-center gap-3 mt-14 mb-14 reveal">
+            <button class="filter-btn active" data-filter="all">All (69)</button>
+            <button class="filter-btn" data-filter="cart">🛒 Cart (11)</button>
+            <button class="filter-btn" data-filter="products">📦 Products (16)</button>
+            <button class="filter-btn" data-filter="sales">🚀 Sales & CRO (12)</button>
+            <button class="filter-btn" data-filter="design">🎨 Design & UX (17)</button>
+            <button class="filter-btn" data-filter="social">💬 Social (9)</button>
+            <button class="filter-btn" data-filter="apps">Apps (2)</button>
+            <button class="filter-btn" data-filter="performance">Performance (3)</button>
           </div>
-        </div>
 
-        <!-- CAROUSEL (Rendered Dynamically) -->
-        <div class="snippets-carousel" id="snippets-grid">
+          <!-- GRID -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="snippets-grid">
+            <!-- Snippets injected by JavaScript -->
 
-        </div>
-
-        <!-- BUNDLES -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
-          <div class="bundle-box reveal">
-            <div class="bundle-tag">🚀 Ultimate CRO</div>
-            <h3>Conversion Booster Bundle</h3>
-            <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">The 4 highest-converting snippets in one package. Save vs
-              apps paying $50/mo.</p>
-            <div class="flex items-center justify-center gap-4 mb-5"><span
-                class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$99</span><span
-                class="text-[1rem] text-[#5a5040] line-through">$250</span></div>
-            <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Sticky Add To
-                Cart</span><span class="bundle-item">Volume Discount</span><span class="bundle-item">Countdown
-                Timer</span><span class="bundle-item">Drawer Cart Upsell</span></div>
-            <a href="https://youseframadan.me" target="_blank" rel="noopener"
-              class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg></a>
           </div>
-          <div class="bundle-box reveal">
-            <div class="bundle-tag">🎨 UI/UX Pack</div>
-            <h3>UI/UX Design Bundle</h3>
-            <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">Upgrade your store's look and navigation in one shot.</p>
-            <div class="flex items-center justify-center gap-4 mb-5"><span
-                class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$69</span><span
-                class="text-[1rem] text-[#5a5040] line-through">$175</span></div>
-            <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Mega Menu</span><span
-                class="bundle-item">Mobile Bottom Bar</span><span class="bundle-item">Marquee Bar</span><span
-                class="bundle-item">Infinite Scroll</span></div>
-            <a href="https://youseframadan.me" target="_blank" rel="noopener"
-              class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg></a>
-          </div>
-        </div>
 
-      </div>
+          <!-- BUNDLES -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div class="bundle-box reveal">
+              <div class="bundle-tag">🚀 Ultimate CRO</div>
+              <h3>Conversion Booster Bundle</h3>
+              <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">The 4 highest-converting snippets in one package. Save
+                vs
+                apps paying $50/mo.</p>
+              <div class="flex items-center justify-center gap-4 mb-5"><span
+                  class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$99</span><span
+                  class="text-[1rem] text-[#5a5040] line-through">$250</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Sticky Add To
+                  Cart</span><span class="bundle-item">Volume Discount</span><span class="bundle-item">Countdown
+                  Timer</span><span class="bundle-item">Drawer Cart Upsell</span></div>
+              <a href="https://youseframadan.me" target="_blank" rel="noopener"
+                class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="bundle-box reveal">
+              <div class="bundle-tag">🎨 UI/UX Pack</div>
+              <h3>UI/UX Design Bundle</h3>
+              <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">Upgrade your store's look and navigation in one shot.
+              </p>
+              <div class="flex items-center justify-center gap-4 mb-5"><span
+                  class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$69</span><span
+                  class="text-[1rem] text-[#5a5040] line-through">$175</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Mega Menu</span><span
+                  class="bundle-item">Mobile Bottom Bar</span><span class="bundle-item">Marquee Bar</span><span
+                  class="bundle-item">Infinite Scroll</span></div>
+              <a href="https://youseframadan.me" target="_blank" rel="noopener"
+                class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="bundle-box reveal">
+              <div class="bundle-tag">🛒 Cart Pack</div>
+              <h3>Cart Optimizer Bundle</h3>
+              <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">Everything you need to maximize AOV directly in the
+                cart.
+              </p>
+              <div class="flex items-center justify-center gap-4 mb-5"><span
+                  class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$89</span><span
+                  class="text-[1rem] text-[#5a5040] line-through">$210</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Slide-Out Cart</span><span
+                  class="bundle-item">Progress Bar</span><span class="bundle-item">Gift Unlocker</span><span
+                  class="bundle-item">Cart Savings</span></div>
+              <a href="https://youseframadan.me" target="_blank" rel="noopener"
+                class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+            <div class="bundle-box reveal">
+              <div class="bundle-tag">💬 Trust Pack</div>
+              <h3>Social Proof Bundle</h3>
+              <p class="text-[#a09880] mt-2 mb-4 text-[0.9rem]">Build instant credibility and push hesitant buyers to
+                purchase.</p>
+              <div class="flex items-center justify-center gap-4 mb-5"><span
+                  class="font-heading text-[2.2rem] font-extrabold" style="color:#4ec994">$59</span><span
+                  class="text-[1rem] text-[#5a5040] line-through">$130</span></div>
+              <div class="flex flex-wrap justify-center gap-2 mb-6"><span class="bundle-item">Sales Pop</span><span
+                  class="bundle-item">Live Visitor</span><span class="bundle-item">Trust Badges</span><span
+                  class="bundle-item">Brands Marquee</span></div>
+              <a href="https://youseframadan.me" target="_blank" rel="noopener"
+                class="btn-primary magnetic inline-flex">Get the Bundle <svg width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            </div>
+          </div>
+
+        </div>
     </section>
 
     <!-- DEVELOPER UTILITIES -->
@@ -299,7 +341,7 @@
                 <span
                   class="text-[0.7rem] text-sh_comment uppercase font-bold tracking-widest">shopify-toolkit.ts</span>
               </div>
-              <pre><code><span class="sh-keyword">import</span> { <span class="sh-variable">Toolkit</span> } <span class="sh-keyword">from</span> <span class="sh-string">'@youpify/core'</span>;
+              <pre><code><span class="sh-keyword">import</span> { <span class="sh-variable">Toolkit</span> } <span class="sh-keyword">from</span> <span class="sh-string">'./toolkit.js'</span>;
 
 <span class="sh-comment">// Initialize with optimized settings</span>
 <span class="sh-keyword">const</span> <span class="sh-variable">app</span> = <span class="sh-keyword">new</span> <span class="sh-variable">Toolkit</span>({

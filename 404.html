@@ -2,6 +2,12 @@
 <html lang="en" dir="ltr" data-theme="dark">
 
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Page Not Found | Yousef Ramadan</title>
@@ -47,11 +53,10 @@
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="process.html" class="nav-link">Process</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>

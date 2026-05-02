@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Yousef Ramadan | Front-End Shopify Developer</title>
   <meta name="description" content="Professional Shopify services: store setup, theme development, app builds, migrations, and CRO. Build the store your brand deserves.">
@@ -54,7 +60,7 @@
         <li><a href="services.html" class="nav-link active">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="store.html#devtools" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
@@ -436,7 +442,7 @@
     <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/5 pb-12 mb-12">
       <div class="max-w-xs text-center md:text-left">
         <a href="index.html" class="nav-logo mb-4 inline-block relative z-[1001]">Yousef<span class="logo-dot">.</span></a>
-        <p class="text-[#5a5040] text-[0.88rem] leading-relaxed">Developing elite Shopify storefronts for global brands. Based in Manchester, working worldwide.</p>
+        <p class="text-[#5a5040] text-[0.88rem] leading-relaxed">Developing elite Shopify storefronts for global brands. Based in Cairo, Egypt, working worldwide.</p>
       </div>
       <div class="flex gap-12 text-center md:text-left">
         <div>

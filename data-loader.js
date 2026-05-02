@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSnippets();
   }
 
-  function createSnippetCard(snippet) {
+  function createFeaturedCard(snippet) {
     const cell = document.createElement('div');
     cell.className = 'carousel-cell w-full md:w-1/2 lg:w-1/3 px-3 mb-6';
     if (isAr) cell.dir = 'rtl';
@@ -27,36 +27,53 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const title = isAr ? snippet.title.ar : snippet.title.en;
     const desc = isAr ? snippet.description.ar : snippet.description.en;
-    const copyBtnText = isAr ? 'نسخ الكود' : 'Copy Code';
-    const buyBtnText = isAr ? 'شراء الآن' : 'Buy Now';
 
     card.innerHTML = `
-      <span class="snippet-badge ${snippet.badgeClass}">${snippet.badge}</span>
+      ${snippet.badge ? `<span class="snippet-badge ${snippet.badgeClass}">${snippet.badge}</span>` : ''}
       <img src="${snippet.image}" class="snippet-img" alt="${title}" loading="lazy">
       <h3>${title}</h3>
       <p>${desc}</p>
-      <div class="flex items-center justify-between mt-auto pt-4">
-        <div class="flex items-center gap-3">
-          <span class="${snippet.isFree ? 'price-free' : 'price-now'}">${snippet.price.now}</span>
-          ${snippet.price.old ? `<span class="price-old">${snippet.price.old}</span>` : ''}
-        </div>
-        ${snippet.isFree 
-          ? `<button class="btn-primary btn-sm copy-btn" data-code="${encodeURIComponent(snippet.code)}">${copyBtnText}</button>`
-          : `<a href="#" class="btn-secondary btn-sm">${buyBtnText}</a>`
-        }
+      <div class="flex items-center gap-3 mt-auto pt-4">
+        <span class="${snippet.isFree ? 'price-free' : 'price-now'}">${snippet.price.now}</span>
+        ${snippet.price.old ? `<span class="price-old">${snippet.price.old}</span>` : ''}
       </div>
     `;
     cell.appendChild(card);
     return cell;
   }
 
+  function createGridCard(snippet) {
+    const card = document.createElement('div');
+    card.className = 'snippet-card h-full flex flex-col m-0 reveal'; 
+    card.setAttribute('data-category', snippet.category);
+    if (isAr) card.dir = 'rtl';
+    
+    const title = isAr ? snippet.title.ar : snippet.title.en;
+    const desc = isAr ? snippet.description.ar : snippet.description.en;
+
+    card.innerHTML = `
+      ${snippet.badge ? `<span class="snippet-badge ${snippet.badgeClass}">${snippet.badge}</span>` : ''}
+      <img src="${snippet.image}" class="snippet-img" alt="${title}" loading="lazy">
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <div class="flex items-center gap-3 mt-auto pt-4">
+        <span class="${snippet.isFree ? 'price-free' : 'price-now'}">${snippet.price.now}</span>
+        ${snippet.price.old ? `<span class="price-old">${snippet.price.old}</span>` : ''}
+      </div>
+    `;
+    return card;
+  }
+
   function renderFeatured() {
     featuredGrid.innerHTML = '';
-    // Take first 4 snippets marked as "Best Seller" or just the first 4 if none marked
-    const featured = window.snippetData.filter(s => s.badge === 'Best Seller' || s.badge === 'الأكثر مبيعاً').slice(0, 4);
+    
+    let featured = window.snippetData.filter(s => s.badge === 'Bestseller' || s.badge === 'Popular' || s.badge === 'Hot').slice(0, 4);
+    if (featured.length === 0) {
+      featured = window.snippetData.slice(0, 4);
+    }
     
     featured.forEach(snippet => {
-      featuredGrid.appendChild(createSnippetCard(snippet));
+      featuredGrid.appendChild(createFeaturedCard(snippet));
     });
 
     new Flickity(featuredGrid, {
@@ -70,14 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  let snippetsFlkty = null;
-
   function renderSnippets(filter = 'all') {
-    if (snippetsFlkty) {
-      snippetsFlkty.destroy();
-      snippetsFlkty = null;
-    }
-    
     grid.innerHTML = '';
     
     const filtered = filter === 'all' 
@@ -85,50 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
       : window.snippetData.filter(s => s.category === filter);
 
     filtered.forEach(snippet => {
-      grid.appendChild(createSnippetCard(snippet));
+      grid.appendChild(createGridCard(snippet));
     });
 
-    snippetsFlkty = new Flickity(grid, {
-      cellAlign: isAr ? 'right' : 'left',
-      contain: true,
-      pageDots: true,
-      prevNextButtons: true,
-      rightToLeft: isAr,
-      wrapAround: false
-    });
-
-    attachCopyListeners();
-    
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.from(grid.querySelectorAll('.snippet-card'), {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power3.out'
-      });
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && filtered.length > 0) {
+      gsap.fromTo(grid.querySelectorAll('.snippet-card'), 
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'power2.out', clearProps: 'all' }
+      );
     }
-  }
-
-  function attachCopyListeners() {
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const code = decodeURIComponent(btn.getAttribute('data-code'));
-        navigator.clipboard.writeText(code).then(() => {
-          const originalText = btn.textContent;
-          btn.textContent = isAr ? 'تم النسخ!' : 'Copied!';
-          const oldBg = btn.style.background;
-          btn.style.background = '#4ec994';
-          btn.style.color = '#0e0d0b';
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = oldBg;
-            btn.style.color = '';
-          }, 2000);
-        });
-      });
-    });
   }
 
   filterBtns.forEach(btn => {

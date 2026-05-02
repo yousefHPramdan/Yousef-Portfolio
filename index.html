@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" >
 
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yousef Ramadan | Front-End Shopify Developer</title>
@@ -56,7 +62,6 @@
   <div id="preloader">
     <div class="relative text-center">
       <div class="pre-text">Yousef<span class="pre-accent">.</span></div>
-      <div class="pre-bar" id="pre-bar"></div>
     </div>
   </div>
   <div class="scan-line"></div>
@@ -65,28 +70,22 @@
   </div>
 
   <!-- NAV -->
-  <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
+  <nav id="navbar" style="background:rgba(5,5,5,0.8)" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span
-          class="logo-dot">.</span></a>
+      <a href="#hero" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="store.html#devtools" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-right">
-        <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
-        <a href="index-ar.html" class="nav-cta desktop magnetic ml-2"
-          style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;"
-          aria-label="Switch language">AR</a>
-        <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
-        <button id="nav-toggle" aria-label="Toggle mobile menu"
-          aria-expanded="false"><span></span><span></span><span></span></button>
+        <a href="mailto:hello@youseframadan.me" class="btn-primary btn-sm desktop">Let's Talk</a>
+        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -97,10 +96,6 @@
       <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="hero-content">
-            <div class="ai-status mb-4">
-              <span class="ai-dot"></span>
-              SYSTEM ONLINE — ACCEPTING PROJECTS
-            </div>
             <div class="hero-badge mb-6">
               <span class="pulse-dot"></span>
               Available for new projects
@@ -108,11 +103,11 @@
             
             <h1 class="hero-title mb-6" id="hero-title">I build Shopify stores that actually sell.</h1>
             
-            <p class="text-[#a09880] text-[1.1rem] max-w-[540px] mb-10 leading-[1.85]">
+            <p class="text-[#a09880] text-[1.1rem] lg:text-[1.25rem] max-w-[600px] mb-12 leading-[1.8]">
               Front-End Shopify Developer specializing in Shopify & Shopify Plus. I combine an understanding of human behavior with technical expertise in HTML, CSS, JavaScript, and Liquid to build high-performing storefronts that drive conversions.
             </p>
             <div class="flex flex-wrap gap-4 items-center mb-16">
-              <a href="contact.html" class="btn-primary magnetic">Start a Project <svg width="18" height="18"
+              <a href="mailto:hello@youseframadan.me" class="btn-primary magnetic">Start a Project <svg width="18" height="18"
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                   stroke-linejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
@@ -180,7 +175,7 @@
     </div>
 
     <!-- ABOUT -->
-    <section class="py-32" id="about">
+    <section class="py-32 lg:py-48" id="about">
       <div class="container">
         <div class="about-card reveal">
           <img src="img/developer_portfolio_hero_variant_2.png" alt="Yousef Ramadan — Front-End Shopify Developer"
@@ -260,7 +255,7 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="py-32" style="background:#161410">
+    <section class="py-32 lg:py-48" style="background:#161410">
       <div class="container">
         <div class="text-center mb-14 reveal">
           <div class="eyebrow mb-3">Proven Results</div>
@@ -302,9 +297,9 @@
 
 
     <!-- ROI CALCULATOR -->
-    <section class="py-32">
+    <section class="py-32 lg:py-48">
       <div class="container">
-        <div class="card p-0 overflow-hidden reveal border-[rgba(212,168,67,0.1)] hover:border-[rgba(212,168,67,0.2)]">
+        <div class="card p-0 overflow-hidden reveal">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
             <div class="p-8 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/5">
               <div class="eyebrow mb-3">Profitability</div>
@@ -325,7 +320,7 @@
                 <p class="text-[0.95rem] font-semibold text-ink">See the estimated lift from a custom optimization.</p>
               </div>
             </div>
-            <div class="p-8 lg:p-14 bg-[#1e1b16]/50">
+            <div class="p-8 lg:p-14 bg-transparent">
               <div class="flex flex-col gap-6">
                 <div>
                   <label for="roi-revenue"
@@ -351,368 +346,435 @@
                     performance tuning.
                   </p>
                 </div>
-                <a href="contact.html" class="btn-primary w-full justify-center mt-4">Get a Free Performance Audit</a>
+                <a href="mailto:hello@youseframadan.me" class="btn-primary w-full justify-center mt-4">Get a Free Performance Audit</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- FEATURED WORK -->
-    <section class="py-32 bg-[#0a0908]">
-      <div class="container">
-        <div class="mb-12 reveal">
-          <div
-            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl transition-all hover:border-gold/30 group/badge">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-            </span>
-            <span
-              class="text-[0.7rem] font-bold text-gold uppercase tracking-widest border-r border-white/10 pr-3">Currently
-              Working On</span>
-            <span class="text-[0.85rem] text-ink-2">Advanced CRO infrastructure for <strong
-                class="text-ink group-hover/badge:text-gold transition-colors">Tiavola</strong></span>
+    
+<div id="services"></div>
+<!-- SERVICES GRID -->
+<section class="py-32">
+  <div class="container">
+    <div class="main-carousel" role="list">
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Store Setup</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Complete Shopify store configuration from scratch — theme setup, core pages, navigation, collections, products, and payment &amp; shipping configuration. Ready to sell from day one.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Theme selection &amp; configuration</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Core pages: Home, Contact, About, Policies</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Products, collections &amp; navigation</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Payment &amp; shipping gateway setup</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Platform Migration</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Seamlessly move your store from WooCommerce, Magento, or any other platform to Shopify. Products, customers, and order history transferred with zero data loss.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>WooCommerce / Magento / BigCommerce</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Full product &amp; customer data transfer</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>SEO redirects &amp; URL structure preserved</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Zero downtime migration plan</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Theme Development</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Custom Shopify themes built from scratch or deep customizations of existing themes. Pixel-perfect, mobile-first designs that reflect your brand and convert visitors into customers.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Sections 2.0 architecture</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Metafields &amp; Metaobjects</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>GSAP animations &amp; microinteractions</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Mobile-first, Core Web Vitals optimized</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">App Development</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Bespoke Shopify apps built with Polaris and App Bridge — wishlists, account extensions, custom dashboards, and workflow automations tailored precisely to your store's needs.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>React + Polaris UI components</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Admin &amp; Storefront API integration</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Prisma + Node.js backend</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Shopify App Bridge 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Conversion Optimization (CRO)</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">Strategic audits and implementation of conversion-focused elements. Using data-driven techniques to increase your store's profitability without increasing ad spend.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Checkout flow optimization</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Upsell &amp; cross-sell implementation</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Trust signals &amp; social proof</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>A/B testing &amp; heatmap analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="carousel-cell w-full md:w-1/2 px-3">
+        <div class="card tilt p-9 h-full" role="listitem">
+          <div class="service-icon mb-5 text-gold" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="font-heading text-[1.2rem] font-bold mb-3">Performance &amp; Speed</h3>
+          <p class="text-[#a09880] text-[0.92rem] leading-[1.8] mb-4">A slow store loses customers. I audit, optimize, and refactor your Shopify theme to pass Core Web Vitals and achieve Lighthouse scores above 90.</p>
+          <ul class="flex flex-col gap-2" role="list">
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Image compression &amp; lazy loading</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>Script deferral &amp; critical CSS</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>LCP, CLS, FID optimization</li>
+            <li class="text-[0.85rem] text-[#a09880] flex gap-2"><span class="text-jade" aria-hidden="true">✓</span>App script lazy-loading</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL ECOSYSTEM -->
+<section class="py-32" style="background:#161410">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">The Stack</div>
+      <h2 class="section-title">Technical Ecosystem</h2>
+      <p class="section-sub mx-auto">Built with clinical precision using the best in Shopify engineering.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal" role="list">
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">💎</span><h3 class="font-heading font-bold text-[1.05rem]">Shopify Liquid</h3></div><p class="text-[#a09880] text-[0.85rem]">Native Liquid mastery for Sections 2.0 themes, custom blocks, and lightning-fast server-side rendering.</p></div>
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">⚛️</span><h3 class="font-heading font-bold text-[1.05rem]">Hydrogen &amp; Remix</h3></div><p class="text-[#a09880] text-[0.85rem]">Ultra-fast headless commerce using Shopify's modern React framework and the Storefront API.</p></div>
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">🧭</span><h3 class="font-heading font-bold text-[1.05rem]">Polaris UI</h3></div><p class="text-[#a09880] text-[0.85rem]">Industry-standard interfaces for embedded Shopify Apps — a native Admin feel for your custom tools.</p></div>
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">⚡</span><h3 class="font-heading font-bold text-[1.05rem]">GSAP / Motion</h3></div><p class="text-[#a09880] text-[0.85rem]">Advanced JS animation logic for smooth, high-end interactions and micro-animations that wow customers.</p></div>
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">🛠️</span><h3 class="font-heading font-bold text-[1.05rem]">GraphQL API</h3></div><p class="text-[#a09880] text-[0.85rem]">Precision data fetching via Admin and Storefront APIs for dashboards, telemetry, and integrations.</p></div>
+      <div class="eco-card" role="listitem"><div class="flex items-center gap-4 mb-3"><span class="eco-icon" aria-hidden="true">🚀</span><h3 class="font-heading font-bold text-[1.05rem]">Theme 2.0</h3></div><p class="text-[#a09880] text-[0.85rem]">Leveraging Metafields, Metaobjects, and App Blocks to create modular themes merchants can manage easily.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DEVELOPMENT PROCESS -->
+<section id="process" class="py-32">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">How I Work</div>
+      <h2 class="section-title">The Development Process</h2>
+      <p class="section-sub mx-auto">A transparent, 6-step process for building premium Shopify stores.</p>
+    </div>
+    <div class="max-w-[800px] mx-auto">
+      <div class="flex flex-col gap-0">
+
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Discovery &amp; Briefing</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">We start with a structured call or questionnaire to understand your brand, products, target audience, and business goals. I'll ask the hard questions other developers skip.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Brand guidelines &amp; visual direction</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Competitors &amp; market research</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Feature requirements &amp; integrations</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Timeline &amp; budget alignment</div>
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-          <div>
-            <div class="eyebrow mb-3">Portfolio</div>
-            <h2 class="section-title text-left mb-0">Featured <span class="text-gold">Projects</span></h2>
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Proposal &amp; Scope</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">I prepare a detailed project scope, feature breakdown, timeline, and fixed-price quote. No surprises, no scope creep. Everything is documented and agreed upon before a single line of code is written.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Full feature list &amp; deliverables</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Fixed price — no hidden costs</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Week-by-week milestone breakdown</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>50% deposit to begin</div>
           </div>
-          <a href="work.html" class="btn-secondary magnetic mb-2">View All Work</a>
         </div>
 
-        <div class="main-carousel reveal">
-          <!-- PROJECT 1 -->
-          <div class="carousel-cell w-full px-3">
-            <a href="case-tiavola.html" class="group block relative overflow-hidden rounded-3xl"
-              style="text-decoration:none">
-              <div class="aspect-[16/10] md:aspect-[2/1] overflow-hidden">
-                <img src="img/fullpage_screenshot_part_1 (1).png" alt="Tiavola Storefront Preview"
-                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  loading="lazy">
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-              </div>
-              <div
-                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div class="flex gap-2 mb-3">
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
-                    Plus</span>
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Lead
-                    Developer</span>
-                </div>
-                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Tiavola</h3>
-                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Leading frontend architecture for a high-growth Shopify Plus storefront.</p>
-              </div>
-            </a>
-          </div>
+        <div class="step-connector reveal"></div>
 
-          <!-- PROJECT 2 -->
-          <div class="carousel-cell w-full sm:w-1/2 px-3">
-            <a href="case-bypavo.html" class="group block relative overflow-hidden rounded-3xl"
-              style="text-decoration:none">
-              <div class="aspect-[16/10] overflow-hidden">
-                <img src="img/PAVO.png" alt="ByPavo Storefront Preview"
-                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  loading="lazy">
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-              </div>
-              <div
-                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div class="flex gap-2 mb-3">
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-jade/10 text-jade border border-jade/20 rounded-full backdrop-blur-md">CRO</span>
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Luxury
-                    Fashion</span>
-                </div>
-                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">ByPavo</h3>
-                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Premium fashion store with a focus on high-performance and conversion optimization.</p>
-              </div>
-            </a>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Design Planning</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Before writing code, I plan every page, every section, and every interaction. Wireframes or Figma mockups are shared for review and approval — so you see it before it's built.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Page-by-page layout planning</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Figma / wireframe review</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Color, typography &amp; spacing system</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Mobile &amp; desktop breakpoints</div>
           </div>
+        </div>
 
-          <!-- PROJECT 3 -->
-          <div class="carousel-cell w-full sm:w-1/2 px-3">
-            <a href="case-loading.html" class="group block relative overflow-hidden rounded-3xl"
-              style="text-decoration:none">
-              <div class="aspect-[16/10] overflow-hidden">
-                <img src="img/loading.png" alt="Loading-eg Storefront Preview"
-                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  loading="lazy">
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-              </div>
-              <div
-                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div class="flex gap-2 mb-3">
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 text-ink border border-white/20 rounded-full backdrop-blur-md">Retail</span>
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">Multi-Brand</span>
-                </div>
-                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Loading-eg</h3>
-                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Complex multi-brand catalog with advanced filtering and seamless UX.</p>
-              </div>
-            </a>
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">04</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Development</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Clean, well-structured Shopify Liquid code. I build on a development store so your live store is never touched until everything is perfect. Weekly progress updates are shared via video or screenshot previews.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Sections 2.0 architecture</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Weekly progress check-ins</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Mobile-first development</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Performance optimization built-in</div>
           </div>
+        </div>
 
-          <!-- PROJECT 4 -->
-          <div class="carousel-cell w-full px-3">
-            <a href="case-wishlist.html" class="group block relative overflow-hidden rounded-3xl"
-              style="text-decoration:none">
-              <div
-                class="aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-gradient-to-br from-[#1e1b16] to-[#d4a843]/20 flex items-center justify-center">
-                <div class="text-center z-10 opacity-30 group-hover:opacity-50 transition-opacity">
-                  <span class="text-[4rem] font-bold font-heading text-white tracking-tighter">APP UI</span>
-                </div>
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90">
-              </div>
-              <div
-                class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div class="flex gap-2 mb-3">
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-gold/10 text-gold border border-gold/20 rounded-full backdrop-blur-md">Shopify
-                    App</span>
-                  <span
-                    class="text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 text-ink-2 border border-white/10 rounded-full backdrop-blur-md">React
-                    / Node</span>
-                </div>
-                <h3 class="font-heading text-[1.8rem] font-bold text-ink mb-2">Wishlist Pro</h3>
-                <p class="text-ink-2 text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Full-stack Shopify app development delivering native-feel admin extensions.</p>
-              </div>
-            </a>
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">05</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Review &amp; Revisions</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">You get full access to the development store for review. I include 2 rounds of revisions to fine-tune anything that needs adjusting. Feedback is implemented within 48 hours.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>2 rounds of revisions included</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>48-hour turnaround on feedback</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Cross-browser &amp; device testing</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Final approval before going live</div>
+          </div>
+        </div>
+
+        <div class="step-connector reveal"></div>
+
+        <div class="step-card reveal">
+          <div class="step-num">06</div>
+          <h3 class="font-heading text-[1.3rem] font-bold mb-3">Launch &amp; Handoff</h3>
+          <p class="text-[#a09880] text-[0.95rem] leading-[1.8] mb-4">Once approved, I push the theme live, configure DNS and domains if needed, and run a final performance check. You receive a handoff document covering everything in your store, plus a 30-minute training call.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Live deployment &amp; DNS setup</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Lighthouse &amp; Core Web Vitals check</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>Handoff documentation</div>
+            <div class="flex gap-2 text-[0.85rem] text-[#a09880]"><span class="text-jade mt-[2px]">✓</span>30-min onboarding call</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="py-32" style="background:#161410">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">Why Work With Me</div><h2 class="section-title">What Makes This Different</h2></div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🗂️</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Streamlined Process</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Proven project management structures ensure you always know the schedule, responsibilities, and next steps. Proactive communication throughout.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">🏆</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Proven Expertise</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Deep specialization in Shopify. I've empowered brands like Pavo, O2morny, Loading-eg and more to launch, migrate, and scale successfully.</p></div>
+      <div class="why-card reveal"><div class="text-[2rem] mb-4">💡</div><h3 class="font-heading text-[1.15rem] font-bold mb-3">Transparent Pricing</h3><p class="text-[#a09880] text-[0.93rem] leading-[1.75]">Clear, upfront pricing tiers for common projects and detailed quotes for custom work. No hidden fees. Focus on measurable results for your investment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON SLIDER -->
+<section class="py-32 overflow-hidden">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="eyebrow mb-4">Proof of Impact</div>
+        <h2 class="section-title text-left mb-6">Visual Transformation</h2>
+        <p class="text-[#a09880] text-[1.1rem] leading-[1.8] mb-8">Conversion optimization isn't just about code—it's about perceived value. I transform generic, cluttered Shopify layouts into premium, high-converting experiences that command authority.</p>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full border border-ink-3 flex items-center justify-center text-jade shrink-0" aria-hidden="true">✓</div>
+            <div>
+              <h4 class="font-bold text-ink">Modern Aesthetics</h4>
+              <p class="text-[0.88rem] text-[#a09880]">Clean layouts and high-end typography that build instant trust.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full border border-ink-3 flex items-center justify-center text-jade shrink-0" aria-hidden="true">✓</div>
+            <div>
+              <h4 class="font-bold text-ink">Conversion Triggers</h4>
+              <p class="text-[0.88rem] text-[#a09880]">Strategically placed social proof and scarcity indicators.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- LATEST INSIGHTS (From BUSINESS_PLAN.md) -->
-    <section class="py-32" style="background:#161410">
-      <div class="container">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-          <div>
-            <div class="eyebrow mb-3">Dev Journal</div>
-            <h2 class="section-title text-left mb-0">Latest <span class="text-jade">Insights</span></h2>
+      <div class="reveal">
+        <div class="ba-container" id="ba-slider" aria-label="Before and after comparison of store optimization">
+          <div class="ba-after"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80" alt="After: Optimized Store Layout" loading="lazy"></div>
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80" alt="Before: Generic Store Layout" loading="lazy">
+            <div class="ba-label">BEFORE</div>
           </div>
-          <a href="blog.html" class="btn-secondary magnetic mb-2">Read All Posts</a>
-        </div>
-        
-        <div class="main-carousel reveal">
-          <!-- POST 1: Authority -->
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
-              <div class="p-6 border-l-4 border-gold h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">Insights</span>
-                  <span class="text-[0.75rem] text-[#5a5040]">Just Now</span>
-                </div>
-                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">I Audited 50+ Shopify Stores This Year</h3>
-                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                  Here is what almost all had in common: LCP above 4s, no social proof, 75%+ abandon rate, broken mobile...
-                </p>
-                <span class="text-[0.85rem] font-bold text-gold flex items-center gap-2">Read on LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span>
-              </div>
-            </a>
-          </div>
-
-          <!-- POST 2: Case Study -->
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="case-tiavola.html" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
-              <div class="p-6 border-l-4 border-jade h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-jade bg-jade/10 px-2 py-1 rounded">Case Study</span>
-                  <span class="text-[0.75rem] text-[#5a5040]">Recently</span>
-                </div>
-                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Lighthouse 41 to 93 in One Week</h3>
-                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                  Client store scored 41 on Lighthouse. Spending $8K/month on ads. Traffic but no sales. See how I fixed it.
-                </p>
-                <span class="text-[0.85rem] font-bold text-jade flex items-center gap-2">View Portfolio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-              </div>
-            </a>
-          </div>
-
-          <!-- POST 6: Hot Take -->
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="contact.html" class="card p-0 overflow-hidden group block h-full" style="text-decoration:none">
-              <div class="p-6 border-l-4 border-terra h-full flex flex-col bg-[#1e1b16] hover:bg-[#26221b] transition-colors">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="text-[0.7rem] font-bold uppercase tracking-widest text-terra bg-terra/10 px-2 py-1 rounded">Hot Take</span>
-                  <span class="text-[0.75rem] text-[#5a5040]">Trending</span>
-                </div>
-                <h3 class="font-heading font-bold text-[1.2rem] mb-3 text-ink">Most Shopify Apps Hurt Your Store</h3>
-                <p class="text-[#a09880] text-[0.9rem] leading-relaxed mb-4 flex-grow">
-                  Every app adds scripts, slows load time, and costs $15-$50/month. Better approach: build it in Liquid.
-                </p>
-                <span class="text-[0.85rem] font-bold text-terra flex items-center gap-2">Let's audit your apps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-              </div>
-            </a>
+          <div class="ba-after-label">AFTER</div>
+          <div class="ba-handle" role="slider" aria-label="Comparison slider handle" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+            <div class="ba-handle-line"></div>
+            <div class="ba-handle-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 8 4 4-4 4M6 8l-4 4 4 4"/></svg>
+            </div>
+            <div class="ba-handle-line"></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- MINI SECTIONS ROW -->
-    <section class="py-32">
-      <div class="container">
-        <div class="main-carousel reveal">
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="services.html" class="card p-8 group h-full block" style="text-decoration:none">
-              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Services</h3>
-              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Store setup, theme dev, app builds, migrations,
-                and CRO strategy.</p>
-              <span
-                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Explore
-                →</span>
-            </a>
-          </div>
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="work.html" class="card p-8 group h-full block" style="text-decoration:none">
-              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                  <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-              </div>
-              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Selected Work</h3>
-              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">Real stores and apps I've designed and built for
-                clients across Egypt and beyond.</p>
-              <span
-                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">View
-                Projects →</span>
-            </a>
-          </div>
-          <div class="carousel-cell w-full sm:w-1/2 lg:w-1/3 px-3">
-            <a href="store.html" class="card p-8 group h-full block" style="text-decoration:none">
-              <div class="mb-4 text-gold flex items-center h-[32px]" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading font-bold text-[1.15rem] mb-2">Youpify Store</h3>
-              <p class="text-[#a09880] text-[0.87rem] leading-[1.7] mb-4">50+ ready-to-use Shopify code snippets to boost
-                your store's conversion rate.</p>
-              <span
-                class="text-[0.82rem] font-bold text-[#d4a843] font-heading opacity-0 group-hover:opacity-100 transition-opacity">Browse
-                Snippets →</span>
-            </a>
-          </div>
-        </div>
+<!-- TECH PILLS -->
+<section class="py-32">
+  <div class="container">
+    <div class="text-center mb-12 reveal"><div class="eyebrow mb-3">Tech Stack</div><h2 class="section-title">Tools &amp; Technologies</h2></div>
+    <div class="flex flex-wrap justify-center gap-4 reveal" aria-label="List of technologies">
+      <span class="tech-pill">Shopify Liquid</span><span class="tech-pill">JavaScript</span><span class="tech-pill">HTML / CSS</span><span class="tech-pill">React</span><span class="tech-pill">GSAP</span><span class="tech-pill">Shopify CLI</span><span class="tech-pill">Polaris</span><span class="tech-pill">Node.js</span><span class="tech-pill">Shopify APIs</span><span class="tech-pill">GraphQL</span><span class="tech-pill">Git</span><span class="tech-pill">Figma</span><span class="tech-pill">Tailwind CSS</span><span class="tech-pill">Prisma</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- MICRO SERVICES -->
+<section class="py-32 lg:py-48">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">A La Carte</div>
+      <h2 class="section-title">Micro-Services & Fast Fixes</h2>
+      <p class="text-[#a09880] mt-3 text-[1.1rem]">High-impact, low-cost solutions to kickstart your store</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 reveal">
+      <div class="card p-8 text-center flex flex-col items-center">
+        <div class="text-[2rem] mb-4">🪲</div>
+        <h4 class="font-heading font-bold text-[1.2rem] mb-2 text-ink">Bug Fix Spec</h4>
+        <div class="font-heading text-[1.8rem] font-bold text-jade mb-3">$25</div>
+        <p class="text-[#a09880] text-[0.9rem] leading-[1.6]">Quick resolution for a single annoying theme bug or layout inconsistency.</p>
+        <a href="mailto:hello@youseframadan.me" class="mt-6 text-[0.85rem] font-bold text-gold hover:underline">Fix Bug →</a>
       </div>
-    </section>
-
-    <!-- HIRE ME ON PLATFORMS -->
-    <section class="py-24">
-      <div class="container">
-        <div class="text-center mb-16 reveal">
-          <div class="section-label">PLATFORMS</div>
-          <h2 class="section-title">Hire Me On</h2>
-          <p class="text-[#a09880] max-w-[540px] mx-auto">Available across multiple freelance platforms — choose the one that works best for you.</p>
-        </div>
-        <div class="platform-badges reveal">
-          <a href="https://www.upwork.com/freelancers/~01efe62c7dbc7ad733" target="_blank" class="platform-badge holo-card" data-platform="upwork">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg></span>
-            Upwork
-          </a>
-          <a href="https://mostaql.com/u/yousefhussin" target="_blank" class="platform-badge holo-card" data-platform="mostaql">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></span>
-            Mostaql
-          </a>
-          <a href="https://khamsat.com/user/yousefhussin" target="_blank" class="platform-badge holo-card" data-platform="khamsat">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></span>
-            Khamsat
-          </a>
-          <a href="https://www.forlanso.com/" target="_blank" class="platform-badge holo-card" data-platform="forlanso">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
-            Forlanso
-          </a>
-          <a href="https://www.instagram.com/youpify.dev/" target="_blank" class="platform-badge holo-card" data-platform="instagram">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
-            Instagram
-          </a>
-          <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="platform-badge holo-card" data-platform="linkedin">
-            <span class="pb-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
-            LinkedIn
-          </a>
-
-        </div>
+      <div class="card p-8 text-center flex flex-col items-center">
+        <div class="text-[2rem] mb-4">⚡</div>
+        <h4 class="font-heading font-bold text-[1.2rem] mb-2 text-ink">Speed Audit</h4>
+        <div class="font-heading text-[1.8rem] font-bold text-jade mb-3">$49</div>
+        <p class="text-[#a09880] text-[0.9rem] leading-[1.6]">Identification of performance bottlenecks killing your Lighthouse score.</p>
+        <a href="mailto:hello@youseframadan.me" class="mt-6 text-[0.85rem] font-bold text-gold hover:underline">Audit Speed →</a>
       </div>
-    </section>
+      <div class="card p-8 text-center flex flex-col items-center">
+        <div class="text-[2rem] mb-4">🧩</div>
+        <h4 class="font-heading font-bold text-[1.2rem] mb-2 text-ink">Custom Liquid Section</h4>
+        <div class="font-heading text-[1.8rem] font-bold text-jade mb-3">$75</div>
+        <p class="text-[#a09880] text-[0.9rem] leading-[1.6]">A bespoke Shopify section with schema settings built strictly for your theme.</p>
+        <a href="mailto:hello@youseframadan.me" class="mt-6 text-[0.85rem] font-bold text-gold hover:underline">Request Section →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <section class="py-32">
+<!-- FAQ -->
+<section class="py-32">
+  <div class="container">
+    <div class="text-center mb-14 reveal"><div class="eyebrow mb-3">Questions</div><h2 class="section-title">FAQ</h2></div>
+    <div class="flex flex-col gap-4 max-w-[800px] mx-auto reveal">
+      <div class="faq-item"><button class="faq-q">What is the process of getting a custom theme?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">I'll ask you questions to understand your brand and goals, create a design plan, build the theme from scratch, integrate it with your store, and test everything fully before launch.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Can you customize my existing theme instead of building a new one?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes! I can improve your current theme with custom sections, performance optimizations, and conversion-boosting UI features without starting from scratch.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How long does it take to build a complete custom store?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">A full custom Shopify store typically takes 3 to 6 weeks, depending on complexity. We'll establish a clear timeline during the discovery phase.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Will my store be optimized for mobile?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — every store I build is strictly mobile-first. Over 70% of e-commerce traffic is mobile, so your store will look and perform flawlessly on all screen sizes.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Do you help with SEO and page speed?<svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Performance is a priority. I ensure your store passes Core Web Vitals, with optimized images, deferred scripts, and clean code for fast load times and better search rankings.</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<div id="work"></div>
+<section class="py-32 lg:py-48" style="background:#0a0908">
+  <div class="container">
+    <div class="text-center mb-16 reveal">
+      <div class="eyebrow mb-3">Portfolio</div>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+    
+  </div>
+</section>
+
+<!-- CTA -->
+    <section class="py-32 lg:py-48">
       <div class="container">
         <div class="cta-box reveal">
           <h2>Ready to build something<br>worth buying from?</h2>
           <p>Whether you're starting fresh or leveling up an existing store, I'm here to make it happen.</p>
           <div class="flex gap-4 justify-center flex-wrap">
-            <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
-            <a href="pricing.html" class="btn-secondary magnetic">View Pricing</a>
+            <a href="mailto:hello@youseframadan.me" class="btn-primary magnetic">Start a Project</a>
+            <a href="services.html#pricing" class="btn-secondary magnetic">View Pricing</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- MODAL OVERLAY -->
+  <div id="modal-overlay" class="modal-backdrop" aria-hidden="true">
+    <div id="modal" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-hero" id="modal-hero">
+        <span id="modal-hero-text">PROJECT</span>
+      </div>
+      <div class="modal-body">
+        <div class="flex flex-wrap gap-2 mb-6" id="modal-tags">
+          <!-- Tags will be injected here -->
+        </div>
+        <h2 id="modal-title" class="font-heading text-2xl font-bold mb-4 text-ink">Project Title</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Scope</div>
+            <div class="modal-meta-val" id="modal-scope">—</div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Timeline</div>
+            <div class="modal-meta-val" id="modal-timeline">—</div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Stack</div>
+            <div class="modal-meta-val" id="modal-stack">—</div>
+          </div>
+          <div class="modal-meta-item">
+            <div class="modal-meta-label">Result</div>
+            <div class="modal-meta-val" id="modal-result">—</div>
+          </div>
+        </div>
+        <div class="prose prose-invert max-w-none">
+          <p id="modal-desc" class="text-ink-2 leading-relaxed">Project description goes here...</p>
+        </div>
+        <div class="mt-10 flex gap-4">
+          <a href="mailto:hello@youseframadan.me" class="btn-primary magnetic">Start a Similar Project</a>
+          <button class="btn-secondary magnetic" id="modal-close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
         <div class="text-center md:text-left">
-          <a href="index.html" class="font-heading font-extrabold text-[1.5rem] text-ink mb-2 block">Yousef<span
-              class="text-gold">.</span></a>
-          <p class="text-[#5a5040] text-[0.85rem] max-w-[280px]">Building high-performing Shopify storefronts that turn
-            browsers into buyers.</p>
+          <a href="index.html" class="font-heading font-extrabold text-[1.5rem] text-ink mb-2 block">Yousef<span class="text-gold">.</span></a>
+          <p class="text-[#5a5040] text-[0.85rem] max-w-[280px]">Building high-performing Shopify storefronts that turn browsers into buyers.</p>
         </div>
         <div class="flex gap-6">
-          <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank"
-            class="text-ink-2 hover:text-gold transition-colors"><svg width="20" height="20" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg></a>
-          <a href="https://www.instagram.com/youpify.dev/" target="_blank"
-            class="text-ink-2 hover:text-gold transition-colors"><svg width="20" height="20" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg></a>
-          <a href="https://github.com/yousefHPramdan" target="_blank"
-            class="text-ink-2 hover:text-gold transition-colors"><svg width="20" height="20" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-              </path>
-            </svg></a>
+          <a href="https://www.linkedin.com/in/yousef-ramadan-5540a3209/" target="_blank" class="text-ink-2 hover:text-gold transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="https://github.com/yousefHPramdan" target="_blank" class="text-ink-2 hover:text-gold transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
         </div>
         <div class="text-center md:text-right">
           <div class="text-ink font-bold text-[0.9rem] mb-1">Cairo, Egypt</div>
@@ -720,19 +782,16 @@
         </div>
       </div>
       <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-[0.82rem] text-[#5a5040]">&copy; <span id="copyright-year">2026</span> Yousef Ramadan. All rights
-          reserved.</p>
+        <p class="text-[0.82rem] text-[#5a5040]">&copy; <span id="copyright-year">2026</span> Yousef Ramadan. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="index.html#about" class="footer-link">About</a>
           <a href="work.html" class="footer-link">Work</a>
           <a href="services.html" class="footer-link">Services</a>
-          <a href="contact.html" class="footer-link">Contact</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <a href="contact.html" id="sticky-widget"><span class="sw-dot"></span><span class="sw-text">Available for Work <span>·
+  <a href="mailto:hello@youseframadan.me" id="sticky-widget"><span class="sw-dot"></span><span class="sw-text">Available for Work <span>·
         Let's Talk</span></span></a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -742,3 +801,5 @@
 </body>
 
 </html>
+
+

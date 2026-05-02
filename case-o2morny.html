@@ -2,6 +2,12 @@
 <html lang="en" dir="ltr" data-theme="dark">
 
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O2morny Case Study — Yousef Ramadan | Shopify Developer</title>
@@ -48,19 +54,15 @@
           class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="work.html" class="nav-link active">Work</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="process.html" class="nav-link">Process</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
-        <a href="index-ar.html" class="nav-cta desktop magnetic ml-2"
-          style="background:transparent; border:1px solid rgba(242,237,228,0.2); color:#f2ede4;"
-          aria-label="Switch language">AR</a>
         <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
         <button id="nav-toggle" aria-label="Toggle mobile menu"
           aria-expanded="false"><span></span><span></span><span></span></button>
@@ -176,8 +178,7 @@
           <a href="index.html#about" class="footer-link">About</a>
           <a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a>
           <a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a>
-          <a href="index-ar.html" class="footer-link">Arabic Version</a>
-        </div>
+          </div>
       </div>
     </div>
   </footer>

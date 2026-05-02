@@ -1,4 +1,4 @@
-const snippetData = [
+window.snippetData = [
   // 1. CART & CHECKOUT (10 items)
   {
     id: 'cart-progress',
@@ -764,6 +764,145 @@ const snippetData = [
     },
     image: 'assets/snippets/review-discount.png',
     price: { now: '$19.90', old: '$49.00' },
+    isFree: false
+  },
+  // 8. NEW ADDITIONS
+  {
+    id: 'bundle-builder',
+    category: 'sales',
+    badge: 'New',
+    badgeClass: 'badge-new',
+    title: { en: 'Mix & Match Bundle Builder', ar: 'باني مجموعات المنتجات' },
+    description: { 
+      en: 'Allow customers to build their own product bundles. Increases AOV massively.', 
+      ar: 'يتيح للعملاء بناء مجموعات منتجاتهم الخاصة. يزيد من متوسط قيمة الطلب بشكل كبير.' 
+    },
+    image: 'assets/snippets/bundle-builder.png',
+    price: { now: '$29.90', old: '$69.00' },
+    isFree: false
+  },
+  {
+    id: 'pre-order',
+    category: 'products',
+    title: { en: 'Pre-Order System', ar: 'نظام الطلب المسبق' },
+    description: { 
+      en: 'Replace Add to Cart with Pre-Order for out-of-stock items to capture sales.', 
+      ar: 'استبدل زر إضافة إلى السلة بالطلب المسبق للمنتجات غير المتوفرة لالتقاط المبيعات.' 
+    },
+    image: 'assets/snippets/pre-order.png',
+    price: { now: '$19.90', old: '$45.00' },
+    isFree: false
+  },
+  {
+    id: 'collection-grid',
+    category: 'design',
+    title: { en: 'Advanced Collection Grid', ar: 'شبكة المجموعات المتقدمة' },
+    description: { 
+      en: 'Enhanced product grid layout with hover effects and quick actions.', 
+      ar: 'تخطيط متقدم لشبكة المنتجات مع تأثيرات التمرير وإجراءات سريعة.' 
+    },
+    image: 'assets/snippets/collection-grid.png',
+    price: { now: '$14.90', old: '$35.00' },
+    isFree: false
+  },
+  {
+    id: 'wishlist-page',
+    category: 'social',
+    title: { en: 'User Wishlist Page', ar: 'صفحة قائمة الأمنيات للعملاء' },
+    description: { 
+      en: 'Dedicated page for customers to view and manage their saved products.', 
+      ar: 'صفحة مخصصة للعملاء لعرض وإدارة المنتجات المحفوظة.' 
+    },
+    image: 'assets/snippets/wishlist-page.png',
+    price: { now: '$19.90', old: '$49.00' },
+    isFree: false
+  },
+  {
+    id: 'lazy-load',
+    category: 'performance',
+    title: { en: 'Advanced Lazy Loading', ar: 'التحميل التدريجي المتقدم' },
+    description: { 
+      en: 'Optimized script and image lazy loading to drastically improve page speed.', 
+      ar: 'تحميل تدريجي محسن للسكريبتات والصور لتحسين سرعة الصفحة بشكل كبير.' 
+    },
+    image: 'assets/snippets/lazy-load.png',
+    price: { now: '$24.90', old: '$59.00' },
+    isFree: false
+  },
+  {
+    id: 'slide-cart',
+    category: 'cart',
+    badge: 'Popular',
+    badgeClass: 'badge-pop',
+    title: { en: 'Slide-Out Cart Drawer', ar: 'السلة الجانبية المنزلقة' },
+    description: { 
+      en: 'Premium slide-out cart with progress bar and embedded upsells.', 
+      ar: 'سلة جانبية احترافية مع شريط تقدم وعروض إضافية مدمجة.' 
+    },
+    image: 'assets/snippets/slide-cart.png',
+    price: { now: '$29.90', old: '$79.00' },
+    isFree: false
+  },
+  {
+    id: 'post-purchase-upsell',
+    category: 'sales',
+    badge: 'High ROI',
+    badgeClass: 'badge-pop',
+    title: { en: 'Post-Purchase Upsell Modal', ar: 'عروض ما بعد الشراء' },
+    description: { 
+      en: 'One-click upsell modal right after checkout. Guaranteed revenue boost.', 
+      ar: 'نافذة عروض بضغطة واحدة بعد إتمام الطلب. زيادة مضمونة للإيرادات.' 
+    },
+    image: 'img/post_purchase_upsell_modal/screen.png',
+    price: { now: '$34.90', old: '$89.00' },
+    isFree: false
+  },
+  {
+    id: 'enhanced-mega',
+    category: 'design',
+    title: { en: 'Enhanced Mega Menu Header', ar: 'رأس الصفحة مع قائمة عملاقة مطورة' },
+    description: { 
+      en: 'A highly visual mega menu featuring promotional banners and top products.', 
+      ar: 'قائمة عملاقة بصرية عالية الجودة تحتوي على لافتات ترويجية وأفضل المنتجات.' 
+    },
+    image: 'assets/snippets/enhanced-mega.png',
+    price: { now: '$24.90', old: '$59.00' },
+    isFree: false
+  },
+  {
+    id: 'gift-with-purchase',
+    category: 'sales',
+    title: { en: 'Tiered Gift With Purchase', ar: 'هدية مجانية حسب قيمة الطلب' },
+    description: { 
+      en: 'Reward customers with varying free gifts based on how much they spend.', 
+      ar: 'كافئ العملاء بهدايا مجانية متنوعة بناءً على قيمة مشترياتهم.' 
+    },
+    image: 'assets/snippets/gift-with-purchase.png',
+    price: { now: '$19.90', old: '$45.00' },
+    isFree: false
+  },
+  {
+    id: 'collection-swatches',
+    category: 'products',
+    title: { en: 'Collection Page Swatches', ar: 'خيارات الألوان في المجموعات' },
+    description: { 
+      en: 'Show available color swatches directly on collection page product cards.', 
+      ar: 'عرض خيارات الألوان المتاحة مباشرة على بطاقات المنتجات في صفحة المجموعات.' 
+    },
+    image: 'assets/snippets/collection-swatches.png',
+    price: { now: '$14.90', old: '$35.00' },
+    isFree: false
+  },
+  {
+    id: 'advanced-size-guide',
+    category: 'design',
+    title: { en: 'Advanced Size Guide Drawer', ar: 'دليل المقاسات المتقدم' },
+    description: { 
+      en: 'Custom size chart that pulls from Metafields/Metaobjects — appears as a smooth side drawer with tabbed charts.', 
+      ar: 'جدول مقاسات مخصص يظهر في سلة جانبية سلسة.' 
+    },
+    image: 'assets/snippets/size-chart.png',
+    price: { now: '$19.90', old: '$45.00' },
     isFree: false
   }
 ];

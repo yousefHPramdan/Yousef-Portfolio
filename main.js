@@ -55,10 +55,7 @@ function initThemeToggle() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── INJECT SCAN LINE ──
-  const scanLine = document.createElement('div');
-  scanLine.className = 'scan-line';
-  document.body.appendChild(scanLine);
+
 
   // ── NEURAL NETWORK CANVAS ──
   initNeuralCanvas();
@@ -80,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── INIT FLICKITY ──
   initFlickity();
-
-  // ── INIT CUSTOM CURSOR ──
-  initCustomCursor();
 
   // ── INJECT WHATSAPP WIDGET ──
   const WA_NUMBER = '+201014124465'; // Updated to match contact page
@@ -253,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navRight = document.querySelector('.nav-right');
   if (navRight) {
-    const isAr = document.documentElement.lang === 'ar';
+    
     const switchUrl = isAr ? currentPath.replace('-ar.html', '.html') : (currentPath.endsWith('.html') ? currentPath.replace('.html', '-ar.html') : 'index-ar.html');
     const switchLabel = isAr ? 'EN' : 'AR';
     let switchLink = navRight.querySelector('a[href*="-ar.html"], a[href="index.html"]:not(.nav-logo), a[aria-label="Switch language"]');
@@ -267,9 +261,76 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyrightEl = document.getElementById('copyright-year');
   if (copyrightEl) copyrightEl.textContent = new Date().getFullYear();
 
-  // ── CASE STUDY CARD CLICK HANDLER (data-case) ──
-  // Enables navigation to dedicated case study pages when a project card is clicked.
-  const CASE_SLUG_MAP = {
+  // ── PROJECT MODAL LOGIC ──
+  const modalOverlay = document.getElementById('modal-overlay');
+  const modal = document.getElementById('modal');
+  const modalClose = document.getElementById('modal-close');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+
+  function openModal(card) {
+    if (!modalOverlay) return;
+
+    const title = card.getAttribute('data-title') || 'Project';
+    const desc = card.getAttribute('data-desc') || '';
+    const tags = card.getAttribute('data-tags') || '';
+    const color = card.getAttribute('data-color') || 'linear-gradient(135deg, #1e1b16, #161410)';
+    const scope = card.getAttribute('data-scope') || '—';
+    const timeline = card.getAttribute('data-timeline') || '—';
+    const stack = card.getAttribute('data-stack') || '—';
+    const result = card.getAttribute('data-result') || '—';
+
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-desc').textContent = desc;
+    document.getElementById('modal-hero-text').textContent = title.toUpperCase();
+    document.getElementById('modal-hero').style.background = color;
+    document.getElementById('modal-scope').textContent = scope;
+    document.getElementById('modal-timeline').textContent = timeline;
+    document.getElementById('modal-stack').textContent = stack;
+    document.getElementById('modal-result').textContent = result;
+
+    const tagsContainer = document.getElementById('modal-tags');
+    tagsContainer.innerHTML = '';
+    tags.split(',').forEach(tag => {
+      if (tag.trim()) {
+        const span = document.createElement('span');
+        span.className = 'proj-tag';
+        span.textContent = tag.trim();
+        tagsContainer.appendChild(span);
+      }
+    });
+
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    if (typeof gsap !== 'undefined') {
+      gsap.fromTo(modal, { opacity: 0, scale: 0.9, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.7)" });
+    }
+  }
+
+  function closeModal() {
+    if (!modalOverlay) return;
+    
+    if (typeof gsap !== 'undefined') {
+      gsap.to(modal, { opacity: 0, scale: 0.95, y: 10, duration: 0.3, onComplete: () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }});
+    } else {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
+
+  // ── PROJECT CLICK HANDLER ──
+  const CASE_STUDY_MAP = {
     tiavola: 'case-tiavola.html',
     bypavo: 'case-bypavo.html',
     loading: 'case-loading.html',
@@ -281,37 +342,29 @@ document.addEventListener('DOMContentLoaded', () => {
     'account-extension': 'case-customer-account-extension.html'
   };
 
-  document.querySelectorAll('[data-case]').forEach(card => {
+  document.querySelectorAll('[data-case], [data-project]').forEach(card => {
     card.style.cursor = 'pointer';
-    card.addEventListener('click', () => {
-      const slug = card.getAttribute('data-case');
-      const target = CASE_SLUG_MAP[slug];
-      if (target) {
-        window.location.href = target;
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+
+    const handleAction = () => {
+      const caseSlug = card.getAttribute('data-case');
+      if (caseSlug && CASE_STUDY_MAP[caseSlug]) {
+        window.location.href = CASE_STUDY_MAP[caseSlug];
+      } else {
+        openModal(card);
+      }
+    };
+
+    card.addEventListener('click', handleAction);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleAction();
       }
     });
   });
 
-  // ── SCROLL REVEAL ──
-  const revealEls = document.querySelectorAll('.reveal');
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    revealEls.forEach((el) => {
-      gsap.fromTo(el, 
-        { opacity: 0, y: 40, scale: 0.99 },
-        { 
-          opacity: 1, y: 0, scale: 1,
-          duration: 1, 
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 88%',
-            toggleActions: 'play none none none'
-          },
-          onComplete: () => el.classList.add('visible')
-        }
-      );
-    });
-  }
 
   // ── 3D TILT ──
   document.querySelectorAll('.tilt').forEach(card => {
@@ -409,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── COMPONENT INITIALIZERS ──
 
 function initFlickity() {
-  const isAr = document.documentElement.lang === 'ar';
+  
   const sliders = document.querySelectorAll('.main-carousel, .flickity-slider-enabled');
   if (!sliders.length || typeof Flickity === 'undefined') return;
 
@@ -418,14 +471,15 @@ function initFlickity() {
     if (slider.classList.contains('flickity-enabled')) return;
 
     new Flickity(slider, {
-      cellAlign: isAr ? 'right' : 'left',
+      cellAlign: 'left',
       contain: true,
       prevNextButtons: true,
       pageDots: true,
       wrapAround: true,
       autoPlay: 5000,
       pauseAutoPlayOnHover: true,
-      rightToLeft: isAr,
+      imagesLoaded: true,
+      
       // Adaptive height for varied content
       adaptiveHeight: true
     });
@@ -441,7 +495,7 @@ function initFlickity() {
       prevNextButtons: false,
       pageDots: false,
       wrapAround: false,
-      rightToLeft: isAr
+      
     });
   });
 }
@@ -471,9 +525,8 @@ function initNavToggle() {
 }
 
 function initPreloader() {
-  const bar = document.getElementById('pre-bar');
   const pre = document.getElementById('preloader');
-  if (!bar || !pre) return;
+  if (!pre) return;
 
   const pageLoadTimeline = (typeof gsap !== 'undefined') ? gsap.timeline() : null;
 
@@ -487,11 +540,10 @@ function initPreloader() {
   }, 2500);
 
   if (pageLoadTimeline) {
-    gsap.to(bar, { width: '100%', duration: 0.8, ease: 'power2.inOut' });
     pageLoadTimeline.to(pre, {
       y: '-100%',
       duration: 1,
-      delay: 0.8,
+      delay: 0.4,
       ease: 'power4.inOut',
       onComplete: () => {
         pre.classList.add('done');
@@ -789,3 +841,4 @@ function initDataStream() {
   stream.textContent = (chars + ' ').repeat(8);
   marqueeTrack.insertBefore(stream, marqueeTrack.firstChild);
 }
+

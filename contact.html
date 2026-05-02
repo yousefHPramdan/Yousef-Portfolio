@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Yousef Ramadan | Front-End Shopify Developer</title>
   <meta name="description" content="Get in touch to discuss your Shopify project. Fast response, free scoping call, fixed-price quotes.">
@@ -40,7 +46,7 @@
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="store.html" class="nav-link">Store</a></li>
-        <li><a href="devtools.html" class="nav-link">DevTools</a></li>
+        <li><a href="store.html#devtools" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
@@ -222,9 +228,13 @@ async function handleSubmit(e) {
     const json = await res.json();
     if (json.success) {
       if (typeof gsap !== 'undefined') {
-        successEl.classList.remove('hidden');
-        gsap.fromTo(successEl, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 });
+        gsap.to(form, { opacity: 0, y: -20, duration: 0.4, onComplete: () => {
+          form.style.display = 'none';
+          successEl.classList.remove('hidden');
+          gsap.fromTo(successEl, { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.7)" });
+        }});
       } else {
+        form.style.display = 'none';
         successEl.classList.remove('hidden');
       }
       form.reset();

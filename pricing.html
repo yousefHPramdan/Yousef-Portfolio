@@ -2,6 +2,12 @@
 <html lang="en" dir="ltr" data-theme="dark">
 
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing | Yousef Ramadan | Front-End Shopify Developer</title>
@@ -59,10 +65,14 @@
       <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span
           class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
-        <li><a href="work.html" class="nav-link">Work</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="store.html" class="nav-link">Store</a></li>
+        <li><a href="store.html#devtools" class="nav-link">DevTools</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="process.html" class="nav-link">Process</a></li>
         <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
@@ -228,6 +238,30 @@
               <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $175</div>
               <p class="text-[#a09880] text-[0.82rem] mt-2">Upsells, trust signals, conversion snippet pack</p>
             </div>
+            <div class="card p-6 text-center mt-4 lg:mt-0">
+              <div class="text-[1.8rem] mb-3">🌍</div>
+              <h4 class="font-heading font-bold mb-2">Multi-Region Setup</h4>
+              <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $200</div>
+              <p class="text-[#a09880] text-[0.82rem] mt-2">Shopify Markets, currencies, and translations setup</p>
+            </div>
+            <div class="card p-6 text-center mt-4 lg:mt-0">
+              <div class="text-[1.8rem] mb-3">📧</div>
+              <h4 class="font-heading font-bold mb-2">Email Automations</h4>
+              <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $150</div>
+              <p class="text-[#a09880] text-[0.82rem] mt-2">Klaviyo flows: Abandoned Cart, Welcome, Win-back</p>
+            </div>
+            <div class="card p-6 text-center mt-4 lg:mt-0">
+              <div class="text-[1.8rem] mb-3">🛒</div>
+              <h4 class="font-heading font-bold mb-2">B2B Wholesale</h4>
+              <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $250</div>
+              <p class="text-[#a09880] text-[0.82rem] mt-2">Custom pricing tiers, net terms, and B2B portals</p>
+            </div>
+            <div class="card p-6 text-center mt-4 lg:mt-0">
+              <div class="text-[1.8rem] mb-3">🛠️</div>
+              <h4 class="font-heading font-bold mb-2">Theme Upgrade</h4>
+              <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $300</div>
+              <p class="text-[#a09880] text-[0.82rem] mt-2">Safe migration to OS 2.0 or a new premium theme</p>
+            </div>
           </div>
         </div>
       </div>
@@ -253,6 +287,13 @@
             </thead>
             <tbody>
               <tr class="border-b border-ink/5 group">
+                <td class="py-4 px-4 text-[#a09880]">Store Setup & Config</td>
+                <td class="py-4 px-4 text-jade">Standard</td>
+                <td class="py-4 px-4 text-jade">Custom</td>
+                <td class="py-4 px-4 text-jade">Priority</td>
+                <td class="py-4 px-4 text-jade">Bespoke</td>
+              </tr>
+              <tr class="border-b border-ink/5 group">
                 <td class="py-4 px-4 text-[#a09880]">Custom Liquid Sections</td>
                 <td class="py-4 px-4 text-jade">3 Sections</td>
                 <td class="py-4 px-4 text-jade">8 Sections</td>
@@ -267,6 +308,13 @@
                 <td class="py-4 px-4 text-jade">Premium</td>
               </tr>
               <tr class="border-b border-ink/5 group">
+                <td class="py-4 px-4 text-[#a09880]">App Stack Audit & Setup</td>
+                <td class="py-4 px-4 text-jade">Basic Apps</td>
+                <td class="py-4 px-4 text-jade">Full Integration</td>
+                <td class="py-4 px-4 text-jade">Priority Setup</td>
+                <td class="py-4 px-4 text-jade">Custom API Integration</td>
+              </tr>
+              <tr class="border-b border-ink/5 group">
                 <td class="py-4 px-4 text-[#a09880]">Post-Launch Support</td>
                 <td class="py-4 px-4 text-jade">7 Days</td>
                 <td class="py-4 px-4 text-jade">14 Days</td>
@@ -274,11 +322,18 @@
                 <td class="py-4 px-4 text-jade">Dedicated</td>
               </tr>
               <tr class="border-b border-ink/5 group">
-                <td class="py-4 px-4 text-[#a09880]">CRO Audit</td>
+                <td class="py-4 px-4 text-[#a09880]">CRO Audit & Setup</td>
                 <td class="py-4 px-4 text-ink-3">—</td>
                 <td class="py-4 px-4 text-jade">✓</td>
                 <td class="py-4 px-4 text-jade">Weekly</td>
                 <td class="py-4 px-4 text-jade">Bespoke</td>
+              </tr>
+              <tr class="border-b border-ink/5 group">
+                <td class="py-4 px-4 text-[#a09880]">Custom App Build</td>
+                <td class="py-4 px-4 text-ink-3">—</td>
+                <td class="py-4 px-4 text-ink-3">—</td>
+                <td class="py-4 px-4 text-ink-3">—</td>
+                <td class="py-4 px-4 text-jade">✓</td>
               </tr>
               <tr class="border-b border-ink/5 group">
                 <td class="py-4 px-4 text-[#a09880]">Headless / Hydrogen</td>
@@ -313,68 +368,8 @@
                 <p class="text-[#a09880] text-[0.95rem] leading-[1.8]">Hourly billing often rewards slow work. Fixed
                   pricing ensures we stay within the agreed scope and timeline, giving you complete financial
                   predictability.</p>
-                <div class="card p-6 border-l-2 border-gold/30">
-                  <div class="flex justify-between items-start mb-4">
-                    <h4 class="font-heading font-bold text-[1.1rem]">Bug Fix Spec</h4>
-                    <span class="text-jade font-bold">$5</span>
-                  </div>
-                  <p class="text-[#a09880] text-[0.82rem] mb-4">Quick resolution for a single annoying theme bug or
-                    layout inconsistency.</p>
-                  <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Fix Bug →</a>
-                </div>
-                <div class="card p-6 border-l-2 border-gold/30">
-                  <div class="flex justify-between items-start mb-4">
-                    <h4 class="font-heading font-bold text-[1.1rem]">SEO Technical Audit</h4>
-                    <span class="text-jade font-bold">$10</span>
-                  </div>
-                  <p class="text-[#a09880] text-[0.82rem] mb-4">Identification of 404s, missing meta tags, and schema
-                    errors killing your rank.</p>
-                  <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Audit SEO →</a>
-                </div>
-                <div class="card p-6 border-l-2 border-gold/30">
-                  <div class="flex justify-between items-start mb-4">
-                    <h4 class="font-heading font-bold text-[1.1rem]">Video Store Audit</h4>
-                    <span class="text-jade font-bold">$10</span>
-                  </div>
-                  <p class="text-[#a09880] text-[0.82rem] mb-4">A 5-minute screencast where I walk through your store
-                    and reveal conversion gaps.</p>
-                  <a href="contact.html" class="text-[0.75rem] font-bold text-gold hover:underline">Watch Audit →</a>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-16 reveal">
-        <div class="text-center mb-10">
-          <div class="eyebrow mb-3">À La Carte</div>
-          <h2 class="section-title text-[1.8rem]">Premium Add-Ons</h2>
-          <p class="text-[#a09880] mt-3 text-[0.93rem]">Bespoke features for established brands.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="card p-6 text-center">
-            <div class="text-[1.8rem] mb-3">🔄</div>
-            <h4 class="font-heading font-bold mb-2">Platform Migration</h4>
-            <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $150</div>
-            <p class="text-[#a09880] text-[0.82rem] mt-2">WooCommerce, Magento → Shopify</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-[1.8rem] mb-3">📱</div>
-            <h4 class="font-heading font-bold mb-2">Custom App Build</h4>
-            <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $350</div>
-            <p class="text-[#a09880] text-[0.82rem] mt-2">Bespoke Shopify apps with Polaris</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-[1.8rem] mb-3">⚡</div>
-            <h4 class="font-heading font-bold mb-2">Speed Optimization</h4>
-            <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $50</div>
-            <p class="text-[#a09880] text-[0.82rem] mt-2">Core Web Vitals & Lighthouse 90+</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-[1.8rem] mb-3">🎨</div>
-            <h4 class="font-heading font-bold mb-2">CRO Implementation</h4>
-            <div class="font-heading text-[1.4rem] font-bold" style="color:#4ec994">From $100</div>
-            <p class="text-[#a09880] text-[0.82rem] mt-2">Upsells & conversion snippet pack</p>
           </div>
         </div>
       </div>
