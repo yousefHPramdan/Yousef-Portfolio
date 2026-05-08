@@ -3,7 +3,7 @@
 
 <head>
   <script>
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('yousef-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();
@@ -40,7 +40,9 @@
 </head>
 
 <body>
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip to content</a>
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gold text-bg px-4 py-2 rounded-full z-[100000]">Skip
+    to content</a>
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
   <div class="orb orb-1"></div>
@@ -49,7 +51,8 @@
 
   <nav id="navbar" style="background:rgba(14,13,11,0.8)" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span class="logo-dot">.</span></a>
+      <a href="index.html" class="nav-logo relative z-[1001]" aria-label="Yousef Ramadan Home">Yousef<span
+          class="logo-dot">.</span></a>
       <ul id="nav-links" role="list">
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="work.html" class="nav-link">Work</a></li>
@@ -62,7 +65,8 @@
       <div class="nav-right">
         <a href="contact.html" class="nav-cta desktop magnetic">Let's Talk</a>
         <button id="theme-btn" aria-label="Toggle dark/light theme">🌙</button>
-        <button id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button id="nav-toggle" aria-label="Toggle mobile menu"
+          aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -72,7 +76,8 @@
       <div class="container">
         <div class="eyebrow mb-4">Shopify App Development</div>
         <h1 class="reveal text-white">Wishlist Pro</h1>
-        <p class="text-[#a09880] max-w-[600px] mx-auto mb-8 reveal">A full-stack Shopify app providing merchants with a native, high-performance wishlist solution built with modern web technologies.</p>
+        <p class="text-[#a09880] max-w-[600px] mx-auto mb-8 reveal">A full-stack Shopify app providing merchants with a
+          native, high-performance wishlist solution built with modern web technologies.</p>
         <div class="flex gap-4 justify-center flex-wrap reveal">
           <span class="proj-tag">Shopify App</span>
           <span class="proj-tag">React / Polaris</span>
@@ -84,7 +89,8 @@
     <div class="case-slider-section reveal my-12 overflow-hidden">
       <div class="main-carousel">
         <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
-          <img src="assets/snippets/wishlist-pro.png" alt="Wishlist Pro App Admin Dashboard" class="w-full h-auto object-cover" loading="lazy">
+          <img src="assets/snippets/wishlist-pro.png" alt="Wishlist Pro App Admin Dashboard"
+            class="w-full h-auto object-cover" loading="lazy">
         </div>
         <div class="carousel-cell w-full mr-4 rounded-xl overflow-hidden">
           <div class="aspect-[16/9] bg-[#1e1b16] flex items-center justify-center border border-white/5">
@@ -120,12 +126,16 @@
 
     <section class="case-section reveal">
       <h2>The Challenge</h2>
-      <p>Many merchants struggle with third-party wishlist apps that are bloated, difficult to customize, and negatively impact storefront performance with heavy client-side scripts. The goal was to build a native-feeling Shopify app that integrates deeply with the Shopify ecosystem while maintaining high performance.</p>
+      <p>Many merchants struggle with third-party wishlist apps that are bloated, difficult to customize, and negatively
+        impact storefront performance with heavy client-side scripts. The goal was to build a native-feeling Shopify app
+        that integrates deeply with the Shopify ecosystem while maintaining high performance.</p>
     </section>
 
     <section class="case-section reveal">
       <h2>The Approach</h2>
-      <p>I built the app using the official Shopify App template, leveraging React Router for the embedded admin experience and Node.js for the backend. The UI is built entirely with Polaris, ensuring it feels like a native part of the Shopify admin.</p>
+      <p>I built the app using the official Shopify App template, leveraging React Router for the embedded admin
+        experience and Node.js for the backend. The UI is built entirely with Polaris, ensuring it feels like a native
+        part of the Shopify admin.</p>
       <ul class="space-y-4 text-[#a09880] mt-6 list-disc pl-6">
         <li>Embedded admin panel built with Shopify Polaris components and App Bridge.</li>
         <li>Backend powered by Node.js and Prisma ORM for efficient data management.</li>
@@ -136,14 +146,17 @@
 
     <section class="case-section reveal">
       <h2>The Result</h2>
-      <p>Wishlist Pro is a production-ready Shopify app that provides a seamless experience for both merchants and customers. It offers deep integration with Shopify's native features and provides merchants with valuable insights into customer intent through wishlist data analytics.</p>
+      <p>Wishlist Pro is a production-ready Shopify app that provides a seamless experience for both merchants and
+        customers. It offers deep integration with Shopify's native features and provides merchants with valuable
+        insights into customer intent through wishlist data analytics.</p>
     </section>
 
     <section class="py-32" style="background:#161410">
       <div class="container">
         <div class="cta-box reveal">
           <h2>Need a custom Shopify app?</h2>
-          <p>Let’s build your next app together. From public SaaS apps to private merchant extensions, I deliver robust Shopify solutions.</p>
+          <p>Let’s build your next app together. From public SaaS apps to private merchant extensions, I deliver robust
+            Shopify solutions.</p>
           <div class="flex gap-4 justify-center flex-wrap">
             <a href="contact.html" class="btn-primary magnetic">Start a Project</a>
             <a href="work.html" class="btn-secondary magnetic">Back to Work</a>
@@ -168,7 +181,7 @@
           <a href="index.html#about" class="footer-link">About</a>
           <a href="https://github.com/yousefHPramdan" target="_blank" class="footer-link">GitHub</a>
           <a href="https://www.instagram.com/youpify.dev/" target="_blank" class="footer-link">Instagram</a>
-          </div>
+        </div>
       </div>
     </div>
   </footer>
